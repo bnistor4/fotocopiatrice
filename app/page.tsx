@@ -34,18 +34,32 @@ export default function Home() {
         <h1 className="masthead-title mt-1 text-3xl sm:text-4xl leading-tight">{s.titolo}</h1>
         <p className="mt-2 text-sm text-(--color-ink-soft)">
           Sedute di pubblicazione: {sedute.map(fmtData).join(", ")} · {s.totale_emendamenti.toLocaleString("it-IT")}{" "}
-          proposte emendative, {s.analizzati.toLocaleString("it-IT")} analizzate dal modello.
+          emendamenti distinti
+          {s.occorrenze_bollettino ? ` (${s.occorrenze_bollettino.toLocaleString("it-IT")} righe di bollettino, ri-pubblicazioni incluse)` : ""}
+          , {s.analizzati.toLocaleString("it-IT")} analizzati dal modello.
         </p>
       </section>
 
       <section className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
         <Stat value={s.totale_emendamenti.toLocaleString("it-IT")} label="emendamenti" />
-        <Stat value={s.fotocopie_esatte.toLocaleString("it-IT")} label="fotocopie esatte" sub={`${s.gruppi_fotocopia_esatta} gruppi identici`} />
+        <Stat
+          value={s.fotocopie_esatte.toLocaleString("it-IT")}
+          label="fotocopie esatte"
+          sub={`${s.fotocopie_esatte_tra_gruppi.toLocaleString("it-IT")} tra gruppi diversi`}
+        />
         <Stat value={s.fotocopie_semantiche.toLocaleString("it-IT")} label="copie semantiche" sub="stesso effetto ≥ 80%" />
         <Stat value={s.localistici.toLocaleString("it-IT")} label="localistici" sub="territorio o ente specifico" />
-        <Stat value={s.mance.toLocaleString("it-IT")} label="mancette" sub="p(handout) ≥ 50%" />
-        <Stat value={fmtEuro(s.euro_richiesti_totale)} label="euro richiesti" sub="somma degli importi nel testo" />
+        <Stat value={s.mirati.toLocaleString("it-IT")} label="mirati" sub={`mancette (handout ≥ 50%): ${s.mance}`} />
+        <Stat
+          value={fmtEuro(s.euro_richiesti_stima)}
+          label="euro richiesti"
+          sub={`stima grezza su ${s.n_con_importo.toLocaleString("it-IT")} emendamenti con importo`}
+        />
       </section>
+      <p className="-mt-6 text-xs text-(--color-faded)">
+        «Euro richiesti» = somma degli importi massimi citati nel testo, esclusa la clausola di copertura; solo
+        emendamenti analizzati e non soppressivi.
+      </p>
 
       <section className="grid gap-10 lg:grid-cols-2">
         <div>
@@ -56,8 +70,9 @@ export default function Home() {
                 <th className="py-1 font-normal">Gruppo</th>
                 <th className="py-1 text-right font-normal">Emend.</th>
                 <th className="py-1 text-right font-normal">Localist.</th>
+                <th className="py-1 text-right font-normal">Mirati</th>
                 <th className="py-1 text-right font-normal">Mancette</th>
-                <th className="py-1 text-right font-normal">Euro</th>
+                <th className="py-1 text-right font-normal">Euro (n)</th>
                 <th className="w-2/5 py-1 font-normal" />
               </tr>
             </thead>
@@ -69,8 +84,11 @@ export default function Home() {
                     <td className="py-1.5 pr-2 font-semibold">{g}</td>
                     <td className="num py-1.5 text-right">{r.n}</td>
                     <td className="num py-1.5 text-right">{r.localistici}</td>
+                    <td className="num py-1.5 text-right">{r.mirati}</td>
                     <td className="num py-1.5 text-right">{r.mance}</td>
-                    <td className="num py-1.5 text-right">{r.euro ? fmtEuro(r.euro) : "—"}</td>
+                    <td className="num py-1.5 text-right">
+                      {r.euro ? `${fmtEuro(r.euro)} (${r.n_con_importo})` : "—"}
+                    </td>
                     <td className="py-1.5 pl-3">
                       <div className="h-3 bg-(--color-paper-dark)">
                         <div className="bar-fill h-full" style={{ width: `${(r.n / maxGruppo) * 100}%` }} />
@@ -95,7 +113,12 @@ export default function Home() {
             {Object.entries(s.per_esito)
               .sort((a, b) => b[1] - a[1])
               .map(([esito, n]) => (
-                <HBar key={esito} label={esito} value={n} max={Math.max(...Object.values(s.per_esito))} />
+                <HBar
+                  key={esito}
+                  label={esito === "non_indicato" ? "esito non indicato nel bollettino" : esito}
+                  value={n}
+                  max={Math.max(...Object.values(s.per_esito))}
+                />
               ))}
           </div>
         </div>

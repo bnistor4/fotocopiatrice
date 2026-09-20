@@ -15,17 +15,25 @@ export type Summary = {
   attoId: string;
   titolo: string;
   totale_emendamenti: number;
+  occorrenze_bollettino?: number;
   analizzati: number;
   per_esito: Record<string, number>;
   articoli_aggiuntivi: number;
   soppressivi: number;
   localistici: number;
+  mirati: number;
   mance: number;
   fotocopie_esatte: number;
+  fotocopie_esatte_tra_gruppi: number;
+  fotocopie_esatte_stesso_gruppo: number;
   gruppi_fotocopia_esatta: number;
   fotocopie_semantiche: number;
-  euro_richiesti_totale: number;
-  per_gruppo: Record<string, { n: number; localistici: number; mance: number; euro: number }>;
+  euro_richiesti_stima: number;
+  n_con_importo: number;
+  per_gruppo: Record<
+    string,
+    { n: number; localistici: number; mirati: number; mance: number; euro: number; n_con_importo: number }
+  >;
   per_ambito: Record<string, number>;
   updatedAt: string;
 };
@@ -79,8 +87,11 @@ export type Emendamento = {
   esito: string | null;
   esitoAnnotazione: string | null;
   nuovaFormulazione: boolean;
+  riformulaDi: string | null;
   identTo: string[];
+  identKeys: string[];
   seduta: string;
+  sedute: string[];
   sourceUrl: string;
   importoEuro: number | null;
   analizzato: boolean;

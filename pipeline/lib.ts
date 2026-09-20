@@ -145,6 +145,12 @@ export function tokenize(testo: string): Set<string> {
  * "1,5 milioni di euro", "200 mila euro", "1,2 miliardi di euro".
  */
 export function importoEuro(testo: string): number | null {
+  // la clausola di copertura ("agli oneri ... si provvede mediante riduzione del
+  // Fondo X pari a NNN milioni") nomina cifre che non sono l'emendamento: taglia
+  const cut = testo.search(
+    /agli oneri|ai maggiori oneri|alle minori entrate|si provvede mediante|mediante corrispondente riduzione/i,
+  );
+  const testoSpesa = cut >= 0 ? testo.slice(0, cut) : testo;
   const amounts: number[] = [];
   const num = "(\\d{1,3}(?:\\.\\d{3})+|\\d+(?:,\\d+)?)";
   const mult: RegExp = new RegExp(
@@ -160,11 +166,11 @@ export function importoEuro(testo: string): number | null {
     if (u === "mila") return v * 1e3;
     return v;
   };
-  for (const m of testo.matchAll(mult)) amounts.push(parse(m[1], m[2]));
-  for (const m of testo.matchAll(euroFirst)) amounts.push(parse(m[1], m[2]));
-  // oltre 100 mld e' quasi sempre un artefatto del testo sorgente
+  for (const m of testoSpesa.matchAll(mult)) amounts.push(parse(m[1], m[2]));
+  for (const m of testoSpesa.matchAll(euroFirst)) amounts.push(parse(m[1], m[2]));
+  // oltre 50 mld e' quasi sempre un artefatto del testo sorgente
   // (es. "196.453.669 milioni di euro" nei PDF del bollettino)
-  const valid = amounts.filter((a) => Number.isFinite(a) && a > 0 && a <= 100e9);
+  const valid = amounts.filter((a) => Number.isFinite(a) && a > 0 && a <= 50e9);
   return valid.length ? Math.max(...valid) : null;
 }
 

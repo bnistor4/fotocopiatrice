@@ -68,16 +68,31 @@ async function main() {
   );
 
   const toSend: Emendamento[] = [];
+  let salvaged = 0;
   for (const e of scope) {
     const hash = normHash(e.testo);
     const euro = importoEuro(e.testo);
-    const cached = cache.emendamenti[e.key];
+    let cached = cache.emendamenti[e.key];
+    if (!cached || cached.normHash !== hash) {
+      // la stessa proposta puo' essere stata analizzata sotto la chiave di una
+      // seduta successiva (pre-canonicalizzazione): stesso normHash = riusabile
+      for (const s of e.sedute.slice(1)) {
+        const alt = cache.emendamenti[`${s}:${e.id}`];
+        if (alt && alt.normHash === hash) {
+          cache.emendamenti[e.key] = alt;
+          cached = alt;
+          salvaged++;
+          break;
+        }
+      }
+    }
     if (cached && cached.normHash === hash) {
       if (cached.importoEuro !== euro) cached.importoEuro = euro;
       continue;
     }
     toSend.push(e);
   }
+  if (salvaged) console.log(`Cache riallineata su chiavi canoniche: ${salvaged} record`);
   console.log(`Da analizzare: ${toSend.length} (cache hit: ${scope.length - toSend.length})`);
 
   if (toSend.length > 0 && !process.env.TYPESAFE_API_KEY) {

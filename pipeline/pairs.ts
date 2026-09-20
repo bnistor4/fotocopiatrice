@@ -73,8 +73,13 @@ async function main() {
     if (arr) arr.push(e);
     else byHash.set(h, [e]);
   }
+  // un gruppo vale se contiene >=2 emendamenti DISTINTI: numero diverso o
+  // firmatari diversi (le ripubblicazioni dello stesso numero+firmatari sono
+  // gia' fuse in scrape.ts, ma lo verifichiamo comunque)
+  const distinctness = (e: Emendamento) =>
+    `${e.id}|${[...new Set(e.firmatari.map((f) => f.idPersona || f.nome))].sort().join("|")}`;
   const exactGroups = [...byHash.values()]
-    .filter((g) => g.length >= 2)
+    .filter((g) => new Set(g.map(distinctness)).size >= 2)
     .map((g) => g.map((e) => e.key));
   const inExactGroup = new Set(exactGroups.flat());
   console.log(
@@ -87,22 +92,58 @@ async function main() {
   const hashOf = analyzed.map((e) => singoli.emendamenti[e.key].normHash);
   console.log(`Genero candidati Jaccard >= ${threshold} su ${analyzed.length} analizzati...`);
   const t0 = Date.now();
-  let candidates = candidatePairs(tokenSets, threshold, (i, j) => hashOf[i] === hashOf[j]);
+  // escluse le fotocopie esatte (stesso normHash) e le riformulazioni (stesso numero)
+  let candidates = candidatePairs(
+    tokenSets,
+    threshold,
+    (i, j) => hashOf[i] === hashOf[j] || analyzed[i].id === analyzed[j].id,
+  );
   console.log(`  ${candidates.length} coppie candidate in ${Date.now() - t0}ms`);
+
+  // L'indice ignora i token presenti in >500 testi: due testi con lo STESSO
+  // insieme di token (template con solo numeri diversi) sono comunque
+  // candidati (Jaccard 1.0) anche se ogni token e' ultra-comune.
+  const byTokenSig = new Map<string, number[]>();
+  analyzed.forEach((e, i) => {
+    const sig = [...tokenSets[i]].sort().join(" ");
+    const arr = byTokenSig.get(sig);
+    if (arr) arr.push(i);
+    else byTokenSig.set(sig, [i]);
+  });
+  const seenCand = new Set(candidates.map(([i, j]) => `${i}|${j}`));
+  let added = 0;
+  for (const idxs of byTokenSig.values()) {
+    if (idxs.length < 2) continue;
+    for (let a = 0; a < idxs.length; a++) {
+      for (let b = a + 1; b < idxs.length; b++) {
+        const i = idxs[a];
+        const j = idxs[b];
+        if (hashOf[i] === hashOf[j] || analyzed[i].id === analyzed[j].id) continue;
+        if (seenCand.has(`${i}|${j}`)) continue;
+        seenCand.add(`${i}|${j}`);
+        candidates.push([i, j, 1]);
+        added++;
+      }
+    }
+  }
+  if (added) console.log(`  +${added} coppie con insieme di token identico`);
+
+  candidates.sort((x, y) => y[2] - x[2]);
   if (candidates.length > maxPairs) {
     candidates = candidates.slice(0, maxPairs);
     console.log(`  -> tagliate a ${maxPairs} (le più simili)`);
   }
 
-  // Coppie marcate "ident." dalla Camera (stessa seduta): sempre inviate a Jev,
-  // anche se fotocopie esatte — sono la verita' di controllo in valutazione.json
+  // Coppie marcate "ident." dalla Camera: sempre inviate a Jev, anche se
+  // fotocopie esatte — sono la verita' di controllo in valutazione.json.
+  // identKeys sono gia' risolte a chiavi canoniche in scrape.ts.
   const indexByKey = new Map(analyzed.map((e, i) => [e.key, i]));
   const seenPair = new Set(candidates.map(([i, j]) => `${i}|${j}`));
   let identAdded = 0;
   analyzed.forEach((e, i) => {
-    for (const x of e.identTo) {
-      const j = indexByKey.get(`${e.seduta}:${x}`);
-      if (j === undefined || j <= i || seenPair.has(`${i}|${j}`)) continue;
+    for (const x of e.identKeys) {
+      const j = indexByKey.get(x);
+      if (j === undefined || j === i || seenPair.has(`${i}|${j}`) || seenPair.has(`${j}|${i}`)) continue;
       seenPair.add(`${i}|${j}`);
       let inter = 0;
       for (const t of tokenSets[i]) if (tokenSets[j].has(t)) inter++;
@@ -122,8 +163,7 @@ async function main() {
 
   const toSend: { i: number; j: number; jaccard: number; key: string }[] = [];
   const isIdentMarked = (a: Emendamento, b: Emendamento) =>
-    // la nota "ident." usa la numerazione della stessa seduta
-    a.seduta === b.seduta && (a.identTo.includes(b.id) || b.identTo.includes(a.id));
+    a.identKeys.includes(b.key) || b.identKeys.includes(a.key);
   for (const [i, j, jaccard] of candidates) {
     const a = analyzed[i];
     const b = analyzed[j];

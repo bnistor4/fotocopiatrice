@@ -37,15 +37,32 @@ export default async function EmendamentoPage({
       <header className="border-b border-(--color-line) pb-4">
         <p className="label">
           <Link href="/" className="hover:text-(--color-accent)">← indice</Link>
-          {" · "}seduta del {fmtData(e.seduta)} · art. {e.articolo}
+          {" · "}seduta del {fmtData(e.seduta)}
+          {e.sedute.length > 1 && ` (+ altre ${e.sedute.length - 1})`} · art. {e.articolo}
         </p>
         <h1 className="masthead-title mt-1 text-4xl">Emendamento {e.id}</h1>
         <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-(--color-ink-soft)">
           <span>
-            Esito: <strong>{e.esito ?? "non ancora esaminato"}</strong>
+            Esito: <strong>{e.esito ?? "esito non indicato nel bollettino"}</strong>
             {e.esitoAnnotazione ? ` (${e.esitoAnnotazione})` : ""}
           </span>
           {e.nuovaFormulazione && <span className="text-(--color-accent)">nuova formulazione</span>}
+          {e.sedute.length > 1 && (
+            <span className="text-(--color-faded)">
+              ripubblicato: {e.sedute.map(fmtData).join(", ")}
+            </span>
+          )}
+          {e.riformulaDi && (
+            <span>
+              riformulazione di{" "}
+              <Link
+                href={`/emendamento/${encodeURIComponent(e.riformulaDi)}?atto=${attoId}`}
+                className="text-(--color-accent) underline underline-offset-4"
+              >
+                Em. {e.riformulaDi.split(":")[1]}
+              </Link>
+            </span>
+          )}
           {e.importoEuro != null && (
             <span>
               Importo nel testo: <strong className="num">{fmtEuro(e.importoEuro)}</strong>
@@ -83,19 +100,19 @@ export default async function EmendamentoPage({
               <p className="label mt-2">gruppi: {e.gruppi.join(" · ")}</p>
             )}
           </div>
-          {e.identTo.length > 0 && (
+          {e.identKeys.length > 0 && (
             <div>
               <h2 className="label border-b border-(--color-line) pb-1">
                 Segnalato identico dalla Camera a
               </h2>
               <ul className="mt-2 space-y-0.5 text-sm">
-                {e.identTo.map((x) => (
-                  <li key={x}>
+                {e.identKeys.map((k) => (
+                  <li key={k}>
                     <Link
-                      href={`/emendamento/${encodeURIComponent(`${e.seduta}:${x}`)}?atto=${attoId}`}
+                      href={`/emendamento/${encodeURIComponent(k)}?atto=${attoId}`}
                       className="text-(--color-accent) underline underline-offset-4"
                     >
-                      Em. {x}
+                      Em. {k.split(":")[1]}
                     </Link>
                   </li>
                 ))}

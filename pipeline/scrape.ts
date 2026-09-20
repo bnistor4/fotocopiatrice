@@ -22,6 +22,8 @@ import {
   fetchStatus,
   fetchText,
   gruppoAt,
+  normaliseText,
+  normHash,
   parseArgs,
   paths,
   readJson,
@@ -59,7 +61,8 @@ const DETAIL_URL = (
 export type Firmatario = { nome: string; idPersona: string };
 
 export type Emendamento = {
-  /** Chiave unica: seduta + numero (il numero si ripete tra sedute e tra tornate). */
+  /** Chiave unica: <primaSeduta>:<numero>. Stesso numero + stesso testo + stessi
+   *  firmatari in sedute successive = la stessa proposta ripubblicata (merge). */
   key: string;
   id: string;
   numeroPubblicato: string;
@@ -73,10 +76,126 @@ export type Emendamento = {
   stato: string | null;
   nuovaFormulazione: boolean;
   identTo: string[];
+  /** identTo risolto a chiavi canoniche (la nota usa la numerazione della seduta). */
+  identKeys: string[];
+  /** Se e' una nuova formulazione di un numero gia' pubblicato: chiave del precedente. */
+  riformulaDi: string | null;
+  /** Prima seduta di pubblicazione (quella della key). */
   seduta: string;
+  /** Tutte le sedute in cui la proposta compare. */
+  sedute: string[];
   commissione: string;
   sourceUrl: string;
 };
+
+/** Una riga del bollettino: la stessa proposta puo' comparire in piu' sedute. */
+type Occurrence = Omit<Emendamento, "key" | "sedute" | "identKeys" | "riformulaDi">;
+
+/**
+ * Unisce le ripubblicazioni: stesso numero + stesso normHash + stesso set di
+ * idPersona dei firmatari = la stessa proposta. Stesso numero con testo
+ * diverso = nuova formulazione (record separato, `riformulaDi` al precedente).
+ */
+function mergeOccorrenze(occorrenze: Occurrence[]): Emendamento[] {
+  const byId = new Map<string, Occurrence[]>();
+  for (const o of occorrenze) {
+    const arr = byId.get(o.id);
+    if (arr) arr.push(o);
+    else byId.set(o.id, [o]);
+  }
+
+  const firmatariKey = (o: Occurrence): string => {
+    const ids = [...new Set(o.firmatari.map((f) => f.idPersona).filter(Boolean))].sort();
+    if (ids.length) return ids.join("|");
+    // proponenti collegiali senza idPersona: confronta il primo nome
+    return `N:${normaliseText(o.firmatari[0]?.nome ?? "")}`;
+  };
+
+  const canonici: Emendamento[] = [];
+  // occorrenza -> chiave canonica; lo stesso numero puo' comparire due volte
+  // nella stessa seduta (formulazione originale + nuova formulazione)
+  const keyOfOccurrence = new Map<Occurrence, string>();
+  const usedKeys = new Set<string>();
+  const orderOf = new Map<string, number>();
+  const occIndex = new Map(occorrenze.map((o, i) => [o, i]));
+
+  for (const [id, occs] of byId) {
+    occs.sort((a, b) => a.seduta.localeCompare(b.seduta));
+    // cluster per (normHash, firmatari): un'occorrenza entra nel cluster che
+    // corrisponde, anche se nel frattempo e' comparsa una riformulazione
+    const clusters: { hash: string; firma: string; occs: Occurrence[] }[] = [];
+    for (const o of occs) {
+      const h = normHash(o.testo);
+      const f = firmatariKey(o);
+      const hit = clusters.find((c) => c.hash === h && c.firma === f);
+      if (hit) hit.occs.push(o);
+      else clusters.push({ hash: h, firma: f, occs: [o] });
+    }
+    let prev: { key: string; hash: string } | null = null;
+    const seenHashes = new Set<string>();
+    for (const cluster of clusters) {
+      const first = cluster.occs[0];
+      let key = `${first.seduta}:${id}`;
+      if (usedKeys.has(key)) {
+        // stesso numero pubblicato due volte nella stessa seduta
+        let n = 2;
+        while (usedKeys.has(`${key}#${n}`)) n++;
+        key = `${key}#${n}`;
+      }
+      usedKeys.add(key);
+      // esito: dalla piu' recente occorrenza che ne ha uno
+      const latestWithEsito = [...cluster.occs]
+        .sort((a, b) => b.seduta.localeCompare(a.seduta))
+        .find((o) => o.esito);
+      canonici.push({
+        ...first,
+        key,
+        esito: latestWithEsito?.esito ?? null,
+        esitoAnnotazione: latestWithEsito?.esitoAnnotazione ?? null,
+        stato: latestWithEsito?.stato ?? first.stato,
+        nuovaFormulazione: cluster.occs.some((o) => o.nuovaFormulazione),
+        identTo: [...new Set(cluster.occs.flatMap((o) => o.identTo))],
+        identKeys: [], // risolti sotto
+        // stesso numero, testo MAI visto prima = riformulazione; stesso testo
+        // con firmatari diversi = copia tra firmatari, non riformulazione
+        riformulaDi: prev && !seenHashes.has(cluster.hash) ? prev.key : null,
+        sedute: [...new Set(cluster.occs.map((o) => o.seduta))].sort(),
+      });
+      orderOf.set(key, Math.min(...cluster.occs.map((o) => occIndex.get(o)!)));
+      for (const o of cluster.occs) keyOfOccurrence.set(o, key);
+      seenHashes.add(cluster.hash);
+      prev = { key, hash: cluster.hash };
+    }
+  }
+
+  // identTo usa la numerazione della seduta in cui la nota appare; se il numero
+  // ha piu' cluster in quella seduta si risolve al primo
+  const canonByKey = new Map(canonici.map((e) => [e.key, e]));
+  const canonAt = new Map<string, string>(); // "seduta:numero" -> prima chiave canonica
+  for (const e of canonici) {
+    for (const s of e.sedute) {
+      const k = `${s}:${e.id}`;
+      if (!canonAt.has(k)) canonAt.set(k, e.key);
+    }
+  }
+  for (const o of occorrenze) {
+    const srcKey = keyOfOccurrence.get(o);
+    const src = srcKey ? canonByKey.get(srcKey) : undefined;
+    if (!src) continue;
+    for (const x of o.identTo) {
+      const targetKey = canonAt.get(`${o.seduta}:${x}`);
+      if (targetKey && targetKey !== src.key && !src.identKeys.includes(targetKey)) {
+        src.identKeys.push(targetKey);
+      }
+    }
+  }
+
+  // ordine di pubblicazione: seduta della prima occorrenza, poi ordine documento
+  canonici.sort(
+    (a, b) => a.seduta.localeCompare(b.seduta) || (orderOf.get(a.key) ?? 0) - (orderOf.get(b.key) ?? 0),
+  );
+  return canonici;
+}
 
 // ---------------------------------------------------------------------------
 // Deputati via SPARQL (dati.camera.it)
@@ -229,7 +348,7 @@ async function main() {
   const [base, suffix] = attoId.includes("-")
     ? [attoId.split("-")[0], attoId.split("-").slice(1).join("-")]
     : [attoId, "null"];
-  const emendamenti: Emendamento[] = [];
+  const occorrenze: Occurrence[] = [];
   const seduteViste = new Set<string>();
   const perSeduta = new Map<string, number>();
 
@@ -299,8 +418,7 @@ async function main() {
         .first()
         .text()
         .trim();
-      emendamenti.push({
-        key: `${sedutaData}:${numero}`,
+      occorrenze.push({
         id: numero,
         numeroPubblicato: $p.attr("numeroPubblicato") ?? numero,
         tipo: $p.attr("tipo") ?? "emendamento",
@@ -328,9 +446,11 @@ async function main() {
     });
   });
 
-  console.log(`Emendamenti estratti: ${emendamenti.length}`);
+  console.log(`Occorrenze estratte (righe del bollettino): ${occorrenze.length}`);
+  const emendamenti = mergeOccorrenze(occorrenze);
+  console.log(`Emendamenti canonici: ${emendamenti.length}`);
   for (const [d, n] of [...perSeduta.entries()].sort()) {
-    console.log(`  seduta ${d}: ${n}`);
+    console.log(`  seduta ${d}: ${n} occorrenze`);
   }
 
   // 4. Cross-check against the HTML list pages (one request per seduta)
@@ -360,6 +480,7 @@ async function main() {
     commissione: commissione ?? null,
     sedute: [...seduteViste].sort(),
     count: emendamenti.length,
+    occorrenze: occorrenze.length,
     fetchedAt: new Date().toISOString(),
     emendamenti,
   };

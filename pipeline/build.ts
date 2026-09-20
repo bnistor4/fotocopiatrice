@@ -23,6 +23,7 @@ type RawFile = {
   container: string;
   sedute: string[];
   count: number;
+  occorrenze?: number;
   emendamenti: Emendamento[];
 };
 type SingoliFile = {
@@ -65,48 +66,70 @@ function main() {
 
   // ---- summary -----------------------------------------------------------
   const perEsito: Record<string, number> = {};
-  let euroTotale = 0;
+  let euroStima = 0;
+  let nConImporto = 0;
   let nArticoliAgg = 0;
   let nSoppressivi = 0;
   let nLocalistici = 0;
   let nMance = 0;
+  let nMirati = 0;
   const perGruppo: Record<
     string,
-    { n: number; localistici: number; mance: number; euro: number }
+    {
+      n: number;
+      localistici: number;
+      mirati: number;
+      mance: number;
+      euro: number;
+      n_con_importo: number;
+    }
   > = {};
   const perAmbito: Record<string, number> = {};
 
   const bumpGruppo = (e: Emendamento) => {
     const g = primoGruppo(e);
-    const rec = (perGruppo[g] ??= { n: 0, localistici: 0, mance: 0, euro: 0 });
+    const rec = (perGruppo[g] ??= {
+      n: 0,
+      localistici: 0,
+      mirati: 0,
+      mance: 0,
+      euro: 0,
+      n_con_importo: 0,
+    });
     rec.n++;
     return rec;
   };
 
   for (const e of raw.emendamenti) {
-    if (e.esito) perEsito[e.esito] = (perEsito[e.esito] ?? 0) + 1;
-    else perEsito["in_attesa"] = (perEsito["in_attesa"] ?? 0) + 1;
+    perEsito[e.esito ?? "non_indicato"] = (perEsito[e.esito ?? "non_indicato"] ?? 0) + 1;
     const rec = bumpGruppo(e);
     const s = singoli.emendamenti[e.key];
-    // importoEuro e' calcolato in codice (regex): lo ricalcoliamo per tutti
-    const euro = importoEuro(e.testo);
-    if (euro) {
-      euroTotale += euro;
-      rec.euro += euro;
-    }
     if (!s) continue;
     const a = s.answers;
+    // stima grezza: solo analizzati, non soppressivi, con importo nel testo
+    const euro = importoEuro(e.testo);
+    if (euro && a.soppressivo < 0.5) {
+      euroStima += euro;
+      nConImporto++;
+      rec.euro += euro;
+      rec.n_con_importo++;
+    }
     if (a.articolo_aggiuntivo >= 0.5) nArticoliAgg++;
     if (a.soppressivo >= 0.5) nSoppressivi++;
     if (a.localistico >= 0.5) {
       nLocalistici++;
       rec.localistici++;
     }
-    // "mancetta" = il modello assegna >50% di probabilita' al livello 3 della
-    // rubrica ("somma specifica a un ente/evento/luogo nominato")
-    if ((a.micro_intervento.probabilities["3"] ?? 0) >= 0.5) {
+    // "mancetta" = >50% sul livello 3 ("somma a un ente/evento/luogo nominato");
+    // "mirato" = livello 2 o 3 combinati
+    const p = a.micro_intervento.probabilities;
+    if ((p["3"] ?? 0) >= 0.5) {
       nMance++;
       rec.mance++;
+    }
+    if ((p["2"] ?? 0) + (p["3"] ?? 0) >= 0.5) {
+      nMirati++;
+      rec.mirati++;
     }
     perAmbito[a.ambito.choice] = (perAmbito[a.ambito.choice] ?? 0) + 1;
   }
@@ -121,20 +144,38 @@ function main() {
     }
   }
 
+  // fotocopie esatte divise per chi firma: interessanti quelle tra gruppi diversi
+  const gruppiOf = (key: string) => {
+    const e = byId.get(key);
+    return e ? new Set([primoGruppo(e)]) : new Set<string>();
+  };
+  let esatteTraGruppi = 0;
+  let esatteStessoGruppo = 0;
+  for (const g of coppie.exactGroups) {
+    const allG = new Set(g.flatMap((k) => [...gruppiOf(k)]));
+    if (allG.size >= 2) esatteTraGruppi += g.length;
+    else esatteStessoGruppo += g.length;
+  }
+
   const summary = {
     attoId,
     titolo,
     totale_emendamenti: raw.count,
+    occorrenze_bollettino: raw.occorrenze,
     analizzati: analyzedIds.size,
     per_esito: perEsito,
     articoli_aggiuntivi: nArticoliAgg,
     soppressivi: nSoppressivi,
     localistici: nLocalistici,
+    mirati: nMirati,
     mance: nMance,
     fotocopie_esatte: exactSet.size,
+    fotocopie_esatte_tra_gruppi: esatteTraGruppi,
+    fotocopie_esatte_stesso_gruppo: esatteStessoGruppo,
     gruppi_fotocopia_esatta: coppie.exactGroups.length,
     fotocopie_semantiche: semanticSet.size,
-    euro_richiesti_totale: euroTotale,
+    euro_richiesti_stima: euroStima,
+    n_con_importo: nConImporto,
     per_gruppo: perGruppo,
     per_ambito: perAmbito,
     updatedAt: new Date().toISOString(),
@@ -194,8 +235,11 @@ function main() {
       esito: e.esito,
       esitoAnnotazione: e.esitoAnnotazione,
       nuovaFormulazione: e.nuovaFormulazione,
+      riformulaDi: e.riformulaDi,
       identTo: e.identTo,
+      identKeys: e.identKeys,
       seduta: e.seduta,
+      sedute: e.sedute,
       sourceUrl: e.sourceUrl,
       importoEuro: importoEuro(e.testo),
       analizzato: !!s,

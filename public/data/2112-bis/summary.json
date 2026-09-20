@@ -1,103 +1,131 @@
 {
   "attoId": "2112-bis",
-  "titolo": "Bilancio di previsione dello Stato per l'anno finanziario 2025 (A.C. 2112-bis)",
-  "totale_emendamenti": 5992,
-  "analizzati": 400,
+  "titolo": "Atto Camera 2112-bis",
+  "totale_emendamenti": 5085,
+  "occorrenze_bollettino": 5992,
+  "analizzati": 5085,
   "per_esito": {
     "inammissibile": 1190,
-    "in_attesa": 4453,
-    "approvato": 349
+    "non_indicato": 3548,
+    "approvato": 347
   },
-  "articoli_aggiuntivi": 297,
-  "soppressivi": 110,
-  "localistici": 5,
-  "mance": 0,
-  "fotocopie_esatte": 2730,
-  "gruppi_fotocopia_esatta": 1023,
-  "fotocopie_semantiche": 4,
-  "euro_richiesti_totale": 1926768645216.3,
+  "articoli_aggiuntivi": 3849,
+  "soppressivi": 1336,
+  "localistici": 754,
+  "mirati": 1173,
+  "mance": 301,
+  "fotocopie_esatte": 1298,
+  "fotocopie_esatte_tra_gruppi": 1264,
+  "fotocopie_esatte_stesso_gruppo": 34,
+  "gruppi_fotocopia_esatta": 461,
+  "fotocopie_semantiche": 44,
+  "euro_richiesti_stima": 475735771306.56995,
+  "n_con_importo": 2042,
   "per_gruppo": {
     "MISTO": {
-      "n": 401,
-      "localistici": 1,
-      "mance": 0,
-      "euro": 80470165885
+      "n": 336,
+      "localistici": 31,
+      "mirati": 49,
+      "mance": 16,
+      "euro": 24875981398,
+      "n_con_importo": 99
     },
     "M5S": {
-      "n": 1425,
-      "localistici": 0,
-      "mance": 0,
-      "euro": 651689848487
+      "n": 1316,
+      "localistici": 182,
+      "mirati": 287,
+      "mance": 53,
+      "euro": 100136041709.08,
+      "n_con_importo": 428
     },
     "NM(N-C-U-I)M-CP": {
-      "n": 194,
-      "localistici": 0,
-      "mance": 0,
-      "euro": 15185911310.869999
+      "n": 155,
+      "localistici": 19,
+      "mirati": 37,
+      "mance": 8,
+      "euro": 6643046050,
+      "n_con_importo": 76
     },
     "FI-PPE": {
-      "n": 639,
-      "localistici": 1,
-      "mance": 0,
-      "euro": 253091069391.99997
+      "n": 541,
+      "localistici": 86,
+      "mirati": 141,
+      "mance": 39,
+      "euro": 99192943148.21,
+      "n_con_importo": 216
     },
     "IV-CR": {
-      "n": 353,
-      "localistici": 0,
-      "mance": 0,
-      "euro": 68732058243.2
+      "n": 306,
+      "localistici": 22,
+      "mirati": 48,
+      "mance": 9,
+      "euro": 39982089750.58,
+      "n_con_importo": 147
     },
     "FDI": {
-      "n": 359,
-      "localistici": 0,
-      "mance": 0,
-      "euro": 10266905275
+      "n": 251,
+      "localistici": 56,
+      "mirati": 78,
+      "mance": 19,
+      "euro": 4017507849.5,
+      "n_con_importo": 116
     },
     "PD-IDP": {
-      "n": 1216,
-      "localistici": 1,
-      "mance": 0,
-      "euro": 468059268098.28
+      "n": 1055,
+      "localistici": 174,
+      "mirati": 286,
+      "mance": 80,
+      "euro": 105143162939.78,
+      "n_con_importo": 501
     },
     "AZ-PER-RE": {
-      "n": 234,
-      "localistici": 0,
-      "mance": 0,
-      "euro": 32540269033
+      "n": 183,
+      "localistici": 15,
+      "mirati": 31,
+      "mance": 11,
+      "euro": 15705948033,
+      "n_con_importo": 93
     },
     "LEGA": {
-      "n": 593,
-      "localistici": 0,
-      "mance": 0,
-      "euro": 86877524805.5
+      "n": 488,
+      "localistici": 100,
+      "mirati": 130,
+      "mance": 52,
+      "euro": 10060617939.970001,
+      "n_con_importo": 184
     },
     "AVS": {
-      "n": 440,
-      "localistici": 2,
-      "mance": 0,
-      "euro": 192761454686.45
+      "n": 384,
+      "localistici": 40,
+      "mirati": 63,
+      "mance": 6,
+      "euro": 59846702488.45,
+      "n_con_importo": 152
     },
     "ND": {
-      "n": 138,
-      "localistici": 0,
-      "mance": 0,
-      "euro": 67094170000
+      "n": 70,
+      "localistici": 29,
+      "mirati": 23,
+      "mance": 8,
+      "euro": 10131730000,
+      "n_con_importo": 30
     }
   },
   "per_ambito": {
-    "sociale_famiglia": 7,
-    "fisco": 281,
-    "ambiente_energia": 50,
-    "giustizia_pa": 4,
-    "lavoro_pensioni": 4,
-    "altro": 20,
-    "sanita": 1,
-    "imprese_incentivi": 11,
-    "infrastrutture_trasporti": 3,
-    "enti_locali": 8,
-    "cultura_turismo_sport": 8,
-    "agricoltura": 2,
-    "scuola_universita": 1
+    "sociale_famiglia": 313,
+    "fisco": 765,
+    "ambiente_energia": 352,
+    "giustizia_pa": 177,
+    "lavoro_pensioni": 574,
+    "altro": 397,
+    "sanita": 520,
+    "imprese_incentivi": 274,
+    "infrastrutture_trasporti": 353,
+    "enti_locali": 317,
+    "cultura_turismo_sport": 256,
+    "agricoltura": 222,
+    "scuola_universita": 389,
+    "sicurezza_difesa": 176
   },
-  "updatedAt": "2026-09-20T22:00:07.002Z"
+  "updatedAt": "2026-09-20T22:23:06.679Z"
 }

@@ -38,6 +38,12 @@ export default function MetodoPage() {
           <strong>nessuna chiave API vive su Vercel</strong>.
         </p>
         <p>
+          Il bollettino ripubblica lo stesso emendamento in più sedute (i «segnalati»):
+          le righe con stesso numero, stesso testo e stessi firmatari vengono contate{" "}
+          <strong>una sola volta</strong>; le riformulazioni (stesso numero, testo diverso)
+          restano schede distinte ma non sono mai conteggiate come fotocopie.
+        </p>
+        <p>
           Il gruppo parlamentare dei firmatari viene ricostruito dal grafo open data della
           Camera (dati.camera.it, SPARQL), alla data della seduta in cui l'emendamento è stato
           pubblicato.
@@ -141,8 +147,10 @@ export default function MetodoPage() {
             testo (ogni scheda riporta il link alla fonte ufficiale).
           </li>
           <li>
-            Gli importi in euro sono estratti con espressioni regolari dal testo: cifre scritte
-            in lettere o formule indirette non vengono conteggiate.
+            Gli importi in euro sono estratti con espressioni regolari dal testo, tagliando la
+            clausola di copertura e ignorando cifre oltre 50 miliardi: è una stima grezza degli
+            importi massimi citati, calcolata solo sugli emendamenti analizzati e non
+            soppressivi. Cifre in lettere o formule indirette non vengono conteggiate.
           </li>
           <li>
             Le coppie oltre la soglia di similarità Jaccard non vengono mostrate al modello:

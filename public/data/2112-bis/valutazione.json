@@ -1,0 +1,31 @@
+{
+  "attoId": "2112-bis",
+  "coppie_inviate": 1890,
+  "coppie_ident_camera": {
+    "n": 135,
+    "media": 0.9682962962962954,
+    "quota_ge_08": 1,
+    "quota_ge_05": 1,
+    "descrizione": "Coppie che la Camera stessa marca come identiche (nota 'ident.'): distribuzione di stesso_effetto di Jev"
+  },
+  "coppie_jaccard_alto": {
+    "n": 157,
+    "media": 0.8570063694267506,
+    "quota_ge_08": 0.8726114649681529,
+    "quota_ge_05": 0.8726114649681529,
+    "descrizione": "Coppie con similarita' Jaccard >= 0.9: distribuzione di stesso_effetto"
+  },
+  "fotocopie_esatte": {
+    "gruppi": 1023,
+    "emendamenti": 2730,
+    "descrizione": "Gruppi con testo identico dopo normalizzazione (sha1), calcolato in codice"
+  },
+  "usage": {
+    "chiamate": 4215,
+    "input_tokens": 5519342,
+    "output_tokens": 364299,
+    "costo_stimato_usd": 0.231812364,
+    "tariffa_input_per_milione": 0.042
+  },
+  "updatedAt": "2026-09-20T22:00:07.043Z"
+}

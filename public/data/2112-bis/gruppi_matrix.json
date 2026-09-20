@@ -1,0 +1,138 @@
+{
+  "gruppi": [
+    "AVS",
+    "AZ-PER-RE",
+    "FDI",
+    "FI-PPE",
+    "IV-CR",
+    "LEGA",
+    "M5S",
+    "MISTO",
+    "NM(N-C-U-I)M-CP",
+    "PD-IDP"
+  ],
+  "counts": {
+    "IV-CR": {
+      "AVS": 10,
+      "FI-PPE": 56,
+      "MISTO": 47,
+      "PD-IDP": 53,
+      "IV-CR": 19,
+      "AZ-PER-RE": 22,
+      "M5S": 13,
+      "LEGA": 24,
+      "FDI": 13,
+      "NM(N-C-U-I)M-CP": 3
+    },
+    "AVS": {
+      "IV-CR": 10,
+      "PD-IDP": 10,
+      "MISTO": 14,
+      "M5S": 21,
+      "AZ-PER-RE": 5,
+      "FI-PPE": 10,
+      "FDI": 3,
+      "NM(N-C-U-I)M-CP": 2,
+      "AVS": 7,
+      "LEGA": 2
+    },
+    "PD-IDP": {
+      "AVS": 10,
+      "FI-PPE": 86,
+      "M5S": 30,
+      "MISTO": 83,
+      "IV-CR": 53,
+      "PD-IDP": 47,
+      "LEGA": 56,
+      "FDI": 30,
+      "AZ-PER-RE": 43,
+      "NM(N-C-U-I)M-CP": 15
+    },
+    "MISTO": {
+      "AVS": 14,
+      "FI-PPE": 69,
+      "FDI": 25,
+      "AZ-PER-RE": 39,
+      "M5S": 28,
+      "PD-IDP": 83,
+      "IV-CR": 47,
+      "LEGA": 40,
+      "MISTO": 46,
+      "NM(N-C-U-I)M-CP": 18
+    },
+    "FI-PPE": {
+      "LEGA": 44,
+      "PD-IDP": 86,
+      "MISTO": 69,
+      "M5S": 29,
+      "IV-CR": 56,
+      "NM(N-C-U-I)M-CP": 17,
+      "AVS": 10,
+      "AZ-PER-RE": 28,
+      "FI-PPE": 43,
+      "FDI": 19
+    },
+    "LEGA": {
+      "FI-PPE": 44,
+      "FDI": 19,
+      "MISTO": 40,
+      "PD-IDP": 56,
+      "M5S": 16,
+      "IV-CR": 24,
+      "AVS": 2,
+      "LEGA": 18,
+      "AZ-PER-RE": 23,
+      "NM(N-C-U-I)M-CP": 12
+    },
+    "FDI": {
+      "MISTO": 25,
+      "LEGA": 19,
+      "AVS": 3,
+      "PD-IDP": 30,
+      "IV-CR": 13,
+      "M5S": 8,
+      "AZ-PER-RE": 11,
+      "FI-PPE": 19,
+      "FDI": 2,
+      "NM(N-C-U-I)M-CP": 6
+    },
+    "M5S": {
+      "PD-IDP": 30,
+      "FI-PPE": 29,
+      "MISTO": 28,
+      "AZ-PER-RE": 10,
+      "IV-CR": 13,
+      "M5S": 68,
+      "AVS": 21,
+      "NM(N-C-U-I)M-CP": 6,
+      "LEGA": 16,
+      "FDI": 8
+    },
+    "AZ-PER-RE": {
+      "MISTO": 39,
+      "IV-CR": 22,
+      "M5S": 10,
+      "AVS": 5,
+      "PD-IDP": 43,
+      "FI-PPE": 28,
+      "NM(N-C-U-I)M-CP": 5,
+      "FDI": 11,
+      "LEGA": 23,
+      "AZ-PER-RE": 9
+    },
+    "NM(N-C-U-I)M-CP": {
+      "FI-PPE": 17,
+      "AVS": 2,
+      "M5S": 6,
+      "AZ-PER-RE": 5,
+      "PD-IDP": 15,
+      "LEGA": 12,
+      "MISTO": 18,
+      "FDI": 6,
+      "IV-CR": 3,
+      "NM(N-C-U-I)M-CP": 2
+    }
+  },
+  "soglia": 0.8,
+  "note": "Coppie con stesso_effetto >= 0.8 oppure stessa_matrice >= 0.8; matrice simmetrica, gruppo del primo firmatario."
+}

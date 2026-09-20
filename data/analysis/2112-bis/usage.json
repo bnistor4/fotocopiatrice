@@ -1,0 +1,37 @@
+{
+  "totalInputTokens": 5519342,
+  "totalOutputTokens": 364299,
+  "calls": 4215,
+  "estimatedCostUSD": 0.231812364,
+  "runs": [
+    {
+      "script": "analyze",
+      "at": "2026-09-20T21:47:32.878Z",
+      "calls": 400,
+      "inputTokens": 740617,
+      "outputTokens": 116324
+    },
+    {
+      "script": "pairs",
+      "at": "2026-09-20T21:48:51.295Z",
+      "calls": 1925,
+      "inputTokens": 2465779,
+      "outputTokens": 125125
+    },
+    {
+      "script": "pairs",
+      "at": "2026-09-20T21:52:36.282Z",
+      "calls": 1755,
+      "inputTokens": 2126937,
+      "outputTokens": 114075
+    },
+    {
+      "script": "pairs",
+      "at": "2026-09-20T21:55:53.467Z",
+      "calls": 135,
+      "inputTokens": 186009,
+      "outputTokens": 8775
+    }
+  ],
+  "updatedAt": "2026-09-20T21:55:53.467Z"
+}

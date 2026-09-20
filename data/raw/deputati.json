@@ -1,0 +1,6212 @@
+{
+  "32460": {
+    "nome": "UMBERTO BOSSI",
+    "cognome": "BOSSI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20260319"
+      }
+    ]
+  },
+  "34580": {
+    "nome": "BRUNO TABACCI",
+    "cognome": "TABACCI",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": "20260709"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20260709",
+        "end": null
+      }
+    ]
+  },
+  "35980": {
+    "nome": "LUCIANO CIOCCHETTI",
+    "cognome": "CIOCCHETTI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "36500": {
+    "nome": "PIERO FRANCO FASSINO",
+    "cognome": "FASSINO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "38560": {
+    "nome": "GIANFRANCO ROTONDI",
+    "cognome": "ROTONDI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "39130": {
+    "nome": "GIULIO CARLO DANILO TREMONTI",
+    "cognome": "TREMONTI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "50115": {
+    "nome": "GIANCARLO GIORGETTI",
+    "cognome": "GIORGETTI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "50204": {
+    "nome": "TOMMASO FOTI",
+    "cognome": "FOTI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "200291": {
+    "nome": "RICCARDO DE CORATO",
+    "cognome": "DE CORATO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "300127": {
+    "nome": "ENRICO LETTA",
+    "cognome": "LETTA",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": "20241220"
+      }
+    ]
+  },
+  "300299": {
+    "nome": "ANDREA GIORGIO FELICE MARIA ORSINI",
+    "cognome": "ORSINI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "300319": {
+    "nome": "EDMONDO CIRIELLI",
+    "cognome": "CIRIELLI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "300369": {
+    "nome": "FRANCESCO SAVERIO ROMANO",
+    "cognome": "ROMANO",
+    "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+    "sigla": "NM(N-C-U-I)M-CP",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "NM(N-C-U-I)M-CP",
+        "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "300444": {
+    "nome": "MAURIZIO LEO",
+    "cognome": "LEO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "300447": {
+    "nome": "MAURIZIO ENZO LUPI",
+    "cognome": "LUPI",
+    "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+    "sigla": "NM(N-C-U-I)M-CP",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "NM(N-C-U-I)M-CP",
+        "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "300469": {
+    "nome": "LUANA ZANELLA",
+    "cognome": "ZANELLA",
+    "gruppo": "ALLEANZA VERDI E SINISTRA",
+    "sigla": "AVS",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "300480": {
+    "nome": "ROBERTO GIACHETTI",
+    "cognome": "GIACHETTI",
+    "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+    "sigla": "IV-CR",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20231120"
+      },
+      {
+        "sigla": "IV-CR",
+        "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+        "start": "20231120",
+        "end": null
+      }
+    ]
+  },
+  "300497": {
+    "nome": "PAOLO BARELLI",
+    "cognome": "BARELLI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "300674": {
+    "nome": "ETTORE ROSATO",
+    "cognome": "ROSATO",
+    "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+    "sigla": "AZ-PER-RE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "301436": {
+    "nome": "FABIO RAMPELLI",
+    "cognome": "RAMPELLI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "301439": {
+    "nome": "LORENZO CESA",
+    "cognome": "CESA",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "NM(N-C-U-I)M-CP",
+        "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+        "start": "20221027",
+        "end": "20240418"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20240418",
+        "end": null
+      }
+    ]
+  },
+  "301457": {
+    "nome": "PAOLA FRASSINETTI",
+    "cognome": "FRASSINETTI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "301459": {
+    "nome": "LAURA RAVETTO",
+    "cognome": "RAVETTO",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20260520"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20260520",
+        "end": null
+      }
+    ]
+  },
+  "301463": {
+    "nome": "ANDREA ORLANDO",
+    "cognome": "ORLANDO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": "20250107"
+      }
+    ]
+  },
+  "301531": {
+    "nome": "MARIA ROSARIA CARFAGNA",
+    "cognome": "CARFAGNA",
+    "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+    "sigla": "NM(N-C-U-I)M-CP",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20240924"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20240924",
+        "end": "20241030"
+      },
+      {
+        "sigla": "NM(N-C-U-I)M-CP",
+        "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+        "start": "20241030",
+        "end": null
+      }
+    ]
+  },
+  "301541": {
+    "nome": "ENRICO COSTA",
+    "cognome": "COSTA",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20240916"
+      },
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20240916",
+        "end": null
+      }
+    ]
+  },
+  "301551": {
+    "nome": "RAFFAELE FITTO",
+    "cognome": "FITTO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": "20241202"
+      }
+    ]
+  },
+  "301558": {
+    "nome": "ELISABETTA GARDINI",
+    "cognome": "GARDINI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "301577": {
+    "nome": "BENEDETTO DELLA VEDOVA",
+    "cognome": "DELLA VEDOVA",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302069": {
+    "nome": "ARTURO SCOTTO",
+    "cognome": "SCOTTO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302080": {
+    "nome": "ANGELO BONELLI",
+    "cognome": "BONELLI",
+    "gruppo": "ALLEANZA VERDI E SINISTRA",
+    "sigla": "AVS",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "302103": {
+    "nome": "GIORGIA MELONI",
+    "cognome": "MELONI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302422": {
+    "nome": "GIOVANNI CUPERLO",
+    "cognome": "CUPERLO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302746": {
+    "nome": "VINICIO GIUSEPPE GUIDO PELUFFO",
+    "cognome": "PELUFFO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302748": {
+    "nome": "EUGENIA MARIA ROCCELLA",
+    "cognome": "ROCCELLA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302754": {
+    "nome": "CHIARA BRAGA",
+    "cognome": "BRAGA",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302762": {
+    "nome": "NICOLA MOLTENI",
+    "cognome": "MOLTENI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302764": {
+    "nome": "SILVANA ANDREINA COMAROLI",
+    "cognome": "COMAROLI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302789": {
+    "nome": "MARIA ANNA MADIA",
+    "cognome": "MADIA",
+    "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+    "sigla": "IV-CR",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": "20260506"
+      },
+      {
+        "sigla": "IV-CR",
+        "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+        "start": "20260506",
+        "end": null
+      }
+    ]
+  },
+  "302794": {
+    "nome": "ROBERTO MORASSUT",
+    "cognome": "MORASSUT",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302818": {
+    "nome": "STEFANO GRAZIANO",
+    "cognome": "GRAZIANO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302824": {
+    "nome": "MASSIMO BITONCI",
+    "cognome": "BITONCI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20251228"
+      }
+    ]
+  },
+  "302838": {
+    "nome": "MICHELA VITTORIA BRAMBILLA",
+    "cognome": "BRAMBILLA",
+    "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+    "sigla": "NM(N-C-U-I)M-CP",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20230302"
+      },
+      {
+        "sigla": "NM(N-C-U-I)M-CP",
+        "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+        "start": "20230302",
+        "end": null
+      }
+    ]
+  },
+  "302856": {
+    "nome": "PAOLA DE MICHELI",
+    "cognome": "DE MICHELI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302867": {
+    "nome": "DEBORAH BERGAMINI",
+    "cognome": "BERGAMINI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302902": {
+    "nome": "FABIO PORTA",
+    "cognome": "PORTA",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302913": {
+    "nome": "ANTONINO MINARDO",
+    "cognome": "MINARDO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20240419"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20240419",
+        "end": "20250718"
+      },
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20250718",
+        "end": null
+      }
+    ]
+  },
+  "302942": {
+    "nome": "ANTONIO ANGELUCCI",
+    "cognome": "ANGELUCCI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302968": {
+    "nome": "CATIA POLIDORI",
+    "cognome": "POLIDORI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "302980": {
+    "nome": "ELENA MACCANTI",
+    "cognome": "MACCANTI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "303089": {
+    "nome": "GILBERTO PICHETTO FRATIN",
+    "cognome": "PICHETTO FRATIN",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "304521": {
+    "nome": "EDOARDO RIXI",
+    "cognome": "RIXI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305549": {
+    "nome": "SIMONA BONAFE'",
+    "cognome": "BONAFE'",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305553": {
+    "nome": "MARIA CHIARA GADDA",
+    "cognome": "GADDA",
+    "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+    "sigla": "IV-CR",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20231120"
+      },
+      {
+        "sigla": "IV-CR",
+        "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+        "start": "20231120",
+        "end": null
+      }
+    ]
+  },
+  "305580": {
+    "nome": "RENATE GEBHARD",
+    "cognome": "GEBHARD",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305586": {
+    "nome": "MANFRED SCHULLIAN",
+    "cognome": "SCHULLIAN",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305624": {
+    "nome": "LORENZO GUERINI",
+    "cognome": "GUERINI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305688": {
+    "nome": "WALTER RIZZETTO",
+    "cognome": "RIZZETTO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305698": {
+    "nome": "ANDREA DE MARIA",
+    "cognome": "DE MARIA",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305704": {
+    "nome": "ANNA ASCANI",
+    "cognome": "ASCANI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305708": {
+    "nome": "MATTEO RICHETTI",
+    "cognome": "RICHETTI",
+    "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+    "sigla": "AZ-PER-RE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305733": {
+    "nome": "LUCA PASTORINO",
+    "cognome": "PASTORINO",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305757": {
+    "nome": "LAURA BOLDRINI",
+    "cognome": "BOLDRINI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305771": {
+    "nome": "IRENE MANZI",
+    "cognome": "MANZI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305815": {
+    "nome": "MATTEO ORFINI",
+    "cognome": "ORFINI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305880": {
+    "nome": "NICOLA FRATOIANNI",
+    "cognome": "FRATOIANNI",
+    "gruppo": "ALLEANZA VERDI E SINISTRA",
+    "sigla": "AVS",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "305931": {
+    "nome": "VINCENZO AMENDOLA",
+    "cognome": "AMENDOLA",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "305974": {
+    "nome": "ROBERTO SPERANZA",
+    "cognome": "SPERANZA",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306003": {
+    "nome": "FRANCESCO BONIFAZI",
+    "cognome": "BONIFAZI",
+    "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+    "sigla": "IV-CR",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20231120"
+      },
+      {
+        "sigla": "IV-CR",
+        "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+        "start": "20231120",
+        "end": null
+      }
+    ]
+  },
+  "306005": {
+    "nome": "DAVIDE FARAONE",
+    "cognome": "FARAONE",
+    "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+    "sigla": "IV-CR",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20231120"
+      },
+      {
+        "sigla": "IV-CR",
+        "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+        "start": "20231120",
+        "end": null
+      }
+    ]
+  },
+  "306008": {
+    "nome": "CHIARA GRIBAUDO",
+    "cognome": "GRIBAUDO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306064": {
+    "nome": "GIULIO CESARE SOTTANELLI",
+    "cognome": "SOTTANELLI",
+    "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+    "sigla": "AZ-PER-RE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306139": {
+    "nome": "NICOLA STUMPO",
+    "cognome": "STUMPO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306158": {
+    "nome": "GIUSEPPE CASTIGLIONE",
+    "cognome": "CASTIGLIONE",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20240514"
+      },
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20240514",
+        "end": null
+      }
+    ]
+  },
+  "306160": {
+    "nome": "MARIA ELENA BOSCHI",
+    "cognome": "BOSCHI",
+    "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+    "sigla": "IV-CR",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20231120"
+      },
+      {
+        "sigla": "IV-CR",
+        "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+        "start": "20231120",
+        "end": null
+      }
+    ]
+  },
+  "306176": {
+    "nome": "MATTEO MAURI",
+    "cognome": "MAURI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306189": {
+    "nome": "LIA QUARTAPELLE PROCOPIO",
+    "cognome": "QUARTAPELLE PROCOPIO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306214": {
+    "nome": "LUCA SQUERI",
+    "cognome": "SQUERI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306272": {
+    "nome": "ALESSANDRO ZAN",
+    "cognome": "ZAN",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": "20240709"
+      }
+    ]
+  },
+  "306349": {
+    "nome": "STEFANO CANDIANI",
+    "cognome": "CANDIANI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306352": {
+    "nome": "ENRICO CAPPELLETTI",
+    "cognome": "CAPPELLETTI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306379": {
+    "nome": "ISABELLA DE MONTE",
+    "cognome": "DE MONTE",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20231120"
+      },
+      {
+        "sigla": "IV-CR",
+        "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+        "start": "20231120",
+        "end": "20240930"
+      },
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20240930",
+        "end": null
+      }
+    ]
+  },
+  "306382": {
+    "nome": "MAURO DEL BARBA",
+    "cognome": "DEL BARBA",
+    "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+    "sigla": "IV-CR",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20231120"
+      },
+      {
+        "sigla": "IV-CR",
+        "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+        "start": "20231120",
+        "end": null
+      }
+    ]
+  },
+  "306395": {
+    "nome": "ROSANNA FILIPPIN",
+    "cognome": "FILIPPIN",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20241220",
+        "end": null
+      }
+    ]
+  },
+  "306398": {
+    "nome": "FEDERICO FORNARO",
+    "cognome": "FORNARO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306412": {
+    "nome": "MARIA CECILIA GUERRA",
+    "cognome": "GUERRA",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306417": {
+    "nome": "BACHISIO SILVIO LAI",
+    "cognome": "LAI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306497": {
+    "nome": "STEFANO VACCARI",
+    "cognome": "VACCARI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "306521": {
+    "nome": "FILIBERTO ZARATTI",
+    "cognome": "ZARATTI",
+    "gruppo": "ALLEANZA VERDI E SINISTRA",
+    "sigla": "AVS",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "307109": {
+    "nome": "MARIO PERANTONI",
+    "cognome": "PERANTONI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20250722",
+        "end": null
+      }
+    ]
+  },
+  "307130": {
+    "nome": "GIORGIO MULE'",
+    "cognome": "MULE'",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307132": {
+    "nome": "ROBERTO TRAVERSI",
+    "cognome": "TRAVERSI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": "20260429"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20260429",
+        "end": "20260728"
+      },
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20260728",
+        "end": null
+      }
+    ]
+  },
+  "307134": {
+    "nome": "ROBERTO BAGNASCO",
+    "cognome": "BAGNASCO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307138": {
+    "nome": "VANNIA GAVA",
+    "cognome": "GAVA",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307142": {
+    "nome": "RICCARDO ZUCCONI",
+    "cognome": "ZUCCONI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307143": {
+    "nome": "EDOARDO ZIELLO",
+    "cognome": "ZIELLO",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20260206"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20260206",
+        "end": null
+      }
+    ]
+  },
+  "307151": {
+    "nome": "SIMONE BILLI",
+    "cognome": "BILLI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307161": {
+    "nome": "NICOLA CARE'",
+    "cognome": "CARE'",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307162": {
+    "nome": "SALVATORE CAIATA",
+    "cognome": "CAIATA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307173": {
+    "nome": "GIORGIA LATINI",
+    "cognome": "LATINI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307175": {
+    "nome": "RACHELE SILVESTRI",
+    "cognome": "SILVESTRI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307185": {
+    "nome": "MARTA ANTONIA FASCINA",
+    "cognome": "FASCINA",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307193": {
+    "nome": "RAFFAELE BRUNO",
+    "cognome": "BRUNO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307202": {
+    "nome": "GILDA SPORTIELLO",
+    "cognome": "SPORTIELLO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307210": {
+    "nome": "CARMELA DI LAURO",
+    "cognome": "DI LAURO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307215": {
+    "nome": "UGO CAPPELLACCI",
+    "cognome": "CAPPELLACCI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307219": {
+    "nome": "SALVATORE DEIDDA",
+    "cognome": "DEIDDA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307223": {
+    "nome": "PIETRO PITTALIS",
+    "cognome": "PITTALIS",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307234": {
+    "nome": "DANIELA TORTO",
+    "cognome": "TORTO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307246": {
+    "nome": "GIOVANNI DONZELLI",
+    "cognome": "DONZELLI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307248": {
+    "nome": "ERICA MAZZETTI",
+    "cognome": "MAZZETTI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307250": {
+    "nome": "RICCARDO RICCIARDI",
+    "cognome": "RICCIARDI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307285": {
+    "nome": "LAURA CAVANDOLI",
+    "cognome": "CAVANDOLI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307298": {
+    "nome": "GALEAZZO BIGNAMI",
+    "cognome": "BIGNAMI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307300": {
+    "nome": "JACOPO MORRONE",
+    "cognome": "MORRONE",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307302": {
+    "nome": "STEFANIA ASCARI",
+    "cognome": "ASCARI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307304": {
+    "nome": "UBALDO PAGANO",
+    "cognome": "PAGANO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": "20260202"
+      }
+    ]
+  },
+  "307306": {
+    "nome": "ANDREA ROSSI",
+    "cognome": "ROSSI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307308": {
+    "nome": "MARCO LACARRA",
+    "cognome": "LACARRA",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307312": {
+    "nome": "MAURO D'ATTIS",
+    "cognome": "D'ATTIS",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307328": {
+    "nome": "LUIGI MARATTIN",
+    "cognome": "MARATTIN",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20231120"
+      },
+      {
+        "sigla": "IV-CR",
+        "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+        "start": "20231120",
+        "end": "20240909"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20240909",
+        "end": null
+      }
+    ]
+  },
+  "307332": {
+    "nome": "MARCELLO GEMMATO",
+    "cognome": "GEMMATO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307334": {
+    "nome": "GIANLUCA VINCI",
+    "cognome": "VINCI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307340": {
+    "nome": "YLENJA LUCASELLI",
+    "cognome": "LUCASELLI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307348": {
+    "nome": "LEONARDO DONNO",
+    "cognome": "DONNO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307356": {
+    "nome": "GIORGIO LOVECCHIO",
+    "cognome": "LOVECCHIO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": "20240904"
+      },
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20240904",
+        "end": null
+      }
+    ]
+  },
+  "307360": {
+    "nome": "ROSSANO SASSO",
+    "cognome": "SASSO",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20260206"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20260206",
+        "end": null
+      }
+    ]
+  },
+  "307370": {
+    "nome": "CARLA GIULIANO",
+    "cognome": "GIULIANO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307374": {
+    "nome": "DEBORA SERRACCHIANI",
+    "cognome": "SERRACCHIANI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307376": {
+    "nome": "MASSIMILIANO PANIZZUT",
+    "cognome": "PANIZZUT",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307388": {
+    "nome": "VALENTINA D'ORSO",
+    "cognome": "D'ORSO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307394": {
+    "nome": "DAVIDE AIELLO",
+    "cognome": "AIELLO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307400": {
+    "nome": "MARIA CAROLINA VARCHI",
+    "cognome": "VARCHI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307402": {
+    "nome": "MATILDE SIRACUSANO",
+    "cognome": "SIRACUSANO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307406": {
+    "nome": "ANGELA RAFFA",
+    "cognome": "RAFFA",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307416": {
+    "nome": "LUCIANO CANTONE",
+    "cognome": "CANTONE",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307418": {
+    "nome": "FILIPPO SCERRA",
+    "cognome": "SCERRA",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307420": {
+    "nome": "VIRGINIO CAPARVI",
+    "cognome": "CAPARVI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307424": {
+    "nome": "FEDERICO MOLLICONE",
+    "cognome": "MOLLICONE",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307426": {
+    "nome": "MARIA TERESA BELLUCCI",
+    "cognome": "BELLUCCI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307430": {
+    "nome": "PATRIZIA PRESTIPINO",
+    "cognome": "PRESTIPINO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20240709",
+        "end": null
+      }
+    ]
+  },
+  "307435": {
+    "nome": "VITTORIA BALDINO",
+    "cognome": "BALDINO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307436": {
+    "nome": "RICCARDO MAGI",
+    "cognome": "MAGI",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307447": {
+    "nome": "FRANCESCO SILVESTRI",
+    "cognome": "SILVESTRI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307452": {
+    "nome": "EMANUELE PRISCO",
+    "cognome": "PRISCO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307453": {
+    "nome": "RICCARDO AUGUSTO MARCHETTI",
+    "cognome": "MARCHETTI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307454": {
+    "nome": "RAFFAELE NEVI",
+    "cognome": "NEVI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307455": {
+    "nome": "MAURO ROTELLI",
+    "cognome": "ROTELLI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307456": {
+    "nome": "ALESSANDRO BATTILOCCHIO",
+    "cognome": "BATTILOCCHIO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307457": {
+    "nome": "PAOLO TRANCASSINI",
+    "cognome": "TRANCASSINI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307459": {
+    "nome": "ILARIA FONTANA",
+    "cognome": "FONTANA",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307463": {
+    "nome": "FRANCESCO LOLLOBRIGIDA",
+    "cognome": "LOLLOBRIGIDA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307464": {
+    "nome": "AUGUSTA MONTARULI",
+    "cognome": "MONTARULI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307466": {
+    "nome": "PATRIZIA MARROCCO",
+    "cognome": "MARROCCO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307471": {
+    "nome": "ALESSANDRO MANUEL BENVENUTO",
+    "cognome": "BENVENUTO",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307475": {
+    "nome": "ALBERTO LUIGI GUSMEROLI",
+    "cognome": "GUSMEROLI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307478": {
+    "nome": "DANIELA RUFFINO",
+    "cognome": "RUFFINO",
+    "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+    "sigla": "AZ-PER-RE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307479": {
+    "nome": "ANDREA DELMASTRO DELLE VEDOVE",
+    "cognome": "DELMASTRO DELLE VEDOVE",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307481": {
+    "nome": "CLAUDIO MANCINI",
+    "cognome": "MANCINI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307496": {
+    "nome": "ROBERTO PELLA",
+    "cognome": "PELLA",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307502": {
+    "nome": "ALESSANDRO GIGLIO VIGNA",
+    "cognome": "GIGLIO VIGNA",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307507": {
+    "nome": "RICCARDO MOLINARI",
+    "cognome": "MOLINARI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307508": {
+    "nome": "ANDREA GIACCONE",
+    "cognome": "GIACCONE",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307511": {
+    "nome": "MONICA CIABURRO",
+    "cognome": "CIABURRO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307531": {
+    "nome": "MICHELE GUBITOSA",
+    "cognome": "GUBITOSA",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307561": {
+    "nome": "PIERO DE LUCA",
+    "cognome": "DE LUCA",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307564": {
+    "nome": "ANNA LAURA ORRICO",
+    "cognome": "ORRICO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307567": {
+    "nome": "WANDA FERRO",
+    "cognome": "FERRO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307568": {
+    "nome": "FRANCESCO CANNIZZARO",
+    "cognome": "CANNIZZARO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": "20260722"
+      }
+    ]
+  },
+  "307570": {
+    "nome": "ARIANNA LAZZARINI",
+    "cognome": "LAZZARINI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307571": {
+    "nome": "ALBERTO STEFANI",
+    "cognome": "STEFANI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20251209"
+      }
+    ]
+  },
+  "307573": {
+    "nome": "MARIA CRISTINA CARETTA",
+    "cognome": "CARETTA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307575": {
+    "nome": "CIRO MASCHIO",
+    "cognome": "MASCHIO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307580": {
+    "nome": "PIERGIORGIO CORTELAZZO",
+    "cognome": "CORTELAZZO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307585": {
+    "nome": "ERIK UMBERTO PRETTO",
+    "cognome": "PRETTO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20260604"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20260604",
+        "end": "20260706"
+      },
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20260706",
+        "end": null
+      }
+    ]
+  },
+  "307591": {
+    "nome": "LORENZO FONTANA",
+    "cognome": "FONTANA",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307601": {
+    "nome": "SIMONA BORDONALI",
+    "cognome": "BORDONALI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307602": {
+    "nome": "PAOLO FORMENTINI",
+    "cognome": "FORMENTINI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307603": {
+    "nome": "ALESSANDRO COLUCCI",
+    "cognome": "COLUCCI",
+    "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+    "sigla": "NM(N-C-U-I)M-CP",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "NM(N-C-U-I)M-CP",
+        "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "307604": {
+    "nome": "STEFANO BENIGNI",
+    "cognome": "BENIGNI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307608": {
+    "nome": "ALESSANDRO SORTE",
+    "cognome": "SORTE",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307612": {
+    "nome": "MARCO OSNATO",
+    "cognome": "OSNATO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307616": {
+    "nome": "EUGENIO ZOFFILI",
+    "cognome": "ZOFFILI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307630": {
+    "nome": "REBECCA FRASSINI",
+    "cognome": "FRASSINI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307632": {
+    "nome": "GIULIO CENTEMERO",
+    "cognome": "CENTEMERO",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307634": {
+    "nome": "DEVIS DORI",
+    "cognome": "DORI",
+    "gruppo": "ALLEANZA VERDI E SINISTRA",
+    "sigla": "AVS",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "307639": {
+    "nome": "ANDREA CRIPPA",
+    "cognome": "CRIPPA",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307641": {
+    "nome": "IGOR GIANCARLO IEZZI",
+    "cognome": "IEZZI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307657": {
+    "nome": "ALESSANDRO CATTANEO",
+    "cognome": "CATTANEO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307659": {
+    "nome": "GLORIA SACCANI",
+    "cognome": "SACCANI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307678": {
+    "nome": "CRISTINA ROSSELLO",
+    "cognome": "ROSSELLO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307680": {
+    "nome": "FABRIZIO CECCHETTI",
+    "cognome": "CECCHETTI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307683": {
+    "nome": "ANDREA DARA",
+    "cognome": "DARA",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307686": {
+    "nome": "GIORGIA ANDREUZZA",
+    "cognome": "ANDREUZZA",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307688": {
+    "nome": "DIMITRI COIN",
+    "cognome": "COIN",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307689": {
+    "nome": "INGRID BISA",
+    "cognome": "BISA",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307716": {
+    "nome": "VANESSA CATTOI",
+    "cognome": "CATTOI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307718": {
+    "nome": "DOMENICO FURGIUELE",
+    "cognome": "FURGIUELE",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20260608"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20260608",
+        "end": null
+      }
+    ]
+  },
+  "307722": {
+    "nome": "ELISA SCUTELLA'",
+    "cognome": "SCUTELLA'",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": "20250312"
+      }
+    ]
+  },
+  "307726": {
+    "nome": "RICCARDO TUCCI",
+    "cognome": "TUCCI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307749": {
+    "nome": "ALBERTO BAGNAI",
+    "cognome": "BAGNAI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20260915"
+      }
+    ]
+  },
+  "307752": {
+    "nome": "FRANCESCO BATTISTONI",
+    "cognome": "BATTISTONI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307762": {
+    "nome": "FRANCESCO BRUZZONE",
+    "cognome": "BRUZZONE",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307782": {
+    "nome": "LUCIANO D'ALFONSO",
+    "cognome": "D'ALFONSO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307790": {
+    "nome": "GIANMAURO DELL'OLIO",
+    "cognome": "DELL'OLIO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307803": {
+    "nome": "GIORGIO FEDE",
+    "cognome": "FEDE",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307804": {
+    "nome": "EMILIANO FENU",
+    "cognome": "FENU",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": "20250722"
+      }
+    ]
+  },
+  "307822": {
+    "nome": "PASQUA L'ABBATE",
+    "cognome": "L'ABBATE",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307826": {
+    "nome": "MAURO ANTONIO DONATO LAUS",
+    "cognome": "LAUS",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307829": {
+    "nome": "ARNALDO LOMUTI",
+    "cognome": "LOMUTI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307837": {
+    "nome": "GIUSEPPE TOMMASO VINCENZO MANGIALAVORI",
+    "cognome": "MANGIALAVORI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307851": {
+    "nome": "TIZIANA NISINI",
+    "cognome": "NISINI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307857": {
+    "nome": "NAZARIO PAGANO",
+    "cognome": "PAGANO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307863": {
+    "nome": "MARCO PELLEGRINI",
+    "cognome": "PELLEGRINI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307889": {
+    "nome": "MASSIMO RUSPANDINI",
+    "cognome": "RUSPANDINI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307892": {
+    "nome": "AGOSTINO SANTILLO",
+    "cognome": "SANTILLO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307902": {
+    "nome": "DIETER STEGER",
+    "cognome": "STEGER",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307903": {
+    "nome": "VALERIA CARMELA MARIA SUDANO",
+    "cognome": "SUDANO",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307918": {
+    "nome": "ANDREA DE BERTOLDI",
+    "cognome": "DE BERTOLDI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": "20240812"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20240812",
+        "end": "20250205"
+      },
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20250205",
+        "end": null
+      }
+    ]
+  },
+  "307922": {
+    "nome": "SERGIO COSTA",
+    "cognome": "COSTA",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307926": {
+    "nome": "GIUSEPPE CONTE",
+    "cognome": "CONTE",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "307983": {
+    "nome": "LUCA TOCCALINI",
+    "cognome": "TOCCALINI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308001": {
+    "nome": "VALENTINA BARZOTTI",
+    "cognome": "BARZOTTI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308101": {
+    "nome": "LUCREZIA MARIA BENEDETTA MANTOVANI",
+    "cognome": "MANTOVANI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308221": {
+    "nome": "EMMA PAVANELLI",
+    "cognome": "PAVANELLI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308243": {
+    "nome": "GIUSEPPE LUCIANO CALOGERO PROVENZANO",
+    "cognome": "PROVENZANO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308244": {
+    "nome": "ELENA BONETTI",
+    "cognome": "BONETTI",
+    "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+    "sigla": "AZ-PER-RE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308270": {
+    "nome": "ALESSANDRA TODDE",
+    "cognome": "TODDE",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": "20240409"
+      }
+    ]
+  },
+  "308421": {
+    "nome": "LUCIA ALBANO",
+    "cognome": "ALBANO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308600": {
+    "nome": "ANDREA CASU",
+    "cognome": "CASU",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308620": {
+    "nome": "ANDREA GENTILE",
+    "cognome": "GENTILE",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20250312",
+        "end": null
+      }
+    ]
+  },
+  "308760": {
+    "nome": "FRANCO MANES",
+    "cognome": "MANES",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308761": {
+    "nome": "CALOGERO PISANO",
+    "cognome": "PISANO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "NM(N-C-U-I)M-CP",
+        "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+        "start": "20221027",
+        "end": "20260225"
+      },
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20260225",
+        "end": null
+      }
+    ]
+  },
+  "308762": {
+    "nome": "STEFANO MARIA BENVENUTI GOSTOLI",
+    "cognome": "BENVENUTI GOSTOLI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308763": {
+    "nome": "MIRCO CARLONI",
+    "cognome": "CARLONI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308764": {
+    "nome": "FRANCESCO MARIA SALVATORE CIANCITTO",
+    "cognome": "CIANCITTO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308765": {
+    "nome": "GIOVANNI LUCA CANNATA",
+    "cognome": "CANNATA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308766": {
+    "nome": "TOMMASO ANTONINO CALDERONE",
+    "cognome": "CALDERONE",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308767": {
+    "nome": "FRANCESCO GALLO",
+    "cognome": "GALLO",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308768": {
+    "nome": "GIANNI LAMPIS",
+    "cognome": "LAMPIS",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308769": {
+    "nome": "BARBARA POLO",
+    "cognome": "POLO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308770": {
+    "nome": "DARIO GIAGONI",
+    "cognome": "GIAGONI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308780": {
+    "nome": "TONI RICCIARDI",
+    "cognome": "RICCIARDI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308781": {
+    "nome": "FEDERICA ONORI",
+    "cognome": "ONORI",
+    "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+    "sigla": "AZ-PER-RE",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": "20240201"
+      },
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20240201",
+        "end": null
+      }
+    ]
+  },
+  "308782": {
+    "nome": "FRANCO TIRELLI",
+    "cognome": "TIRELLI",
+    "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+    "sigla": "NM(N-C-U-I)M-CP",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "NM(N-C-U-I)M-CP",
+        "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "308783": {
+    "nome": "CHRISTIAN DIEGO DI SANZO",
+    "cognome": "DI SANZO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308784": {
+    "nome": "ANDREA DI GIUSEPPE",
+    "cognome": "DI GIUSEPPE",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308785": {
+    "nome": "ILARIA CAVO",
+    "cognome": "CAVO",
+    "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+    "sigla": "NM(N-C-U-I)M-CP",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "NM(N-C-U-I)M-CP",
+        "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "308786": {
+    "nome": "GEROLAMO CANGIANO",
+    "cognome": "CANGIANO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308787": {
+    "nome": "CARMEN LETIZIA GIORGIANNI",
+    "cognome": "GIORGIANNI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308788": {
+    "nome": "FRANCESCO MARIA RUBANO",
+    "cognome": "RUBANO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308789": {
+    "nome": "MARIA IMMACOLATA VIETRI",
+    "cognome": "VIETRI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308790": {
+    "nome": "GIUSEPPE BICCHIELLI",
+    "cognome": "BICCHIELLI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "NM(N-C-U-I)M-CP",
+        "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+        "start": "20221027",
+        "end": "20250916"
+      },
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20250916",
+        "end": null
+      }
+    ]
+  },
+  "308791": {
+    "nome": "ATTILIO PIERRO",
+    "cognome": "PIERRO",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20251230"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20251230",
+        "end": "20260120"
+      },
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20260120",
+        "end": "20260608"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20260608",
+        "end": null
+      }
+    ]
+  },
+  "308792": {
+    "nome": "ANDREA PELLICINI",
+    "cognome": "PELLICINI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308793": {
+    "nome": "MAURIZIO CASASCO",
+    "cognome": "CASASCO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308794": {
+    "nome": "GIANGIACOMO CALOVINI",
+    "cognome": "CALOVINI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308795": {
+    "nome": "CARMINE FABIO RAIMONDO",
+    "cognome": "RAIMONDO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308796": {
+    "nome": "MARCELLO COPPO",
+    "cognome": "COPPO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308797": {
+    "nome": "MARTINA SEMENZATO",
+    "cognome": "SEMENZATO",
+    "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+    "sigla": "NM(N-C-U-I)M-CP",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "NM(N-C-U-I)M-CP",
+        "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE (NM(N-C-U-I)M-CP) (27.10.2022",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "308798": {
+    "nome": "CARLO NORDIO",
+    "cognome": "NORDIO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308799": {
+    "nome": "FRANCESCO FILINI",
+    "cognome": "FILINI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308800": {
+    "nome": "MARINA MARCHETTO",
+    "cognome": "MARCHETTO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308801": {
+    "nome": "GIANANGELO BOF",
+    "cognome": "BOF",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20260608"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20260608",
+        "end": null
+      }
+    ]
+  },
+  "308802": {
+    "nome": "VALENTINA GRIPPO",
+    "cognome": "GRIPPO",
+    "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+    "sigla": "AZ-PER-RE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308803": {
+    "nome": "RACHELE SCARPA",
+    "cognome": "SCARPA",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308804": {
+    "nome": "AUGUSTO CURTI",
+    "cognome": "CURTI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308805": {
+    "nome": "ANTONIO BALDELLI",
+    "cognome": "BALDELLI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308806": {
+    "nome": "VITO DE PALMA",
+    "cognome": "DE PALMA",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308807": {
+    "nome": "ANDREA CAROPPO",
+    "cognome": "CAROPPO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308808": {
+    "nome": "SALVATORE MARCELLO DI MATTINA",
+    "cognome": "DI MATTINA",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308809": {
+    "nome": "ANTONINO IARIA",
+    "cognome": "IARIA",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308810": {
+    "nome": "MARCO GRIMALDI",
+    "cognome": "GRIMALDI",
+    "gruppo": "ALLEANZA VERDI E SINISTRA",
+    "sigla": "AVS",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "308811": {
+    "nome": "GIANDONATO LA SALANDRA",
+    "cognome": "LA SALANDRA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308812": {
+    "nome": "MARCO PERISSA",
+    "cognome": "PERISSA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308813": {
+    "nome": "IMMACOLATA ZURZOLO",
+    "cognome": "ZURZOLO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308814": {
+    "nome": "LUIGI GIOVANNI MAIORANO",
+    "cognome": "MAIORANO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308815": {
+    "nome": "MAURO BERRUTO",
+    "cognome": "BERRUTO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308816": {
+    "nome": "ELISABETTA PICCOLOTTI",
+    "cognome": "PICCOLOTTI",
+    "gruppo": "ALLEANZA VERDI E SINISTRA",
+    "sigla": "AVS",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "308817": {
+    "nome": "CLAUDIO MICHELE STEFANAZZI",
+    "cognome": "STEFANAZZI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308818": {
+    "nome": "DANIELA MORFINO",
+    "cognome": "MORFINO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308819": {
+    "nome": "GIANLUCA CARAMANNA",
+    "cognome": "CARAMANNA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308820": {
+    "nome": "IDA CARMINA",
+    "cognome": "CARMINA",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308821": {
+    "nome": "GIOVANNA IACONO",
+    "cognome": "IACONO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308822": {
+    "nome": "EMANUELE POZZOLO",
+    "cognome": "POZZOLO",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": "20250514"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20250514",
+        "end": null
+      }
+    ]
+  },
+  "308823": {
+    "nome": "ANTONIO GIORDANO",
+    "cognome": "GIORDANO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308824": {
+    "nome": "CHIARA APPENDINO",
+    "cognome": "APPENDINO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308825": {
+    "nome": "VINCENZO AMICH",
+    "cognome": "AMICH",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308826": {
+    "nome": "FABRIZIO COMBA",
+    "cognome": "COMBA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308827": {
+    "nome": "GIACOMO DIEGO GATTA",
+    "cognome": "GATTA",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308828": {
+    "nome": "MARIANGELA MATERA",
+    "cognome": "MATERA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308829": {
+    "nome": "RITA DALLA CHIESA",
+    "cognome": "DALLA CHIESA",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308830": {
+    "nome": "DAVIDE BELLOMO",
+    "cognome": "BELLOMO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20250321"
+      },
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20250321",
+        "end": null
+      }
+    ]
+  },
+  "308831": {
+    "nome": "DARIO IAIA",
+    "cognome": "IAIA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308832": {
+    "nome": "ALESSIA AMBROSI",
+    "cognome": "AMBROSI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308833": {
+    "nome": "SAVERIO CONGEDO",
+    "cognome": "CONGEDO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308834": {
+    "nome": "SARA FERRARI",
+    "cognome": "FERRARI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308835": {
+    "nome": "PAOLO CIANI",
+    "cognome": "CIANI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308836": {
+    "nome": "SIMONETTA MATONE",
+    "cognome": "MATONE",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308837": {
+    "nome": "FEDERICO FRENI",
+    "cognome": "FRENI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308838": {
+    "nome": "ANTONIO TAJANI",
+    "cognome": "TAJANI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308839": {
+    "nome": "ALESSANDRO PALOMBI",
+    "cognome": "PALOMBI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308840": {
+    "nome": "ANTONIO CASO",
+    "cognome": "CASO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308841": {
+    "nome": "ALFONSO COLUCCI",
+    "cognome": "COLUCCI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308842": {
+    "nome": "NICOLA ZINGARETTI",
+    "cognome": "ZINGARETTI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": "20240709"
+      }
+    ]
+  },
+  "308843": {
+    "nome": "MICHELA DI BIASE",
+    "cognome": "DI BIASE",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308844": {
+    "nome": "DARIO CAROTENUTO",
+    "cognome": "CAROTENUTO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308845": {
+    "nome": "PASQUALINO PENZA",
+    "cognome": "PENZA",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308846": {
+    "nome": "CARMELA AURIEMMA",
+    "cognome": "AURIEMMA",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308847": {
+    "nome": "ANDREA VOLPI",
+    "cognome": "VOLPI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308848": {
+    "nome": "ANGELO ROSSI",
+    "cognome": "ROSSI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308849": {
+    "nome": "GAETANO AMATO",
+    "cognome": "AMATO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308850": {
+    "nome": "MICHELE SCHIANO DI VISCONTI",
+    "cognome": "SCHIANO DI VISCONTI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308851": {
+    "nome": "MARTA SCHIFONE",
+    "cognome": "SCHIFONE",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308852": {
+    "nome": "ANNARITA PATRIARCA",
+    "cognome": "PATRIARCA",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308853": {
+    "nome": "MARIANNA RICCIARDI",
+    "cognome": "RICCIARDI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308854": {
+    "nome": "ALESSANDRO CARAMIELLO",
+    "cognome": "CARAMIELLO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308855": {
+    "nome": "SILVIO GIOVINE",
+    "cognome": "GIOVINE",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308856": {
+    "nome": "MARCO SARRACINO",
+    "cognome": "SARRACINO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308857": {
+    "nome": "FRANCESCO EMILIO BORRELLI",
+    "cognome": "BORRELLI",
+    "gruppo": "ALLEANZA VERDI E SINISTRA",
+    "sigla": "AVS",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "308858": {
+    "nome": "SUSANNA CHERCHI",
+    "cognome": "CHERCHI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308859": {
+    "nome": "FRANCESCO MURA",
+    "cognome": "MURA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308860": {
+    "nome": "GIANMARCO MAZZI",
+    "cognome": "MAZZI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308861": {
+    "nome": "FRANCESCA GHIRRA",
+    "cognome": "GHIRRA",
+    "gruppo": "ALLEANZA VERDI E SINISTRA",
+    "sigla": "AVS",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "308862": {
+    "nome": "ALESSANDRO URZI'",
+    "cognome": "URZI'",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308863": {
+    "nome": "MADDALENA MORGANTE",
+    "cognome": "MORGANTE",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308864": {
+    "nome": "MARCO PADOVANI",
+    "cognome": "PADOVANI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308865": {
+    "nome": "FLAVIO TOSI",
+    "cognome": "TOSI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": "20240709"
+      }
+    ]
+  },
+  "308866": {
+    "nome": "GUERINO TESTA",
+    "cognome": "TESTA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308867": {
+    "nome": "FABIO ROSCANI",
+    "cognome": "ROSCANI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308868": {
+    "nome": "MATTEO ROSSO",
+    "cognome": "ROSSO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308869": {
+    "nome": "FRANCESCO MARI",
+    "cognome": "MARI",
+    "gruppo": "ALLEANZA VERDI E SINISTRA",
+    "sigla": "AVS",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": null
+      }
+    ]
+  },
+  "308870": {
+    "nome": "MARIA GRAZIA FRIJIA",
+    "cognome": "FRIJIA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308871": {
+    "nome": "VALENTINA GHIO",
+    "cognome": "GHIO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308872": {
+    "nome": "ENRICA ALIFANO",
+    "cognome": "ALIFANO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308873": {
+    "nome": "GIANPIERO ZINZI",
+    "cognome": "ZINZI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308874": {
+    "nome": "MARCO CERRETO",
+    "cognome": "CERRETO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308875": {
+    "nome": "ANTONIO D'ALESSIO",
+    "cognome": "D'ALESSIO",
+    "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+    "sigla": "AZ-PER-RE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308876": {
+    "nome": "TULLIO FERRANTE",
+    "cognome": "FERRANTE",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308877": {
+    "nome": "FABRIZIO ROSSI",
+    "cognome": "ROSSI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308878": {
+    "nome": "ELISA MONTEMAGNI",
+    "cognome": "MONTEMAGNI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308879": {
+    "nome": "CHIARA TENERINI",
+    "cognome": "TENERINI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308880": {
+    "nome": "FEDERICO GIANASSI",
+    "cognome": "GIANASSI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308881": {
+    "nome": "EMILIANO FOSSI",
+    "cognome": "FOSSI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308882": {
+    "nome": "FABRIZIO SALA",
+    "cognome": "SALA",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308883": {
+    "nome": "CHIARA LA PORTA",
+    "cognome": "LA PORTA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": "20251203"
+      }
+    ]
+  },
+  "308884": {
+    "nome": "ALESSANDRO AMORESE",
+    "cognome": "AMORESE",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308885": {
+    "nome": "STEFANO GIOVANNI MAULLU",
+    "cognome": "MAULLU",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308886": {
+    "nome": "LORENZO MALAGOLA",
+    "cognome": "MALAGOLA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308887": {
+    "nome": "FRANCESCO MICHELOTTI",
+    "cognome": "MICHELOTTI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308888": {
+    "nome": "GRAZIA DI MAGGIO",
+    "cognome": "DI MAGGIO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308889": {
+    "nome": "FABIO PIETRELLA",
+    "cognome": "PIETRELLA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308890": {
+    "nome": "ANDREA BARABOTTI",
+    "cognome": "BARABOTTI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308891": {
+    "nome": "SILVIA ROGGIANI",
+    "cognome": "ROGGIANI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308892": {
+    "nome": "MARCO FURFARO",
+    "cognome": "FURFARO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308893": {
+    "nome": "ELEONORA EVI",
+    "cognome": "EVI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": "20240423"
+      },
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20240423",
+        "end": null
+      }
+    ]
+  },
+  "308894": {
+    "nome": "MARCO SIMIANI",
+    "cognome": "SIMIANI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308895": {
+    "nome": "GIULIA PASTORELLA",
+    "cognome": "PASTORELLA",
+    "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+    "sigla": "AZ-PER-RE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308896": {
+    "nome": "ANDREA QUARTINI",
+    "cognome": "QUARTINI",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308897": {
+    "nome": "MANLIO MESSINA",
+    "cognome": "MESSINA",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": "20250731"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20250731",
+        "end": null
+      }
+    ]
+  },
+  "308898": {
+    "nome": "ELIANA LONGI",
+    "cognome": "LONGI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308899": {
+    "nome": "PAOLO EMILIO RUSSO",
+    "cognome": "RUSSO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308900": {
+    "nome": "ANASTASIO CARRA'",
+    "cognome": "CARRA'",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308901": {
+    "nome": "MARIA STEFANIA MARINO",
+    "cognome": "MARINO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308902": {
+    "nome": "ANTHONY EMANUELE BARBAGALLO",
+    "cognome": "BARBAGALLO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308903": {
+    "nome": "ANDREA MASCARETTI",
+    "cognome": "MASCARETTI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308904": {
+    "nome": "SARA KELANY",
+    "cognome": "KELANY",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308905": {
+    "nome": "NOVO UMBERTO MAERNA",
+    "cognome": "MAERNA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308906": {
+    "nome": "GIOVANNI ARRUZZOLO",
+    "cognome": "ARRUZZOLO",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308907": {
+    "nome": "ANDREA TREMAGLIA",
+    "cognome": "TREMAGLIA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308908": {
+    "nome": "LUCA SBARDELLA",
+    "cognome": "SBARDELLA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308909": {
+    "nome": "ALFREDO ANTONIOZZI",
+    "cognome": "ANTONIOZZI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308910": {
+    "nome": "CRISTINA ALMICI",
+    "cognome": "ALMICI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308911": {
+    "nome": "SIMONA LOIZZO",
+    "cognome": "LOIZZO",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308912": {
+    "nome": "GIAN ANTONIO GIRELLI",
+    "cognome": "GIRELLI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308913": {
+    "nome": "FABRIZIO BENZONI",
+    "cognome": "BENZONI",
+    "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+    "sigla": "AZ-PER-RE",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308914": {
+    "nome": "CARLO MACCARI",
+    "cognome": "MACCARI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308915": {
+    "nome": "PAOLA MARIA CHIESA",
+    "cognome": "CHIESA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308916": {
+    "nome": "ANTONELLA FORATTINI",
+    "cognome": "FORATTINI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308917": {
+    "nome": "CHIARA COLOSIMO",
+    "cognome": "COLOSIMO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308918": {
+    "nome": "NICOLA OTTAVIANI",
+    "cognome": "OTTAVIANI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308920": {
+    "nome": "ELISABETTA CHRISTIANA LANCELLOTTA",
+    "cognome": "LANCELLOTTA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308921": {
+    "nome": "GIOVANNA MIELE",
+    "cognome": "MIELE",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308922": {
+    "nome": "MASSIMO MILANI",
+    "cognome": "MILANI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308923": {
+    "nome": "PAOLO PULCIANI",
+    "cognome": "PULCIANI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308924": {
+    "nome": "NAIKE GRUPPIONI",
+    "cognome": "GRUPPIONI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "AZ-PER-RE",
+        "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+        "start": "20221018",
+        "end": "20231120"
+      },
+      {
+        "sigla": "IV-CR",
+        "gruppo": "ITALIA VIVA-CASA RIFORMISTA",
+        "start": "20231120",
+        "end": "20250605"
+      },
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20250605",
+        "end": null
+      }
+    ]
+  },
+  "308925": {
+    "nome": "ROSARIA TASSINARI",
+    "cognome": "TASSINARI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308926": {
+    "nome": "BEATRIZ COLOMBO",
+    "cognome": "COLOMBO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308927": {
+    "nome": "GAETANA RUSSO",
+    "cognome": "RUSSO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308928": {
+    "nome": "DAVIDE BERGAMINI",
+    "cognome": "BERGAMINI",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": "20260107"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20260107",
+        "end": "20260120"
+      },
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20260120",
+        "end": "20260608"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20260608",
+        "end": null
+      }
+    ]
+  },
+  "308929": {
+    "nome": "ABOUBAKAR SOUMAHORO",
+    "cognome": "SOUMAHORO",
+    "gruppo": "MISTO",
+    "sigla": "MISTO",
+    "storia": [
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20221018",
+        "end": "20221027"
+      },
+      {
+        "sigla": "AVS",
+        "gruppo": "ALLEANZA VERDI E SINISTRA",
+        "start": "20221027",
+        "end": "20230109"
+      },
+      {
+        "sigla": "MISTO",
+        "gruppo": "MISTO",
+        "start": "20230109",
+        "end": null
+      }
+    ]
+  },
+  "308930": {
+    "nome": "ELENA ETHEL SCHLEIN",
+    "cognome": "SCHLEIN",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308931": {
+    "nome": "OUIDAD BAKKALI",
+    "cognome": "BAKKALI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308932": {
+    "nome": "ANDREA GNASSI",
+    "cognome": "GNASSI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308933": {
+    "nome": "FEDERICO CAFIERO DE RAHO",
+    "cognome": "CAFIERO DE RAHO",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308934": {
+    "nome": "ILENIA MALAVASI",
+    "cognome": "MALAVASI",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308935": {
+    "nome": "DANIELA DONDI",
+    "cognome": "DONDI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308936": {
+    "nome": "VIRGINIO MEROLA",
+    "cognome": "MEROLA",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308937": {
+    "nome": "ALICE BUONGUERRIERI",
+    "cognome": "BUONGUERRIERI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308938": {
+    "nome": "MAURO MALAGUTI",
+    "cognome": "MALAGUTI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308939": {
+    "nome": "ALDO MATTIA",
+    "cognome": "MATTIA",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308940": {
+    "nome": "EMANUELE LOPERFIDO",
+    "cognome": "LOPERFIDO",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308941": {
+    "nome": "NICOLE MATTEONI",
+    "cognome": "MATTEONI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "308942": {
+    "nome": "GRAZIANO PIZZIMENTI",
+    "cognome": "PIZZIMENTI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20221018",
+        "end": null
+      }
+    ]
+  },
+  "309140": {
+    "nome": "ANTONIO FERRARA",
+    "cognome": "FERRARA",
+    "gruppo": "MOVIMENTO 5 STELLE",
+    "sigla": "M5S",
+    "storia": [
+      {
+        "sigla": "M5S",
+        "gruppo": "MOVIMENTO 5 STELLE",
+        "start": "20240410",
+        "end": null
+      }
+    ]
+  },
+  "309160": {
+    "nome": "NADIA ROMEO",
+    "cognome": "ROMEO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20240709",
+        "end": null
+      }
+    ]
+  },
+  "309161": {
+    "nome": "MARIA PAOLA BOSCAINI",
+    "cognome": "BOSCAINI",
+    "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+    "sigla": "FI-PPE",
+    "storia": [
+      {
+        "sigla": "FI-PPE",
+        "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+        "start": "20240709",
+        "end": null
+      }
+    ]
+  },
+  "309200": {
+    "nome": "ANTONIO MARIA GABELLONE",
+    "cognome": "GABELLONE",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20241202",
+        "end": null
+      }
+    ]
+  },
+  "309220": {
+    "nome": "ALBERTO PANDOLFO",
+    "cognome": "PANDOLFO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20250107",
+        "end": null
+      }
+    ]
+  },
+  "309260": {
+    "nome": "IRENE GORI",
+    "cognome": "GORI",
+    "gruppo": "FRATELLI D'ITALIA",
+    "sigla": "FDI",
+    "storia": [
+      {
+        "sigla": "FDI",
+        "gruppo": "FRATELLI D'ITALIA",
+        "start": "20251203",
+        "end": null
+      }
+    ]
+  },
+  "309280": {
+    "nome": "FRANCESCA VIGGIANO",
+    "cognome": "VIGGIANO",
+    "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+    "sigla": "PD-IDP",
+    "storia": [
+      {
+        "sigla": "PD-IDP",
+        "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+        "start": "20260203",
+        "end": null
+      }
+    ]
+  },
+  "309300": {
+    "nome": "MANUELA MAFFIOLI",
+    "cognome": "MAFFIOLI",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20260326",
+        "end": null
+      }
+    ]
+  },
+  "309320": {
+    "nome": "ALBERTO DI RUBBA",
+    "cognome": "DI RUBBA",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20260326",
+        "end": null
+      }
+    ]
+  },
+  "309321": {
+    "nome": "GIULIO CENTENARO",
+    "cognome": "CENTENARO",
+    "gruppo": "LEGA - SALVINI PREMIER",
+    "sigla": "LEGA",
+    "storia": [
+      {
+        "sigla": "LEGA",
+        "gruppo": "LEGA - SALVINI PREMIER",
+        "start": "20260326",
+        "end": null
+      }
+    ]
+  }
+}

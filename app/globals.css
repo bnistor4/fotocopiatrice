@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f7f4ec;
+  --color-paper-dark: #efeade;
+  --color-ink: #1b1813;
+  --color-ink-soft: #4d463c;
+  --color-faded: #837a6b;
+  --color-line: #d8d1c2;
+  --color-accent: #9e2b25;
+  --color-accent-soft: #c26a63;
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-body: Georgia, "Times New Roman", Times, serif;
+  --font-label: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
+}
+
+html {
+  background: var(--color-paper);
+}
+
+body {
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+.masthead-title {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.label {
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-faded);
+}
+
+.rule-double {
+  border-top: 3px double var(--color-ink);
+}
+
+.rule-thin {
+  border-top: 1px solid var(--color-line);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.prob-track {
+  height: 4px;
+  background: var(--color-line);
+}
+
+.prob-fill {
+  height: 100%;
+  background: var(--color-accent);
+}
+
+/* barre orizzontali nei grafici CSS */
+.bar-fill {
+  background: var(--color-ink);
+}
+.bar-fill.accent {
+  background: var(--color-accent);
+}
+
+/* heatmap */
+.cell {
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.15rem;
+  border: 1px solid var(--color-paper);
+}

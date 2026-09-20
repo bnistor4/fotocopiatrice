@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+# raw XML containers are large intermediates; the parsed emendamenti.json is committed
+data/raw/*/container.xml

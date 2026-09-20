@@ -1,0 +1,103 @@
+{
+  "attoId": "2112-bis",
+  "titolo": "Bilancio di previsione dello Stato per l'anno finanziario 2025 (A.C. 2112-bis)",
+  "totale_emendamenti": 5992,
+  "analizzati": 400,
+  "per_esito": {
+    "inammissibile": 1190,
+    "in_attesa": 4453,
+    "approvato": 349
+  },
+  "articoli_aggiuntivi": 297,
+  "soppressivi": 110,
+  "localistici": 5,
+  "mance": 0,
+  "fotocopie_esatte": 2730,
+  "gruppi_fotocopia_esatta": 1023,
+  "fotocopie_semantiche": 4,
+  "euro_richiesti_totale": 1926768645216.3,
+  "per_gruppo": {
+    "MISTO": {
+      "n": 401,
+      "localistici": 1,
+      "mance": 0,
+      "euro": 80470165885
+    },
+    "M5S": {
+      "n": 1425,
+      "localistici": 0,
+      "mance": 0,
+      "euro": 651689848487
+    },
+    "NM(N-C-U-I)M-CP": {
+      "n": 194,
+      "localistici": 0,
+      "mance": 0,
+      "euro": 15185911310.869999
+    },
+    "FI-PPE": {
+      "n": 639,
+      "localistici": 1,
+      "mance": 0,
+      "euro": 253091069391.99997
+    },
+    "IV-CR": {
+      "n": 353,
+      "localistici": 0,
+      "mance": 0,
+      "euro": 68732058243.2
+    },
+    "FDI": {
+      "n": 359,
+      "localistici": 0,
+      "mance": 0,
+      "euro": 10266905275
+    },
+    "PD-IDP": {
+      "n": 1216,
+      "localistici": 1,
+      "mance": 0,
+      "euro": 468059268098.28
+    },
+    "AZ-PER-RE": {
+      "n": 234,
+      "localistici": 0,
+      "mance": 0,
+      "euro": 32540269033
+    },
+    "LEGA": {
+      "n": 593,
+      "localistici": 0,
+      "mance": 0,
+      "euro": 86877524805.5
+    },
+    "AVS": {
+      "n": 440,
+      "localistici": 2,
+      "mance": 0,
+      "euro": 192761454686.45
+    },
+    "ND": {
+      "n": 138,
+      "localistici": 0,
+      "mance": 0,
+      "euro": 67094170000
+    }
+  },
+  "per_ambito": {
+    "sociale_famiglia": 7,
+    "fisco": 281,
+    "ambiente_energia": 50,
+    "giustizia_pa": 4,
+    "lavoro_pensioni": 4,
+    "altro": 20,
+    "sanita": 1,
+    "imprese_incentivi": 11,
+    "infrastrutture_trasporti": 3,
+    "enti_locali": 8,
+    "cultura_turismo_sport": 8,
+    "agricoltura": 2,
+    "scuola_universita": 1
+  },
+  "updatedAt": "2026-09-20T22:00:07.002Z"
+}

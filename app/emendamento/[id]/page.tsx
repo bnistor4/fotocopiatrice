@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ProbBar } from "@/app/components";
+import { ProbBar, Termine } from "@/app/components";
 import {
   fmtData,
   fmtEuro,
@@ -9,6 +9,7 @@ import {
   getLatestAtto,
   pct,
 } from "@/lib/data";
+import { nomeAmbito, nomeEsito, nomeGruppo } from "@/lib/testi";
 
 export function generateStaticParams() {
   const atto = getLatestAtto();
@@ -43,13 +44,19 @@ export default async function EmendamentoPage({
         <h1 className="masthead-title mt-1 text-4xl">Emendamento {e.id}</h1>
         <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-(--color-ink-soft)">
           <span>
-            Esito: <strong>{e.esito ?? "esito non indicato nel bollettino"}</strong>
+            Che fine ha fatto:{" "}
+            <strong>{e.esito ? nomeEsito(e.esito) : nomeEsito("non_indicato")}</strong>
             {e.esitoAnnotazione ? ` (${e.esitoAnnotazione})` : ""}
           </span>
-          {e.nuovaFormulazione && <span className="text-(--color-accent)">nuova formulazione</span>}
+          {e.nuovaFormulazione && (
+            <span className="text-(--color-accent)">
+              <Termine id="riformulazione">nuova formulazione</Termine>
+            </span>
+          )}
           {e.sedute.length > 1 && (
             <span className="text-(--color-faded)">
-              ripubblicato: {e.sedute.map(fmtData).join(", ")}
+              <Termine id="ripubblicato">ripubblicato</Termine>:{" "}
+              {e.sedute.map(fmtData).join(", ")}
             </span>
           )}
           {e.riformulaDi && (
@@ -65,7 +72,8 @@ export default async function EmendamentoPage({
           )}
           {e.importoEuro != null && (
             <span>
-              Importo nel testo: <strong className="num">{fmtEuro(e.importoEuro)}</strong>
+              Cifra scritta nel testo:{" "}
+              <strong className="num">{fmtEuro(e.importoEuro)}</strong>
             </span>
           )}
           <a
@@ -81,12 +89,12 @@ export default async function EmendamentoPage({
 
       <section className="grid gap-8 lg:grid-cols-[2fr_1fr]">
         <div>
-          <h2 className="label">Testo della proposta</h2>
+          <h2 className="label">Il testo della proposta</h2>
           <p className="mt-3 whitespace-pre-line text-[1.05rem] leading-relaxed">{e.testo}</p>
         </div>
         <aside className="space-y-6">
           <div>
-            <h2 className="label border-b border-(--color-line) pb-1">Firmatari</h2>
+            <h2 className="label border-b border-(--color-line) pb-1">Chi lo firma</h2>
             <ul className="mt-2 space-y-0.5 text-sm">
               {e.firmatari.map((f, i) => (
                 <li key={`${f.idPersona}-${i}`}>
@@ -97,13 +105,15 @@ export default async function EmendamentoPage({
               {e.firmatari.length === 0 && <li className="text-(--color-faded)">—</li>}
             </ul>
             {e.gruppi.length > 0 && (
-              <p className="label mt-2">gruppi: {e.gruppi.join(" · ")}</p>
+              <p className="label mt-2">
+                partiti: {e.gruppi.map((g) => `${nomeGruppo(g)} (${g})`).join(" · ")}
+              </p>
             )}
           </div>
           {e.identKeys.length > 0 && (
             <div>
               <h2 className="label border-b border-(--color-line) pb-1">
-                Segnalato identico dalla Camera a
+                <Termine id="segnalato-identico">La Camera lo segna identico a</Termine>
               </h2>
               <ul className="mt-2 space-y-0.5 text-sm">
                 {e.identKeys.map((k) => (
@@ -124,35 +134,39 @@ export default async function EmendamentoPage({
 
       <section>
         <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">
-          La lettura del modello
+          Come lo ha letto il programma
         </h2>
+        <p className="mt-2 text-xs text-(--color-faded)">
+          Ogni barra è quanto il programma è sicuro della risposta — una{" "}
+          <Termine id="probabilita">probabilità</Termine>, non un verdetto.
+        </p>
         {a ? (
           <div className="mt-4 grid gap-x-10 gap-y-3 lg:grid-cols-2">
-            <ProbBar p={a.articolo_aggiuntivo} label="articolo aggiuntivo" />
-            <ProbBar p={a.soppressivo} label="soppressivo" />
-            <ProbBar p={a.localistico} label="localistico" />
-            <ProbBar p={a.beneficiario_identificabile} label="beneficiario identificabile" />
-            <ProbBar p={a.copertura_indicata} label="copertura indicata" />
+            <ProbBar p={a.articolo_aggiuntivo} label="aggiunge un articolo nuovo" />
+            <ProbBar p={a.soppressivo} label="cancella una parte" />
+            <ProbBar p={a.localistico} label="per un luogo o ente preciso" />
+            <ProbBar p={a.beneficiario_identificabile} label="si capisce chi ci guadagna" />
+            <ProbBar p={a.copertura_indicata} label="dice da dove vengono i soldi" />
             <div className="flex items-center gap-2">
-              <span className="label w-40 shrink-0">ambito</span>
+              <span className="label w-40 shrink-0">di cosa parla</span>
               <span className="text-sm">
-                {a.ambito.choice.replace(/_/g, " ")}{" "}
+                {nomeAmbito(a.ambito.choice)}{" "}
                 <span className="text-(--color-faded)">({pct(a.ambito.probabilities[a.ambito.choice] ?? 0)})</span>
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="label w-40 shrink-0">micro-intervento</span>
+              <span className="label w-40 shrink-0">quanto è su misura</span>
               <span className="num text-sm">
                 {a.micro_intervento.score.toFixed(1)} / 3{" "}
                 <span className="text-(--color-faded)">
-                  (0 = regola generale, 3 = mancetta)
+                  (0 = regola per tutti, 3 = mancetta)
                 </span>
               </span>
             </div>
           </div>
         ) : (
           <p className="mt-3 text-(--color-faded)">
-            Questo emendamento non è ancora stato analizzato dal modello.
+            Questo emendamento non è ancora stato letto dal programma.
           </p>
         )}
       </section>

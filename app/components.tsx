@@ -1,5 +1,24 @@
 // Piccoli componenti presentazionali condivisi (server-safe, nessun client JS).
+import Link from "next/link";
 import { pct } from "@/lib/data";
+import { voce } from "@/lib/testi";
+
+/** Parola spiegata nel glossario: sottolineatura tratteggiata, link all'ancora. */
+export function Termine({ id, children }: { id: string; children?: React.ReactNode }) {
+  const v = voce(id);
+  return (
+    <Link href={`/glossario#${id}`} title={v?.breve} className="termine">
+      {children ?? v?.titolo ?? id}
+    </Link>
+  );
+}
+
+/** Didascalia breve sotto titoli/stat: una riga dalla voce di glossario. */
+export function Spiega({ id }: { id: string }) {
+  const v = voce(id);
+  if (!v) return null;
+  return <p className="text-xs text-(--color-faded)">{v.breve}</p>;
+}
 
 export function ProbBar({ p, label }: { p: number; label: string }) {
   return (
@@ -13,7 +32,15 @@ export function ProbBar({ p, label }: { p: number; label: string }) {
   );
 }
 
-export function Stat({ value, label, sub }: { value: string; label: string; sub?: string }) {
+export function Stat({
+  value,
+  label,
+  sub,
+}: {
+  value: string;
+  label: React.ReactNode;
+  sub?: React.ReactNode;
+}) {
   return (
     <div className="border-l border-(--color-line) pl-3">
       <div className="masthead-title num text-3xl sm:text-4xl">{value}</div>

@@ -3,11 +3,12 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import type { Coppia, CoppieFile, PairProbs } from "@/lib/data";
+import { nomeGruppo, voce } from "@/lib/testi";
 
-const MEASURES: { key: keyof PairProbs; label: string }[] = [
-  { key: "stesso_effetto", label: "stesso effetto" },
-  { key: "stessa_matrice", label: "stessa matrice" },
-  { key: "differenza_solo_numerica", label: "differisce solo un numero" },
+const MEASURES: { key: keyof PairProbs; label: string; voceId: string }[] = [
+  { key: "stesso_effetto", label: "stesso risultato", voceId: "stesso-risultato" },
+  { key: "stessa_matrice", label: "stessa bozza", voceId: "stessa-bozza" },
+  { key: "differenza_solo_numerica", label: "cambia solo un numero", voceId: "solo-un-numero" },
 ];
 
 const pct = (p: number) => `${Math.round(p * 100)}%`;
@@ -35,7 +36,9 @@ function PairCard({ c, attoId }: { c: Coppia; attoId: string }) {
           Em. {e.id}
         </Link>
         <span className="label">art. {e.articolo}</span>
-        <span className="label">{e.gruppi.join(" · ") || "—"}</span>
+        <span className="label" title={e.gruppi.map(nomeGruppo).join(" · ")}>
+          {e.gruppi.join(" · ") || "—"}
+        </span>
       </div>
       <p className="mt-1 whitespace-pre-line text-sm leading-relaxed text-(--color-ink-soft)">
         {e.testo}
@@ -50,10 +53,15 @@ function PairCard({ c, attoId }: { c: Coppia; attoId: string }) {
             <MiniBar p={c.probabilita[m.key]} label={m.label} />
           </div>
         ))}
-        <span className="label">jaccard {Math.round(c.jaccard * 100)}%</span>
+        <span className="label" title={voce("parole-in-comune")?.breve}>
+          parole in comune {Math.round(c.jaccard * 100)}%
+        </span>
         {c.identMarkedByCamera && (
-          <span className="border border-(--color-accent) px-2 py-0.5 text-[0.68rem] font-semibold uppercase tracking-wider text-(--color-accent)">
-            Segnalata identica dalla Camera
+          <span
+            className="border border-(--color-accent) px-2 py-0.5 text-[0.68rem] font-semibold uppercase tracking-wider text-(--color-accent)"
+            title={voce("segnalato-identico")?.breve}
+          >
+            La Camera stessa li segna come identici
           </span>
         )}
       </div>
@@ -105,20 +113,30 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
   if (error) return <p className="text-(--color-accent)">Errore nel caricamento: {error}</p>;
   if (!data) return <p className="text-(--color-faded)">Caricamento delle coppie…</p>;
 
+  const glossLink = (id: string, testo: string) => (
+    <Link href={`/glossario#${id}`} title={voce(id)?.breve} className="termine">
+      {testo}
+    </Link>
+  );
+
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="masthead-title text-3xl">Le coppie</h1>
+        <h1 className="masthead-title text-3xl">Copie a confronto</h1>
         <p className="mt-1 max-w-3xl text-sm text-(--color-ink-soft)">
-          {titolo}. Ogni coppia è valutata dal modello su tre dimensioni: se produce lo stesso
-          effetto giuridico, se sembra uscire dalla stessa bozza, e se l'unica differenza è un
-          numero. Le barre sono probabilità, non verdetti.
+          Qui vedi due emendamenti affiancati ({titolo}). Sopra, tre barre dicono quanto il
+          programma è sicuro che abbiano lo{" "}
+          {glossLink("stesso-risultato", "stesso risultato")}, che vengano dalla{" "}
+          {glossLink("stessa-bozza", "stessa bozza")}, o che{" "}
+          {glossLink("solo-un-numero", "cambi solo un numero")}. Le barre sono{" "}
+          {glossLink("probabilita", "percentuali")}, non verdetti. Le parole sottolineate
+          portano alla spiegazione.
         </p>
       </header>
 
       <div className="flex flex-wrap items-end gap-x-8 gap-y-3 border-y border-(--color-line) py-3">
         <label className="block">
-          <span className="label block">Misura</span>
+          <span className="label block">Cosa confrontare</span>
           <select
             className="mt-1 border border-(--color-line) bg-transparent px-2 py-1 text-sm"
             value={measure}
@@ -130,7 +148,9 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
           </select>
         </label>
         <label className="block">
-          <span className="label block">Probabilità minima: {minProb}%</span>
+          <span className="label block">
+            Quanto deve essere sicuro il programma: {minProb}%
+          </span>
           <input
             type="range" min={0} max={100} step={5} value={minProb}
             onChange={(e) => setMinProb(Number(e.target.value))}
@@ -138,7 +158,7 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
           />
         </label>
         <label className="block">
-          <span className="label block">Gruppo</span>
+          <span className="label block">Partito</span>
           <select
             className="mt-1 border border-(--color-line) bg-transparent px-2 py-1 text-sm"
             value={gruppo}
@@ -146,7 +166,9 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
           >
             <option value="">tutti</option>
             {gruppi.map((g) => (
-              <option key={g} value={g}>{g}</option>
+              <option key={g} value={g}>
+                {nomeGruppo(g)} ({g})
+              </option>
             ))}
           </select>
         </label>
@@ -156,7 +178,7 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
             onChange={(e) => setSoloCamera(e.target.checked)}
             className="accent-(--color-accent)"
           />
-          solo quelle segnate «ident.» dalla Camera
+          solo le coppie che la Camera segna come identiche
         </label>
         <span className="label ml-auto">{lista.length} coppie</span>
       </div>
@@ -167,7 +189,8 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
         ))}
         {lista.length > 100 && (
           <p className="text-sm text-(--color-faded)">
-            Mostrate le prime 100 di {lista.length} coppie — alza la soglia o filtra per gruppo.
+            Mostrate le prime 100 di {lista.length} coppie — alza la soglia o filtra per
+            partito.
           </p>
         )}
         {lista.length === 0 && (

@@ -1,4 +1,5 @@
 import { getGruppiMatrix, getLatestAtto } from "@/lib/data";
+import { nomeGruppo } from "@/lib/testi";
 
 export default function GruppiPage() {
   const atto = getLatestAtto();
@@ -18,10 +19,15 @@ export default function GruppiPage() {
       <header>
         <h1 className="masthead-title text-3xl">Chi copia chi</h1>
         <p className="mt-1 max-w-3xl text-sm text-(--color-ink-soft)">
-          Matrice dei gruppi politici: ogni cella conta le coppie di emendamenti dei due gruppi
-          con probabilità di stesso effetto o stessa matrice ≥ {Math.round(m.soglia * 100)}%.
-          La diagonale conta le copie interne allo stesso gruppo. Gruppo = quello del primo
-          firmatario alla data della seduta.
+          Ogni riga e ogni colonna è un partito. Il numero nella casella dice quante coppie di
+          emendamenti «gemelli» (stesso risultato o stessa bozza, con almeno{" "}
+          {Math.round(m.soglia * 100)}% di sicurezza) hanno un emendamento di un partito e uno
+          dell'altro. Più la casella è scura, più i due partiti hanno depositato testi uguali.
+          La diagonale (grigia) conta le copie interne a uno stesso partito.
+        </p>
+        <p className="mt-1 max-w-3xl text-sm text-(--color-ink-soft)">
+          Come leggerla: prendi la riga di un partito e scorri — le caselle scure sono i partiti
+          con cui condivide più testi.
         </p>
       </header>
 
@@ -29,9 +35,14 @@ export default function GruppiPage() {
         <table className="border-collapse">
           <thead>
             <tr>
-              <th className="label p-1 text-left font-normal">da \ contro</th>
+              <th className="label p-1 text-left font-normal">un testo di \ e uno di</th>
               {m.gruppi.map((g) => (
-                <th key={g} className="label p-1 font-normal" style={{ writingMode: "vertical-rl" }}>
+                <th
+                  key={g}
+                  className="label p-1 font-normal"
+                  style={{ writingMode: "vertical-rl" }}
+                  title={nomeGruppo(g)}
+                >
                   {g}
                 </th>
               ))}
@@ -40,7 +51,10 @@ export default function GruppiPage() {
           <tbody>
             {m.gruppi.map((a) => (
               <tr key={a}>
-                <td className="label p-1 pr-2 text-right whitespace-nowrap">{a}</td>
+                <td className="p-1 pr-2 text-right whitespace-nowrap">
+                  <span className="text-sm font-semibold">{nomeGruppo(a)}</span>{" "}
+                  <span className="label">{a}</span>
+                </td>
                 {m.gruppi.map((b) => {
                   const v = m.counts[a]?.[b] ?? 0;
                   const intensity = a === b ? 0 : Math.min(v / max, 1);
@@ -48,7 +62,7 @@ export default function GruppiPage() {
                     <td
                       key={b}
                       className="cell"
-                      title={`${a} ↔ ${b}: ${v} coppie`}
+                      title={`${nomeGruppo(a)} ↔ ${nomeGruppo(b)}: ${v} coppie`}
                       style={{
                         background:
                           a === b
@@ -66,8 +80,18 @@ export default function GruppiPage() {
           </tbody>
         </table>
       </div>
+
+      <div className="max-w-3xl border-l-2 border-(--color-accent) bg-white/40 py-2 pl-4">
+        <p className="label">Cosa significa</p>
+        <p className="mt-1 text-sm">
+          Le fotocopie tra partiti diversi nascono di solito da un testo scritto fuori dal
+          Parlamento — associazioni, categorie, gruppi di interesse — e consegnato a più
+          deputati. Non è illegale, ma dice chi scrive davvero le leggi.
+        </p>
+      </div>
+
       <p className="text-xs text-(--color-faded)">
-        {totale} coppie sopra soglia · {m.note}
+        {totale.toLocaleString("it-IT")} coppie sopra soglia · {m.note}
       </p>
     </div>
   );

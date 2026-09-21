@@ -1,19 +1,23 @@
 import { getLatestAtto, getValutazione, pct } from "@/lib/data";
+import { Termine } from "@/app/components";
+import { COSA_NON_DICE, DATI_USATI } from "@/lib/testi";
+
+export const metadata = { title: "Come è fatto — Fotocopiatrice" };
 
 const DOMANDE_SINGOLO = [
-  ["Articolo aggiuntivo", "aggiunge disposizioni nuove (articolo o commi inediti) invece di modificare o sopprimere testo esistente?"],
-  ["Soppressivo", "sopprime testo del disegno di legge (comma, articolo, parole)?"],
-  ["Localistico", "destina soldi, benefici o deroghe a un territorio specifico o a un ente, fondazione, evento, azienda nominati?"],
-  ["Beneficiario identificabile", "un lettore può capire concretamente chi ci guadagna — un ente nominato o un gruppo molto ristretto?"],
-  ["Copertura indicata", "il testo dice come viene finanziata la spesa (riduzioni di altri fondi, Fondo esigenze indifferibili, ecc.)?"],
-  ["Ambito", "a quale area di politica pubblica appartiene (fisco, sanità, scuola, infrastrutture…)? — risposta a scelta multipla"],
-  ["Micro-intervento", "su una scala 0–3: da regola generale per tutti a «mancetta» — una somma specifica per un ente, evento o progetto nominato"],
+  ["Aggiunge un articolo nuovo", "propone qualcosa che nella legge non c'era, invece di correggere o cancellare?"],
+  ["Cancella una parte", "chiede di togliere un articolo, un comma o delle parole?"],
+  ["Per un luogo o ente preciso", "destina soldi o vantaggi a un territorio, un ente, una manifestazione o un'azienda nominati?"],
+  ["Si capisce chi ci guadagna", "un lettore può capire concretamente chi ci guadagna — un ente nominato o un gruppo molto ristretto?"],
+  ["Dice da dove vengono i soldi", "il testo dice come viene pagata la spesa che propone?"],
+  ["Di cosa parla", "a quale area appartiene, tra 14 possibili (tasse, sanità, scuola, lavoro…)?"],
+  ["Quanto è su misura", "su una scala 0–3: da regola che vale per tutti (0) a somma precisa per un destinatario nominato (3)?"],
 ];
 
 const DOMANDE_COPPIA = [
-  ["Stesso effetto", "le due proposte cambiano la legge nello stesso modo — stessa disposizione, beneficiari, importi, date e percentuali?"],
-  ["Stessa matrice", "sembrano uscite dalla stessa bozza — stessa struttura, stesse clausole, stesse formule — anche se importi o beneficiari sono stati ritoccati?"],
-  ["Differenza solo numerica", "l'unica differenza sostanziale è un numero (importo, percentuale, anno, data)?"],
+  ["Stesso risultato", "le due proposte cambiano la legge nello stesso modo — stesse regole, stessi soldi, stessi destinatari, stesse date?"],
+  ["Stessa bozza", "sembrano uscite dallo stesso documento — stessa struttura e stesse frasi — anche se qualcuno ha cambiato cifre o destinatari?"],
+  ["Cambia solo un numero", "l'unica differenza di sostanza è una cifra, una percentuale, un anno o una data?"],
 ];
 
 export default function MetodoPage() {
@@ -23,37 +27,46 @@ export default function MetodoPage() {
   return (
     <div className="max-w-3xl space-y-10">
       <header>
-        <h1 className="masthead-title text-3xl">Come funziona</h1>
+        <h1 className="masthead-title text-3xl">Come è fatto</h1>
       </header>
 
       <section className="space-y-3">
-        <h2 className="masthead-title text-2xl">La macchina</h2>
+        <h2 className="masthead-title text-2xl">In breve, in tre passi</h2>
+        <ol className="list-decimal space-y-2 pl-5">
+          <li>
+            Scarichiamo dal sito della Camera il documento con tutti gli emendamenti depositati.
+          </li>
+          <li>
+            Per ognuno facciamo sette domande al{" "}
+            <Termine id="programma-di-lettura">programma di lettura</Termine>.
+          </li>
+          <li>Confrontiamo a coppie quelli che si somigliano.</li>
+        </ol>
         <p>
-          La pipeline gira <strong>in locale</strong>, non sul sito: uno script scarica gli
-          emendamenti pubblicati dalla Camera dei deputati (documenti.camera.it), un secondo
-          script li sottopone a <strong>Jev</strong>, il modello «System One» di TypeSafe — un
-          modello che non scrive testo ma risponde a domande precise restituendo{" "}
-          <em>probabilità tipizzate</em>. Un terzo script confronta le coppie di emendamenti.
-          I risultati vengono salvati in file JSON che questo sito si limita a leggere:{" "}
-          <strong>nessuna chiave API vive su Vercel</strong>.
-        </p>
-        <p>
-          Il bollettino ripubblica lo stesso emendamento in più sedute (i «segnalati»):
-          le righe con stesso numero, stesso testo e stessi firmatari vengono contate{" "}
-          <strong>una sola volta</strong>; le riformulazioni (stesso numero, testo diverso)
-          restano schede distinte ma non sono mai conteggiate come fotocopie.
-        </p>
-        <p>
-          Il gruppo parlamentare dei firmatari viene ricostruito dal grafo open data della
-          Camera (dati.camera.it, SPARQL), alla data della seduta in cui l'emendamento è stato
-          pubblicato.
+          Tutto gira su un nostro computer; il sito mostra solo i risultati. Nessuna chiave o
+          dato privato passa per il sito.
         </p>
       </section>
 
       <section className="space-y-3">
-        <h2 className="masthead-title text-2xl">Le domande poste al modello</h2>
+        <h2 className="masthead-title text-2xl">{DATI_USATI.titolo}</h2>
+        {DATI_USATI.paragrafi.map((p) => {
+          const m = p.match(/^(Perché[^.]*\.)\s*(.*)$/s);
+          return m ? (
+            <p key={p.slice(0, 24)}>
+              <strong>{m[1]}</strong> {m[2]}
+            </p>
+          ) : (
+            <p key={p.slice(0, 24)}>{p}</p>
+          );
+        })}
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="masthead-title text-2xl">Le sette domande</h2>
         <p className="text-sm text-(--color-ink-soft)">
-          Per ogni emendamento (testo completo, articolo, firmatari e gruppi nello «stato»):
+          Per ogni emendamento — il testo completo, chi lo firma e il suo partito — il programma
+          risponde con una percentuale:
         </p>
         <ul className="list-none space-y-2 border-l border-(--color-line) pl-4">
           {DOMANDE_SINGOLO.map(([t, d]) => (
@@ -62,9 +75,10 @@ export default function MetodoPage() {
             </li>
           ))}
         </ul>
+        <h2 className="masthead-title pt-4 text-2xl">Le tre domande sulle coppie</h2>
         <p className="text-sm text-(--color-ink-soft)">
-          Per ogni coppia candidata (similarità Jaccard sul testo ≥ 0,35, oppure testo
-          identico):
+          Solo per le coppie con almeno il 35% di{" "}
+          <Termine id="parole-in-comune">parole in comune</Termine>, o con testo identico:
         </p>
         <ul className="list-none space-y-2 border-l border-(--color-line) pl-4">
           {DOMANDE_COPPIA.map(([t, d]) => (
@@ -73,30 +87,35 @@ export default function MetodoPage() {
             </li>
           ))}
         </ul>
+        <p className="text-sm text-(--color-ink-soft)">
+          Le domande sono in inglese nel codice perché il programma è addestrato soprattutto in
+          inglese; i testi degli emendamenti gli vengono dati in italiano così come sono.
+        </p>
       </section>
 
       {v && (
         <section className="space-y-3">
           <h2 className="masthead-title text-2xl">Quanto ci si può fidare</h2>
           <p>
-            La Camera stessa marca come «identici» gli emendamenti presentati identici da più
-            firmatari (la nota «ident.» nel bollettino). Usiamo quella marcatura come verità di
-            controllo:
+            La prova del nove: gli uffici della Camera segnano da soli le coppie{" "}
+            <Termine id="segnalato-identico">identiche</Termine> (la nota «ident.» nel documento
+            ufficiale). Se su quelle coppie il programma risponde «stesso risultato», vuol dire
+            che sta leggendo bene. Ecco com'è andata:
           </p>
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="label border-b border-(--color-line) text-left">
-                <th className="py-1 font-normal">Campionato</th>
-                <th className="py-1 text-right font-normal">Coppie</th>
-                <th className="py-1 text-right font-normal">Media «stesso effetto»</th>
-                <th className="py-1 text-right font-normal">Quota ≥ 80%</th>
-                <th className="py-1 text-right font-normal">Quota ≥ 50%</th>
+                <th className="py-1 font-normal">Quali coppie</th>
+                <th className="py-1 text-right font-normal">Quante</th>
+                <th className="py-1 text-right font-normal">Sicurezza media «stesso risultato»</th>
+                <th className="py-1 text-right font-normal">Almeno 80%</th>
+                <th className="py-1 text-right font-normal">Almeno 50%</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b border-(--color-line)">
-                <td className="py-1.5">Coppie segnate «ident.» dalla Camera</td>
-                <td className="num text-right">{v.coppie_ident_camera.n}</td>
+                <td className="py-1.5">Coppie che la Camera segna come identiche</td>
+                <td className="num text-right">{v.coppie_ident_camera.n.toLocaleString("it-IT")}</td>
                 <td className="num text-right">
                   {v.coppie_ident_camera.media != null ? pct(v.coppie_ident_camera.media) : "—"}
                 </td>
@@ -108,8 +127,8 @@ export default function MetodoPage() {
                 </td>
               </tr>
               <tr className="border-b border-(--color-line)">
-                <td className="py-1.5">Coppie con testo quasi identico (Jaccard ≥ 0,9)</td>
-                <td className="num text-right">{v.coppie_jaccard_alto.n}</td>
+                <td className="py-1.5">Coppie con testo quasi uguale (≥ 90% di parole in comune)</td>
+                <td className="num text-right">{v.coppie_jaccard_alto.n.toLocaleString("it-IT")}</td>
                 <td className="num text-right">
                   {v.coppie_jaccard_alto.media != null ? pct(v.coppie_jaccard_alto.media) : "—"}
                 </td>
@@ -122,17 +141,25 @@ export default function MetodoPage() {
               </tr>
             </tbody>
           </table>
+          {v.coppie_ident_camera.quota_ge_08 != null && (
+            <p>
+              Nella prima riga il programma è d'accordo con la Camera nel{" "}
+              {pct(v.coppie_ident_camera.quota_ge_08)} dei casi (soglia 80%). Nella seconda riga
+              la media è più bassa: molti testi quasi uguali cambiano proprio la cifra o il
+              destinatario, e il programma li distingue.
+            </p>
+          )}
           <p className="text-sm text-(--color-ink-soft)">
-            Fotocopie esatte (testo identico dopo normalizzazione, calcolato in codice senza il
-            modello): {v.fotocopie_esatte.gruppi} gruppi, {v.fotocopie_esatte.emendamenti}{" "}
-            emendamenti.
+            Fotocopie esatte (stesso testo parola per parola, conteggio fatto senza il
+            programma): {v.fotocopie_esatte.gruppi} gruppi,{" "}
+            {v.fotocopie_esatte.emendamenti.toLocaleString("it-IT")} emendamenti.
           </p>
           {v.usage && (
             <p className="text-sm text-(--color-ink-soft)">
-              Costo dell'analisi finora: {v.usage.chiamate} chiamate,{" "}
-              {v.usage.input_tokens.toLocaleString("it-IT")} token in ingresso, ≈{" "}
-              {v.usage.costo_stimato_usd.toFixed(3)} $ (tariffa {v.usage.tariffa_input_per_milione}{" "}
-              $/Milione di token in input).
+              Leggere tutto è costato {v.usage.chiamate.toLocaleString("it-IT")} chiamate e ≈{" "}
+              {v.usage.costo_stimato_usd.toFixed(2)} $ (tariffa{" "}
+              {v.usage.tariffa_input_per_milione} $ per milione di token in ingresso). Una
+              persona ci metterebbe settimane.
             </p>
           )}
         </section>
@@ -142,24 +169,31 @@ export default function MetodoPage() {
         <h2 className="masthead-title text-2xl">Limiti</h2>
         <ul className="list-disc space-y-2 pl-5">
           <li>
-            Le risposte sono <strong>probabilità, non verdetti</strong>. Un «82%» di stesso
-            effetto non dimostra la copia: va letto come un indizio forte da verificare sul
-            testo (ogni scheda riporta il link alla fonte ufficiale).
+            Le risposte del programma sono percentuali, non verdetti. Un «82%» non dimostra la
+            copia: è un indizio forte da verificare sul testo originale, sempre linkato.
           </li>
           <li>
-            Gli importi in euro sono estratti con espressioni regolari dal testo, tagliando la
-            clausola di copertura e ignorando cifre oltre 50 miliardi: è una stima grezza degli
-            importi massimi citati, calcolata solo sugli emendamenti analizzati e non
-            soppressivi. Cifre in lettere o formule indirette non vengono conteggiate.
+            Le cifre in euro sono lette automaticamente dai testi: è una stima grezza delle
+            richieste, non una previsione di spesa. Cifre scritte in lettere o formule indirette
+            non vengono conteggiate.
           </li>
           <li>
-            Le coppie oltre la soglia di similarità Jaccard non vengono mostrate al modello:
-            copie molto riformulate possono sfuggire.
+            Le coppie con meno del 35% di parole in comune non vengono lette dal programma: una
+            copia riscritta con parole molto diverse può sfuggire.
           </li>
           <li>
-            Il gruppo associato a un emendamento è quello del primo firmatario alla data della
-            seduta; chi ha cambiato gruppo appare con il gruppo di allora.
+            Il partito di un emendamento è quello del primo firmatario nel giorno di
+            pubblicazione: chi ha cambiato partito dopo appare con quello di allora.
           </li>
+        </ul>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="masthead-title text-2xl">Cosa questo sito non dice</h2>
+        <ul className="list-disc space-y-2 pl-5">
+          {COSA_NON_DICE.map((r) => (
+            <li key={r}>{r}</li>
+          ))}
         </ul>
       </section>
     </div>

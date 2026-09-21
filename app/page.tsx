@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HBar, Stat } from "./components";
+import { HBar, Spiega, Stat, Termine } from "./components";
 import {
   fmtData,
   fmtEuro,
@@ -7,6 +7,7 @@ import {
   getLatestAtto,
   getSummary,
 } from "@/lib/data";
+import { evidenze, IN_DUE_PAROLE, nomeAmbito, nomeEsito, nomeGruppo } from "@/lib/testi";
 
 export default function Home() {
   const atto = getLatestAtto();
@@ -30,49 +31,106 @@ export default function Home() {
   return (
     <div className="space-y-10">
       <section>
-        <p className="label">L'atto esaminato</p>
+        <p className="label">
+          <Termine id="legge-di-bilancio">La legge di bilancio 2025</Termine>
+        </p>
         <h1 className="masthead-title mt-1 text-3xl sm:text-4xl leading-tight">{s.titolo}</h1>
         <p className="mt-2 text-sm text-(--color-ink-soft)">
-          Sedute di pubblicazione: {sedute.map(fmtData).join(", ")} · {s.totale_emendamenti.toLocaleString("it-IT")}{" "}
-          emendamenti distinti
-          {s.occorrenze_bollettino ? ` (${s.occorrenze_bollettino.toLocaleString("it-IT")} righe di bollettino, ri-pubblicazioni incluse)` : ""}
-          , {s.analizzati.toLocaleString("it-IT")} analizzati dal modello.
+          Pubblicati nelle sedute del {sedute.map(fmtData).join(", ")} ·{" "}
+          {s.totale_emendamenti.toLocaleString("it-IT")} proposte distinte
+          {s.occorrenze_bollettino
+            ? ` (${s.occorrenze_bollettino.toLocaleString("it-IT")} righe negli elenchi, ripubblicazioni incluse)`
+            : ""}
+          , tutte lette dal programma.
         </p>
       </section>
 
+      <section className="border border-(--color-line) bg-white/40 p-5">
+        <h2 className="label">In due parole</h2>
+        <div className="mt-3 max-w-3xl space-y-2 text-[1.02rem] leading-relaxed">
+          {IN_DUE_PAROLE.map((p) => (
+            <p key={p.slice(0, 24)}>{p}</p>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">
+          Quattro cose da sapere
+        </h2>
+        <div className="mt-4 grid gap-6 sm:grid-cols-2">
+          {evidenze(s).map((e) => (
+            <div key={e.id} className="border-l border-(--color-line) pl-4">
+              <div className="masthead-title num text-4xl">{e.numero}</div>
+              <p className="mt-1 text-sm text-(--color-ink-soft)">{e.testo}</p>
+              <Link
+                href={`/glossario#${e.id}`}
+                className="mt-1 inline-block text-xs text-(--color-accent) underline underline-offset-4"
+              >
+                cos'è →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
-        <Stat value={s.totale_emendamenti.toLocaleString("it-IT")} label="emendamenti" />
+        <Stat
+          value={s.totale_emendamenti.toLocaleString("it-IT")}
+          label={<Termine id="emendamento">proposte di modifica</Termine>}
+        />
         <Stat
           value={s.fotocopie_esatte.toLocaleString("it-IT")}
-          label="fotocopie esatte"
-          sub={`${s.fotocopie_esatte_tra_gruppi.toLocaleString("it-IT")} tra gruppi diversi`}
+          label={<Termine id="fotocopia-esatta">fotocopie esatte</Termine>}
+          sub={`stesso testo, firme diverse; ${s.fotocopie_esatte_tra_gruppi.toLocaleString("it-IT")} tra partiti diversi`}
         />
-        <Stat value={s.fotocopie_semantiche.toLocaleString("it-IT")} label="copie semantiche" sub="stesso effetto ≥ 80%" />
-        <Stat value={s.localistici.toLocaleString("it-IT")} label="localistici" sub="territorio o ente specifico" />
-        <Stat value={s.mirati.toLocaleString("it-IT")} label="mirati" sub={`mancette (handout ≥ 50%): ${s.mance}`} />
+        <Stat
+          value={s.fotocopie_semantiche.toLocaleString("it-IT")}
+          label={<Termine id="copia-riscritta">copie riscritte</Termine>}
+          sub="testo diverso, stesso risultato (≥ 80%)"
+        />
+        <Stat
+          value={s.localistici.toLocaleString("it-IT")}
+          label={<Termine id="territorio-preciso">per un luogo o ente preciso</Termine>}
+        />
+        <Stat
+          value={s.mirati.toLocaleString("it-IT")}
+          label={<Termine id="su-misura">su misura</Termine>}
+          sub={
+            <>
+              di cui <Termine id="mancetta">mancette</Termine>:{" "}
+              {s.mance.toLocaleString("it-IT")}
+            </>
+          }
+        />
         <Stat
           value={fmtEuro(s.euro_richiesti_stima)}
-          label="euro richiesti"
-          sub={`stima grezza su ${s.n_con_importo.toLocaleString("it-IT")} emendamenti con importo`}
+          label={<Termine id="euro-richiesti">euro richiesti</Termine>}
+          sub="somma grezza delle cifre nei testi, non una spesa"
         />
       </section>
-      <p className="-mt-6 text-xs text-(--color-faded)">
-        «Euro richiesti» = somma degli importi massimi citati nel testo, esclusa la clausola di copertura; solo
-        emendamenti analizzati e non soppressivi.
-      </p>
+      <div className="-mt-6">
+        <Spiega id="euro-richiesti" />
+      </div>
 
       <section className="grid gap-10 lg:grid-cols-2">
         <div>
-          <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">Per gruppo politico</h2>
+          <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">
+            Per partito
+          </h2>
+          <p className="mt-2 text-xs text-(--color-faded)">
+            I partiti grandi depositano più emendamenti: guarda le proporzioni, non solo i
+            totali.
+          </p>
           <table className="mt-3 w-full text-sm">
             <thead>
               <tr className="label border-b border-(--color-line) text-left">
-                <th className="py-1 font-normal">Gruppo</th>
-                <th className="py-1 text-right font-normal">Emend.</th>
-                <th className="py-1 text-right font-normal">Localist.</th>
-                <th className="py-1 text-right font-normal">Mirati</th>
+                <th className="py-1 font-normal">Partito</th>
+                <th className="py-1 text-right font-normal">Proposte</th>
+                <th className="py-1 text-right font-normal">Per un luogo preciso</th>
+                <th className="py-1 text-right font-normal">Su misura</th>
                 <th className="py-1 text-right font-normal">Mancette</th>
-                <th className="py-1 text-right font-normal">Euro (n)</th>
+                <th className="py-1 text-right font-normal">Euro nei testi (quante)</th>
                 <th className="w-2/5 py-1 font-normal" />
               </tr>
             </thead>
@@ -81,7 +139,10 @@ export default function Home() {
                 .sort((a, b) => b[1].n - a[1].n)
                 .map(([g, r]) => (
                   <tr key={g} className="border-b border-(--color-line)">
-                    <td className="py-1.5 pr-2 font-semibold">{g}</td>
+                    <td className="py-1.5 pr-2">
+                      <span className="font-semibold">{nomeGruppo(g)}</span>
+                      <span className="block text-xs text-(--color-faded)">{g}</span>
+                    </td>
                     <td className="num py-1.5 text-right">{r.n}</td>
                     <td className="num py-1.5 text-right">{r.localistici}</td>
                     <td className="num py-1.5 text-right">{r.mirati}</td>
@@ -100,22 +161,26 @@ export default function Home() {
           </table>
         </div>
         <div>
-          <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">Per ambito</h2>
+          <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">
+            Di cosa parlano
+          </h2>
           <div className="mt-3">
             {Object.entries(s.per_ambito)
               .sort((a, b) => b[1] - a[1])
               .map(([ambito, n]) => (
-                <HBar key={ambito} label={ambito.replace(/_/g, " ")} value={n} max={maxAmbito} />
+                <HBar key={ambito} label={nomeAmbito(ambito)} value={n} max={maxAmbito} />
               ))}
           </div>
-          <h2 className="masthead-title mt-8 border-b border-(--color-line) pb-2 text-2xl">Esiti</h2>
+          <h2 className="masthead-title mt-8 border-b border-(--color-line) pb-2 text-2xl">
+            Che fine hanno fatto
+          </h2>
           <div className="mt-3">
             {Object.entries(s.per_esito)
               .sort((a, b) => b[1] - a[1])
               .map(([esito, n]) => (
                 <HBar
                   key={esito}
-                  label={esito === "non_indicato" ? "esito non indicato nel bollettino" : esito}
+                  label={nomeEsito(esito)}
                   value={n}
                   max={Math.max(...Object.values(s.per_esito))}
                 />
@@ -126,8 +191,11 @@ export default function Home() {
 
       <section>
         <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">
-          Le cifre più alte nel testo
+          Le richieste più grandi scritte nei testi
         </h2>
+        <div className="mt-1">
+          <Spiega id="euro-richiesti" />
+        </div>
         <div className="mt-3 grid gap-x-8 gap-y-3 sm:grid-cols-2">
           {topEuro.map((e) => (
             <div key={e.key} className="border-b border-(--color-line) pb-2">
@@ -150,7 +218,7 @@ export default function Home() {
 
       <section className="rule-thin pt-4 text-sm">
         <Link href="/coppie" className="text-(--color-accent) underline underline-offset-4">
-          Sfoglia le coppie di emendamenti più simili →
+          Guarda le coppie di emendamenti che si somigliano →
         </Link>
       </section>
     </div>

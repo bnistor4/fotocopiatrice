@@ -1,24 +1,25 @@
 {
   "attoId": "2112-bis",
   "titolo": "Bilancio di previsione dello Stato per l'anno finanziario 2025 (A.C. 2112-bis)",
-  "totale_emendamenti": 5085,
+  "totale_emendamenti": 5082,
   "occorrenze_bollettino": 5992,
-  "analizzati": 5085,
+  "analizzati": 5082,
   "per_esito": {
     "inammissibile": 1190,
-    "non_indicato": 3548,
+    "non_indicato": 3545,
     "approvato": 347
   },
-  "articoli_aggiuntivi": 3849,
-  "soppressivi": 1336,
+  "articoli_aggiuntivi": 3846,
+  "soppressivi": 1335,
   "localistici": 754,
   "mirati": 1173,
   "mance": 301,
-  "fotocopie_esatte": 1298,
-  "fotocopie_esatte_tra_gruppi": 1264,
+  "fotocopie_esatte": 1293,
+  "fotocopie_esatte_tra_gruppi": 1259,
   "fotocopie_esatte_stesso_gruppo": 34,
-  "gruppi_fotocopia_esatta": 461,
+  "gruppi_fotocopia_esatta": 459,
   "fotocopie_semantiche": 44,
+  "approvati_governo_relatori": 42,
   "esempio_fotocopia": {
     "a": {
       "key": "20241217:97.26.",
@@ -35,11 +36,12 @@
     "testo": "Dopo il comma 1 inserire i seguenti: 1-bis. È assegnato un contributo di 1 milione di euro per l'anno 2025 e di 0,5 milioni di euro per ciascuno degli anni 2026 e 2027 in favore del comune di Brescia, da destinare a interventi infrastrutturali. Agli oneri derivanti dal presente comma, pari a 1 milione di euro per l'anno 2025 e a 0,5 milioni di euro per ciascuno degli anni 2026 e 2027, si provvede mediante corrispondente riduzione del Fondo di cui all'articolo 1, comma 200, della legge 23 dicembre 2014, n. 190, come rifinanziato dall'articolo 121, comma 2, della presente legge.",
     "importoEuro": 1000000
   },
-  "euro_richiesti_stima": 475735771306.56995,
-  "n_con_importo": 2042,
+  "euro_richiesti_stima": 475705771306.56995,
+  "n_con_importo": 2041,
   "per_gruppo": {
     "MISTO": {
       "n": 336,
+      "approvati": 20,
       "localistici": 31,
       "mirati": 49,
       "mance": 16,
@@ -48,6 +50,7 @@
     },
     "M5S": {
       "n": 1316,
+      "approvati": 43,
       "localistici": 182,
       "mirati": 287,
       "mance": 53,
@@ -56,6 +59,7 @@
     },
     "NM(N-C-U-I)M-CP": {
       "n": 155,
+      "approvati": 13,
       "localistici": 19,
       "mirati": 37,
       "mance": 8,
@@ -64,6 +68,7 @@
     },
     "FI-PPE": {
       "n": 541,
+      "approvati": 37,
       "localistici": 86,
       "mirati": 141,
       "mance": 39,
@@ -72,6 +77,7 @@
     },
     "IV-CR": {
       "n": 306,
+      "approvati": 16,
       "localistici": 22,
       "mirati": 48,
       "mance": 9,
@@ -79,15 +85,17 @@
       "n_con_importo": 147
     },
     "FDI": {
-      "n": 251,
+      "n": 253,
+      "approvati": 51,
       "localistici": 56,
       "mirati": 78,
       "mance": 19,
-      "euro": 4017507849.5,
-      "n_con_importo": 116
+      "euro": 4047507849.5,
+      "n_con_importo": 117
     },
     "PD-IDP": {
       "n": 1055,
+      "approvati": 38,
       "localistici": 174,
       "mirati": 286,
       "mance": 80,
@@ -96,6 +104,7 @@
     },
     "AZ-PER-RE": {
       "n": 183,
+      "approvati": 19,
       "localistici": 15,
       "mirati": 31,
       "mance": 11,
@@ -104,6 +113,7 @@
     },
     "LEGA": {
       "n": 488,
+      "approvati": 55,
       "localistici": 100,
       "mirati": 130,
       "mance": 52,
@@ -112,23 +122,43 @@
     },
     "AVS": {
       "n": 384,
+      "approvati": 12,
       "localistici": 40,
       "mirati": 63,
       "mance": 6,
       "euro": 59846702488.45,
       "n_con_importo": 152
     },
-    "ND": {
-      "n": 70,
-      "localistici": 29,
-      "mirati": 23,
+    "ORGANO": {
+      "n": 2,
+      "approvati": 1,
+      "localistici": 0,
+      "mirati": 0,
+      "mance": 0,
+      "euro": 0,
+      "n_con_importo": 0
+    },
+    "GOVERNO": {
+      "n": 8,
+      "approvati": 6,
+      "localistici": 2,
+      "mirati": 1,
+      "mance": 0,
+      "euro": 1856000000,
+      "n_con_importo": 2
+    },
+    "RELATORI": {
+      "n": 55,
+      "approvati": 36,
+      "localistici": 27,
+      "mirati": 22,
       "mance": 8,
-      "euro": 10131730000,
-      "n_con_importo": 30
+      "euro": 8215730000,
+      "n_con_importo": 26
     }
   },
   "per_ambito": {
-    "sociale_famiglia": 313,
+    "sociale_famiglia": 312,
     "fisco": 765,
     "ambiente_energia": 352,
     "giustizia_pa": 177,
@@ -136,12 +166,12 @@
     "altro": 397,
     "sanita": 520,
     "imprese_incentivi": 274,
-    "infrastrutture_trasporti": 353,
+    "infrastrutture_trasporti": 352,
     "enti_locali": 317,
     "cultura_turismo_sport": 256,
     "agricoltura": 222,
     "scuola_universita": 389,
-    "sicurezza_difesa": 176
+    "sicurezza_difesa": 175
   },
-  "updatedAt": "2026-09-21T10:14:59.468Z"
+  "updatedAt": "2026-09-21T10:36:01.974Z"
 }

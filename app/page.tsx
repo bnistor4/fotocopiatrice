@@ -32,6 +32,12 @@ export default function Home() {
   const sedute = [...new Set(emendamenti.map((e) => e.seduta))].sort();
   const gruppi = Object.entries(s.per_gruppo).sort((a, b) => b[1].n - a[1].n);
   const maxQuota = Math.max(...gruppi.map(([, r]) => r.n / s.totale_emendamenti), 0.01);
+  const PSEUDO = new Set(["GOVERNO", "RELATORI", "ORGANO"]);
+  const partiti = gruppi.filter(([g]) => !PSEUDO.has(g));
+  const collegiali = gruppi.filter(([g]) => PSEUDO.has(g));
+  const govRel = collegiali.filter(([g]) => g === "GOVERNO" || g === "RELATORI");
+  const govRelN = govRel.reduce((a, [, r]) => a + r.n, 0);
+  const govRelApprovati = govRel.reduce((a, [, r]) => a + r.approvati, 0);
 
   const esitoTone = (k: string) =>
     k === "approvato" ? "ok" : k === "inammissibile" ? "accent" : "faded";
@@ -239,10 +245,14 @@ export default function Home() {
               </tr>
             </thead>
             <tbody>
-              {gruppi.map(([g, r]) => {
+              {[...partiti, ...collegiali].map(([g, r]) => {
                 const quota = r.n / s.totale_emendamenti;
+                const pseudo = PSEUDO.has(g);
                 return (
-                  <tr key={g}>
+                  <tr
+                    key={g}
+                    className={pseudo ? "bg-(--color-bg) text-(--color-ink-soft)" : undefined}
+                  >
                     <td>
                       <span className="font-semibold">{nomeGruppo(g)}</span>
                       <span className="block text-xs text-(--color-faded)">{g}</span>
@@ -279,6 +289,11 @@ export default function Home() {
         <p className="mt-3 text-[13px] text-(--color-faded)">
           I partiti grandi depositano più emendamenti: guarda le proporzioni, non solo i
           totali.
+        </p>
+        <p className="mt-1 text-[13px] text-(--color-faded)">
+          Governo e Relatori non sono gruppi di deputati: sono chi scrive la legge e
+          chi guida l'esame in Commissione. I loro emendamenti sono pochi ma passano
+          quasi sempre: {govRelApprovati} approvati su {govRelN}.
         </p>
       </Card>
 

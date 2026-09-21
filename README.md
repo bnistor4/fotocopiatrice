@@ -8,10 +8,10 @@ Primo atto analizzato: legge di bilancio 2025 (A.C. 2112-bis), Commissione Bilan
 
 | | |
 | --- | --- |
-| Emendamenti unici | 5.085 (5.992 pubblicazioni nel bollettino, 865 ripubblicazioni) |
-| Identici parola per parola a un altro | 1.298 (25%), in 461 gruppi; 1.264 tra gruppi parlamentari diversi |
+| Emendamenti unici | 5.082 (5.992 pubblicazioni nel bollettino, 868 ripubblicazioni) |
+| Identici parola per parola a un altro | 1.293 (25%), in 459 gruppi; 1.259 tra gruppi parlamentari diversi |
 | Riscritti ma equivalenti (secondo il modello, soglia 80%) | 44 |
-| Approvati / inammissibili / senza esito pubblicato | 347 / 1.190 / 3.548 |
+| Approvati / inammissibili / senza esito pubblicato | 347 / 1.190 / 3.545 |
 | Costo dell'analisi automatica | 12.206 chiamate, ~20 M token, 0,84 $ |
 
 ## Cosa contiene il repository

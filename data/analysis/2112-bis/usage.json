@@ -66,7 +66,21 @@
       "calls": 92,
       "inputTokens": 145664,
       "outputTokens": 5980
+    },
+    {
+      "script": "analyze",
+      "at": "2026-09-21T10:34:13.355Z",
+      "calls": 0,
+      "inputTokens": 0,
+      "outputTokens": 0
+    },
+    {
+      "script": "pairs",
+      "at": "2026-09-21T10:34:19.586Z",
+      "calls": 0,
+      "inputTokens": 0,
+      "outputTokens": 0
     }
   ],
-  "updatedAt": "2026-09-20T22:22:59.776Z"
+  "updatedAt": "2026-09-21T10:34:19.586Z"
 }

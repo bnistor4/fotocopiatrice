@@ -1,4 +1,3 @@
-{"idPersona":"","nome":"La XII Commissione","gruppo":"ND","depositati":2,"identiciAdAltro":2,"identiciAdAltroGruppo":2,"approvati":1}
 {"idPersona":"200291","nome":"Riccardo De Corato","gruppo":"FDI","depositati":3,"identiciAdAltro":2,"identiciAdAltroGruppo":2,"approvati":0}
 {"idPersona":"300299","nome":"Andrea Orsini","gruppo":"FI-PPE","depositati":16,"identiciAdAltro":0,"identiciAdAltroGruppo":0,"approvati":4}
 {"idPersona":"300447","nome":"Maurizio Lupi","gruppo":"NM(N-C-U-I)M-CP","depositati":37,"identiciAdAltro":11,"identiciAdAltroGruppo":11,"approvati":3}
@@ -330,5 +329,4 @@
 {"idPersona":"309161","nome":"Maria Paola Boscaini","gruppo":"FI-PPE","depositati":3,"identiciAdAltro":1,"identiciAdAltroGruppo":1,"approvati":0}
 {"idPersona":"35980","nome":"Luciano Ciocchetti","gruppo":"FDI","depositati":5,"identiciAdAltro":1,"identiciAdAltroGruppo":1,"approvati":2}
 {"idPersona":"36500","nome":"Piero Fassino","gruppo":"PD-IDP","depositati":4,"identiciAdAltro":1,"identiciAdAltroGruppo":0,"approvati":0}
-{"idPersona":"50204","nome":"Tommaso Foti","gruppo":"FDI","depositati":4,"identiciAdAltro":3,"identiciAdAltroGruppo":3,"approvati":0}
-{"idPersona":"XXX","nome":"Foti","gruppo":"ND","depositati":5,"identiciAdAltro":5,"identiciAdAltroGruppo":5,"approvati":2}
+{"idPersona":"50204","nome":"Foti","gruppo":"FDI","depositati":6,"identiciAdAltro":3,"identiciAdAltroGruppo":3,"approvati":2}

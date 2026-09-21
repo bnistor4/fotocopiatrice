@@ -40,8 +40,8 @@
     "identiciAdAltroGruppo": 95
   },
   "FDI": {
-    "n": 251,
-    "approvati": 49,
+    "n": 253,
+    "approvati": 51,
     "inammissibili": 55,
     "senzaEsito": 147,
     "identiciAdAltro": 52,
@@ -79,26 +79,41 @@
     "identiciAdAltro": 121,
     "identiciAdAltroGruppo": 121
   },
-  "ND": {
-    "n": 7,
-    "approvati": 3,
+  "ORGANO": {
+    "n": 2,
+    "approvati": 1,
     "inammissibili": 0,
-    "senzaEsito": 4,
-    "identiciAdAltro": 7,
-    "identiciAdAltroGruppo": 7
+    "senzaEsito": 1,
+    "identiciAdAltro": 2,
+    "identiciAdAltroGruppo": 2
+  },
+  "GOVERNO": {
+    "n": 8,
+    "approvati": 6,
+    "inammissibili": 0,
+    "senzaEsito": 2,
+    "identiciAdAltro": 0,
+    "identiciAdAltroGruppo": 0
+  },
+  "RELATORI": {
+    "n": 55,
+    "approvati": 36,
+    "inammissibili": 0,
+    "senzaEsito": 19,
+    "identiciAdAltro": 0,
+    "identiciAdAltroGruppo": 0
   },
   "matrice": {
     "FDI": {
       "FI-PPE": 21,
       "LEGA": 39,
-      "PD-IDP": 15,
-      "AZ-PER-RE": 8,
+      "PD-IDP": 17,
+      "AZ-PER-RE": 10,
       "M5S": 12,
       "MISTO": 7,
       "AVS": 5,
-      "IV-CR": 4,
+      "IV-CR": 6,
       "NM(N-C-U-I)M-CP": 6,
-      "ND": 3,
       "FDI": 1
     },
     "FI-PPE": {
@@ -112,7 +127,7 @@
       "PD-IDP": 108,
       "FI-PPE": 12,
       "M5S": 51,
-      "ND": 3
+      "ORGANO": 3
     },
     "IV-CR": {
       "MISTO": 69,
@@ -124,8 +139,7 @@
       "PD-IDP": 115,
       "M5S": 73,
       "IV-CR": 16,
-      "FDI": 4,
-      "ND": 2
+      "FDI": 6
     },
     "MISTO": {
       "IV-CR": 69,
@@ -162,7 +176,7 @@
       "PD-IDP": 76,
       "FDI": 39,
       "M5S": 36,
-      "ND": 1
+      "ORGANO": 1
     },
     "NM(N-C-U-I)M-CP": {
       "IV-CR": 33,
@@ -185,9 +199,8 @@
       "FI-PPE": 18,
       "PD-IDP": 53,
       "M5S": 34,
-      "FDI": 8,
-      "AZ-PER-RE": 1,
-      "ND": 2
+      "FDI": 10,
+      "AZ-PER-RE": 1
     },
     "PD-IDP": {
       "IV-CR": 115,
@@ -199,8 +212,7 @@
       "FI-PPE": 108,
       "PD-IDP": 52,
       "M5S": 157,
-      "FDI": 15,
-      "ND": 3
+      "FDI": 17
     },
     "M5S": {
       "AZ-PER-RE": 34,
@@ -214,13 +226,9 @@
       "M5S": 44,
       "NM(N-C-U-I)M-CP": 44
     },
-    "ND": {
+    "ORGANO": {
       "FI-PPE": 3,
-      "LEGA": 1,
-      "FDI": 3,
-      "PD-IDP": 3,
-      "AZ-PER-RE": 2,
-      "IV-CR": 2
+      "LEGA": 1
     }
   }
 }

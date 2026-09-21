@@ -1,3 +1,5 @@
+import { fmtNum } from "./format";
+
 // Tutti i testi esplicativi del sito, scritti per un lettore che non conosce
 // il Parlamento né l'informatica. Regola: ogni parola tecnica ha una voce qui
 // e le pagine la linkano con <Termine id="..."/>.
@@ -25,7 +27,7 @@ export const GLOSSARIO: Voce[] = [
     titolo: "Emendamento",
     breve: "Una proposta di modifica al testo della legge, presentata da uno o più deputati.",
     spiegazione:
-      "Prima del voto finale, ogni deputato può proporre di cambiare la legge: aggiungere un pezzo, toglierne uno, cambiare una cifra. Ogni proposta si chiama emendamento, ha un numero e i nomi di chi la firma. Su questa legge ne sono stati depositati 5.085. Ne vengono discussi e votati solo alcune centinaia: gli altri vengono dichiarati inammissibili, ritirati, oppure decadono perché il Governo fa approvare un unico testo finale.",
+      "Prima del voto finale, ogni deputato può proporre di cambiare la legge: aggiungere un pezzo, toglierne uno, cambiare una cifra. Ogni proposta si chiama emendamento, ha un numero e i nomi di chi la firma. Su questa legge ne sono stati depositati 5.082. Ne vengono discussi e votati solo alcune centinaia: gli altri vengono dichiarati inammissibili, ritirati, oppure decadono perché il Governo fa approvare un unico testo finale.",
     perche:
       "Ogni emendamento è una richiesta di spendere, o di non spendere, denaro pubblico. Leggerli dice cosa chiedono davvero i partiti, al di là dei comunicati.",
   },
@@ -144,7 +146,7 @@ export const GLOSSARIO: Voce[] = [
     spiegazione:
       "«Approvato» significa che è entrato nella legge. «Inammissibile» significa che è stato scartato prima ancora del voto, perché fuori tema o senza copertura. «Nessun esito pubblicato» è la voce più numerosa: la Camera non ha scritto nulla accanto a quell'emendamento nel documento ufficiale. Nella pratica, la maggior parte di questi non è mai stata votata: è decaduta quando il Governo ha fatto approvare il testo finale.",
     perche:
-      "Su 5.085 proposte, 347 sono diventate legge. Le altre 4.700 sono servite a fare pressione, a farsi vedere dal proprio elettorato, o a nulla.",
+      "Su 5.082 proposte, 347 sono diventate legge. Le altre 4.700 sono servite a fare pressione, a farsi vedere dal proprio elettorato, o a nulla.",
   },
   {
     id: "inammissibile",
@@ -179,7 +181,7 @@ export const GLOSSARIO: Voce[] = [
     titolo: "Il programma di lettura (Jev)",
     breve: "Un'intelligenza artificiale che legge un testo e risponde a domande chiuse con una percentuale. Non scrive, non inventa.",
     spiegazione:
-      "Si chiama Jev ed è fatto dall'azienda TypeSafe. A differenza dei chatbot, non produce frasi: gli si dà un testo e una domanda tipo «questo emendamento aggiunge un articolo nuovo?», e lui risponde «sì al 91%». Lo abbiamo scelto perché è pensato per questo tipo di lavoro, è veloce e costa pochissimo: leggere tutti i 5.085 emendamenti e confrontare 5.125 coppie è costato meno di un euro. Una persona ci metterebbe settimane.",
+      "Si chiama Jev ed è fatto dall'azienda TypeSafe. A differenza dei chatbot, non produce frasi: gli si dà un testo e una domanda tipo «questo emendamento aggiunge un articolo nuovo?», e lui risponde «sì al 91%». Lo abbiamo scelto perché è pensato per questo tipo di lavoro, è veloce e costa pochissimo: leggere tutti i 5.082 emendamenti e confrontare 5.125 coppie è costato meno di un euro. Una persona ci metterebbe settimane.",
     perche:
       "Fino a ieri nessuno leggeva tutti gli emendamenti: né i giornalisti, né i cittadini, spesso nemmeno i deputati. Adesso costa 84 centesimi.",
   },
@@ -197,7 +199,7 @@ export const GLOSSARIO: Voce[] = [
     titolo: "Parole in comune",
     breve: "Quanta parte delle parole di due testi è uguale, in percentuale. Serve a decidere quali coppie far leggere al programma.",
     spiegazione:
-      "Confrontare tutti i 5.085 emendamenti tra loro farebbe 13 milioni di coppie. Prima facciamo un conto veloce: quante parole hanno in comune? Solo le coppie con almeno il 35% di parole in comune (o testo identico) vengono lette dal programma. Il prezzo è che una copia riscritta con parole molto diverse può sfuggirci.",
+      "Confrontare tutti i 5.082 emendamenti tra loro farebbe 13 milioni di coppie. Prima facciamo un conto veloce: quante parole hanno in comune? Solo le coppie con almeno il 35% di parole in comune (o testo identico) vengono lette dal programma. Il prezzo è che una copia riscritta con parole molto diverse può sfuggirci.",
   },
   {
     id: "euro-richiesti",
@@ -259,6 +261,9 @@ export const GRUPPI: Record<string, string> = {
   "IV-CR": "Italia Viva",
   "NM(N-C-U-I)M-CP": "Noi Moderati",
   MISTO: "Gruppo Misto (deputati senza gruppo proprio)",
+  GOVERNO: "Governo",
+  RELATORI: "Relatori (chi guida l'esame in Commissione)",
+  ORGANO: "Altra commissione della Camera",
   ND: "Gruppo non ricostruito",
 };
 
@@ -282,19 +287,19 @@ export const COSA_STAI_GUARDANDO = {
     {
       titolo: "2. I deputati propongono modifiche",
       testo:
-        "Prima del voto, ogni deputato può dire: «qui aggiungete questo», «qui togliete quello», «qui mettete 10 milioni invece di 5». Ognuna di queste proposte scritte si chiama emendamento. Porta un numero e la firma di chi la presenta. Su questa legge ne sono arrivate 5.085.",
+        "Prima del voto, ogni deputato può dire: «qui aggiungete questo», «qui togliete quello», «qui mettete 10 milioni invece di 5». Ognuna di queste proposte scritte si chiama emendamento. Porta un numero e la firma di chi la presenta. Su questa legge ne sono arrivate 5.082.",
       id: "emendamento",
     },
     {
       titolo: "3. Molte proposte sono uguali tra loro",
       testo:
-        "Mettendo i testi uno accanto all'altro si scopre che 1.298 sono identici parola per parola a un altro emendamento, quasi sempre firmato da un deputato di un altro partito. Altri sono scritti diversamente ma chiedono la stessa cosa. Chi ha scritto il testo originale? Spesso non un deputato: un'associazione, una categoria, un'azienda, che lo consegna a più parlamentari perché lo depositino.",
+        "Mettendo i testi uno accanto all'altro si scopre che 1.293 sono identici parola per parola a un altro emendamento, quasi sempre firmato da un deputato di un altro partito. Altri sono scritti diversamente ma chiedono la stessa cosa. Chi ha scritto il testo originale? Spesso non un deputato: un'associazione, una categoria, un'azienda, che lo consegna a più parlamentari perché lo depositino.",
       id: "fotocopia-esatta",
     },
     {
       titolo: "4. Un programma li ha letti tutti",
       testo:
-        "Nessuna persona ha mai letto tutti i 5.085 emendamenti. Noi li abbiamo fatti leggere a un programma di intelligenza artificiale che risponde a domande chiuse (per esempio: «questo emendamento dà soldi a un Comune preciso?») con una percentuale di sicurezza. È costato 84 centesimi. Il programma non giudica: conta e segnala. Il giudizio spetta a te, e il testo ufficiale è sempre a un clic.",
+        "Nessuna persona ha mai letto tutti i 5.082 emendamenti. Noi li abbiamo fatti leggere a un programma di intelligenza artificiale che risponde a domande chiuse (per esempio: «questo emendamento dà soldi a un Comune preciso?») con una percentuale di sicurezza. È costato 84 centesimi. Il programma non giudica: conta e segnala. Il giudizio spetta a te, e il testo ufficiale è sempre a un clic.",
       id: "programma-di-lettura",
     },
   ],
@@ -337,7 +342,7 @@ export const PERCHE_LO_FANNO = {
       testo:
         "Molti emendamenti si depositano sapendo che saranno dichiarati inammissibili o non verranno mai votati. Servono a mettere un tema sul tavolo: poi i partiti ne «segnalano» pochi al Governo, che decide quali accogliere, spesso riscrivendoli.",
       comporta:
-        "Cosa entra davvero nella legge lo decidono poche persone in una stanza, non il voto sui 5.085 testi. Su questa legge 1.190 proposte sono state scartate prima del voto e 3.548 non hanno alcun esito pubblicato.",
+        "Cosa entra davvero nella legge lo decidono poche persone in una stanza, non il voto sui 5.082 testi. Su questa legge 1.190 proposte sono state scartate prima del voto e 3.545 non hanno alcun esito pubblicato.",
     },
   ],
   cosa_comportano: {
@@ -408,7 +413,7 @@ export const CHI_FIRMA = {
 /** Testo di apertura della home, riga per riga. */
 export const IN_DUE_PAROLE = [
   "Ogni anno il Parlamento approva la legge di bilancio: decide come spendere i soldi pubblici. Prima del voto, i deputati possono proporre modifiche, chiamate emendamenti.",
-  "Sulla legge di bilancio per il 2025 ne sono stati depositati 5.085 alla Camera. Nessuna persona li ha mai letti tutti.",
+  "Sulla legge di bilancio per il 2025 ne sono stati depositati 5.082 alla Camera. Nessuna persona li ha mai letti tutti.",
   "Li abbiamo fatti leggere a un programma, che per ognuno ha risposto a sette domande semplici e ha confrontato le coppie che si somigliano. Costo: 84 centesimi.",
   "Questo sito mostra cosa è uscito. Ogni numero è cliccabile, ogni parola difficile è spiegata, e ogni emendamento ha il link al testo ufficiale sul sito della Camera.",
 ];
@@ -422,12 +427,13 @@ export function evidenze(s: {
   mance: number;
   localistici: number;
   per_esito: Record<string, number>;
+  approvati_governo_relatori: number;
 }) {
   const uno_su = (n: number) => Math.round(s.totale_emendamenti / n);
   return [
     {
       numero: `1 su ${uno_su(s.fotocopie_esatte)}`,
-      testo: `è una fotocopia parola per parola di un altro emendamento (${s.fotocopie_esatte.toLocaleString("it-IT")} in tutto). Quasi sempre firmata da partiti diversi: ${s.fotocopie_esatte_tra_gruppi.toLocaleString("it-IT")} casi.`,
+      testo: `è una fotocopia parola per parola di un altro emendamento (${fmtNum(s.fotocopie_esatte)} in tutto). Quasi sempre firmata da partiti diversi: ${fmtNum(s.fotocopie_esatte_tra_gruppi)} casi.`,
       id: "fotocopia-esatta",
     },
     {
@@ -436,13 +442,13 @@ export function evidenze(s: {
       id: "articolo-aggiuntivo",
     },
     {
-      numero: s.localistici.toLocaleString("it-IT"),
+      numero: fmtNum(s.localistici),
       testo: `riguardano un luogo, un ente o un evento nominato per nome. Di questi, ${s.mance} chiedono una somma precisa per quel destinatario: le «mancette».`,
       id: "mancetta",
     },
     {
-      numero: (s.per_esito.approvato ?? 0).toLocaleString("it-IT"),
-      testo: `sono diventati legge. ${(s.per_esito.inammissibile ?? 0).toLocaleString("it-IT")} sono stati scartati prima del voto; per gli altri ${(s.per_esito.non_indicato ?? 0).toLocaleString("it-IT")} la Camera non ha pubblicato alcun esito.`,
+      numero: fmtNum(s.per_esito.approvato ?? 0),
+      testo: `sono diventati legge, ${fmtNum(s.approvati_governo_relatori)} dei quali proposti dal Governo o dai relatori. ${fmtNum(s.per_esito.inammissibile ?? 0)} sono stati scartati prima del voto; per gli altri ${fmtNum(s.per_esito.non_indicato ?? 0)} la Camera non ha pubblicato alcun esito.`,
       id: "esito",
     },
   ];
@@ -456,6 +462,7 @@ export const DATI_USATI = {
     "Perché la Camera e non il Senato. Nel 2024 la legge di bilancio è stata esaminata prima dalla Camera, dove è avvenuto tutto il lavoro di modifica. Il Senato l'ha poi approvata senza cambiarla, quindi non ci sono emendamenti significativi da leggere lì.",
     "Perché la Commissione e non l'Aula. È in Commissione che vengono depositati quasi tutti gli emendamenti. Quelli ripresentati in Aula sono una piccola selezione di quelli già letti.",
     "Il partito dei firmatari viene dal sito open data della Camera (dati.camera.it), che registra a quale gruppo appartiene ogni deputato in ogni giorno. Usiamo il gruppo del giorno in cui l'emendamento è stato pubblicato, non quello di oggi.",
+    "Gli emendamenti del Governo e dei relatori compaiono nel documento della Camera senza nome: li mostriamo come «Governo» e «Relatori». Sono pochi (63) ma sono quelli che passano più spesso (42 approvati), perché è il Governo che scrive il testo finale.",
     "Cosa non abbiamo usato: dichiarazioni, comunicati, articoli di giornale, resoconti dei dibattiti. Solo i testi depositati, così come sono.",
   ],
 };

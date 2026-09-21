@@ -100,7 +100,8 @@ async function main() {
     process.exit(1);
   }
 
-  const client = new TypeSafeClient();
+  // il client serve solo se c'e' qualcosa da inviare (con cache piena gira senza chiave)
+  const client = toSend.length ? new TypeSafeClient() : null;
   let calls = 0;
   let inputTokens = 0;
   let outputTokens = 0;
@@ -116,7 +117,7 @@ async function main() {
       firmatari: e.firmatari.map((f) => f.nome),
       gruppi: e.gruppi,
     };
-    const res = await client.systemOne({ state, questions: singleQuestions });
+    const res = await client!.systemOne({ state, questions: singleQuestions });
     const a = res.answers;
     const answers: SingleAnswers = {
       articolo_aggiuntivo: a.articolo_aggiuntivo.noul,

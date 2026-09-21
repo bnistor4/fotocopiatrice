@@ -36,9 +36,10 @@ export type Summary = {
   } | null;
   euro_richiesti_stima: number;
   n_con_importo: number;
+  approvati_governo_relatori: number;
   per_gruppo: Record<
     string,
-    { n: number; localistici: number; mirati: number; mance: number; euro: number; n_con_importo: number }
+    { n: number; approvati: number; localistici: number; mirati: number; mance: number; euro: number; n_con_importo: number }
   >;
   per_ambito: Record<string, number>;
   updatedAt: string;
@@ -56,7 +57,7 @@ export type CoppiaLato = {
   articolo: string;
   testo: string;
   gruppi: string[];
-  primoFirmatario: { nome: string; idPersona: string } | null;
+  primoFirmatario: { nome: string; idPersona: string; tipo?: string } | null;
   nFirmatari: number;
   gruppo: string;
 };
@@ -111,7 +112,7 @@ export type Emendamento = {
   numeroPubblicato: string;
   articolo: string;
   testo: string;
-  firmatari: { nome: string; idPersona: string }[];
+  firmatari: { nome: string; idPersona: string; tipo?: string }[];
   gruppi: string[];
   esito: string | null;
   esitoAnnotazione: string | null;

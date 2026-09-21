@@ -19,7 +19,7 @@ Regola di separazione: quello che è **osservato** (testi, firme, esiti, annotaz
     "acquisitoIl": "<ISO 8601>"
   },
   "sedute": ["20241209", "…"],
-  "conteggi": { "occorrenzeBollettino": 5992, "emendamentiUnici": 5085, "ripubblicazioni": 865 },
+  "conteggi": { "occorrenzeBollettino": 5992, "emendamentiUnici": 5082, "ripubblicazioni": 868 },
   "modello": {
     "fornitore": "TypeSafe",
     "nome": "Jev",
@@ -50,8 +50,9 @@ Solo dati osservati più due campi deterministici (`testoHash`, `importoEuroEstr
 | `articolo` | string | Articolo del disegno di legge a cui si riferisce |
 | `testo` | string | Testo integrale come pubblicato |
 | `testoHash` | string | SHA-1 di `normaliseText(testo)` (minuscole, sola lettera/cifra, spazi singoli). Due emendamenti con lo stesso hash sono «identici parola per parola» |
-| `firmatari` | `{nome, idPersona}[]` | In ordine di firma. `idPersona` è l'id di `dati.camera.it` |
-| `primoFirmatario` | `{nome, idPersona}` \| null | `firmatari[0]` |
+| `firmatari` | `{nome, idPersona, tipo}[]` | In ordine di firma. `idPersona` è l'id di `dati.camera.it` (vuoto per i proponenti collegiali). `tipo` è il `tipoProponente` della Camera |
+| `primoFirmatario` | `{nome, idPersona, tipo}` \| null | `firmatari[0]` |
+| `tipoProponente` | string | Tipo del primo firmatario: `deputato` / `governo` / `relatori` / `relatore` / `organo`. Governo e relatori non hanno nome nel documento della Camera: compaiono come «Governo» e «Relatori» |
 | `gruppi` | string[] | Sigle dei gruppi di tutti i firmatari al giorno della seduta, deduplicate |
 | `gruppo` | string | Gruppo del primo firmatario |
 | `esito` | string \| null | Come pubblicato dalla Camera, normalizzato in `approvato` / `inammissibile` / `respinto` / `ritirato` / … / null |
@@ -78,7 +79,7 @@ Array di gruppi, uno per `testoHash` con almeno 2 emendamenti. Ordinato per `n` 
 | `annotatoDallaCamera` | boolean | Almeno una coppia del gruppo compare in `identTo` |
 | `testo` | string | Il testo (del primo emendamento del gruppo in ordine di `key`) |
 
-Conteggi attesi per 2112-bis: 461 gruppi, 1.298 emendamenti coinvolti, 1.264 con `traGruppiDiversi` tra gruppi diversi e 34 nello stesso gruppo (calcolati sui singoli emendamenti: un emendamento è «tra gruppi diversi» se nel suo gruppo c'è almeno un primo firmatario di un altro gruppo).
+Conteggi attesi per 2112-bis: 459 gruppi, 1.293 emendamenti coinvolti, 1.259 con `traGruppiDiversi` tra gruppi diversi e 34 nello stesso gruppo (calcolati sui singoli emendamenti: un emendamento è «tra gruppi diversi» se nel suo gruppo c'è almeno un primo firmatario di un altro gruppo).
 
 ## `per_deputato.jsonl` — un primo firmatario per riga
 
@@ -94,7 +95,7 @@ Solo conteggi deterministici. Nessuna uscita del modello.
 | `identiciAdAltroGruppo` | number | Di questi, quanti condivisi con un primo firmatario di un **altro gruppo** |
 | `approvati` | number | Con `esito = approvato` |
 
-Include tutti i deputati con `depositati ≥ 1` (non solo i 40 mostrati nel sito).
+Include tutti i deputati con `depositati ≥ 1` (non solo i 40 mostrati nel sito). I proponenti collegiali (Governo, relatori, organi), che non hanno `idPersona`, sono esclusi: questo file riguarda solo persone fisiche.
 
 ## `per_gruppo.json`
 

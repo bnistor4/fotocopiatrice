@@ -16,8 +16,8 @@
     "descrizione": "Coppie con similarita' Jaccard >= 0.9: distribuzione di stesso_effetto"
   },
   "fotocopie_esatte": {
-    "gruppi": 461,
-    "emendamenti": 1298,
+    "gruppi": 459,
+    "emendamenti": 1293,
     "descrizione": "Gruppi con testo identico dopo normalizzazione (sha1), calcolato in codice"
   },
   "usage": {
@@ -27,5 +27,5 @@
     "costo_stimato_usd": 0.838145532,
     "tariffa_input_per_milione": 0.042
   },
-  "updatedAt": "2026-09-21T10:14:59.525Z"
+  "updatedAt": "2026-09-21T10:36:02.023Z"
 }

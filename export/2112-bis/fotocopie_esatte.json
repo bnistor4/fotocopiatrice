@@ -588,8 +588,8 @@
     ],
     "gruppiParlamentari": [
       "AZ-PER-RE",
+      "FDI",
       "IV-CR",
-      "ND",
       "PD-IDP"
     ],
     "traGruppiDiversi": true,
@@ -1439,7 +1439,7 @@
     "gruppiParlamentari": [
       "FI-PPE",
       "LEGA",
-      "ND"
+      "ORGANO"
     ],
     "traGruppiDiversi": true,
     "annotatoDallaCamera": true,
@@ -2423,7 +2423,7 @@
     ],
     "gruppiParlamentari": [
       "AZ-PER-RE",
-      "ND",
+      "FDI",
       "PD-IDP"
     ],
     "traGruppiDiversi": true,
@@ -2615,23 +2615,6 @@
     "traGruppiDiversi": true,
     "annotatoDallaCamera": true,
     "testo": "Dopo l'articolo 110, è aggiunto il seguente: Art. 110-bis.(Disposizioni urgenti per le funzionalità delle pubbliche amministrazioni operanti nel settore della mobilità) 1. Al fine di adeguare la capacità tecnico-amministrativa degli enti istituiti per l'esercizio obbligatoriamente associato di funzioni in materia di mobilità e trasporto pubblico locale, a livello comunale e metropolitano, di bacino e multilivello regionale, gli stessi enti possono procedere ad assunzioni di personale a tempo indeterminato in coerenza con i piani triennali dei fabbisogni di personale e fermo restando il rispetto pluriennale dell'equilibrio di bilancio asseverato dall'organo di revisione. Per detti enti, ai fini del rispetto dei limiti previsti dall'articolo 1, comma 562, della legge 27 dicembre 2006, n. 296, non rileva il limite del turn-over ed il limite di spesa è adeguato tenendo anche conto della minore spesa sostenuta dagli enti obbligatoriamente associati, per effetto dell'adesione all'ente multilivello. Ai fini del rispetto del limite al trattamento accessorio del personale di cui all'articolo 23, comma 2, del decreto legislativo 25 maggio 2017, n. 75, si applicano le disposizioni di adeguamento previste dall'articolo 33, comma 1, ultimo periodo, del decreto-legge 30 aprile 2019, n. 34, convertito, con modificazioni, con la legge 28 giugno 2019, n. 58. 2. All'articolo 14 del decreto-legge 16 settembre 2024, n. 131, convertito, con modificazioni, dalla legge 14 novembre 2024, n. 166, dopo il comma 3 è aggiunto il seguente: «3-bis. Al fine di garantire il più efficace dispiegamento degli interventi previsti dal Programma, alla luce dell'innovatività degli obiettivi, delle modalità e dei tempi, nonché del concomitante impegno dei beneficiari sull'attuazione del Piano nazionale di ripresa e resilienza, si applicano le deroghe in materia di personale di cui all'articolo 10, commi 1 e 2, del decreto-legge 30 aprile 2022, n. 36, convertito, con modificazioni, dalla legge 29 giugno 2022, n. 79, come modificato dall'articolo 36, comma 2-quater, del decreto-legge 2 marzo 2024, n. 19, convertito, con modificazioni, dalla legge 29 aprile 2024, n. 56.»."
-  },
-  {
-    "testoHash": "9d56a19eda0fe4f553693e058c882a243d091812",
-    "n": 3,
-    "emendamenti": [
-      "20241115:97.01.",
-      "20241115:97.03.",
-      "20241204:97.01."
-    ],
-    "gruppiParlamentari": [
-      "FDI",
-      "ND",
-      "PD-IDP"
-    ],
-    "traGruppiDiversi": true,
-    "annotatoDallaCamera": true,
-    "testo": "Dopo l'articolo 97, aggiungere il seguente: Art. 97-bis. (Misure urgenti per il trasporto pubblico locale) 1. Alla legge 29 dicembre 2022, n. 197, all'articolo 1, comma 478, apportare le seguenti modificazioni: a) le parole da: «è autorizzata la spesa di 50 milioni di euro per ciascuno degli anni 2023, 2024, 2025,» fino a: «e di 450 milioni di euro per l'anno 2032» sono sostituite dalle seguenti: «fermo restando quanto previsto dai commi 3, 3-bis, 3-ter e 3-quater dell'articolo 17 del decreto-legge 10 agosto 2023, n. 104, convertito, con modificazioni, dalla legge 9 ottobre 2023, n. 136, è autorizzata la spesa di 50 milioni di euro per ciascuno degli anni 2025, 2026, 2027 di 100 milioni di euro per ciascuno degli anni 2028 e 2029, di 200 milioni di euro per ciascuno degli anni 2030 e 2031, di 500 milioni di euro per ciascuno degli anni 2032 e 2033 e di 450 milioni di euro per l'anno 2034»; b) sono aggiunte, in fine, le seguenti parole: «Il Commissario straordinario nominato ai sensi dell'articolo 4 del decreto-legge 18 aprile 2019, n. 32, convertito, con modificazioni, dalla legge 14 giugno 2019, n. 55, provvede entro il 28 febbraio 2025 ad aggiornare il quadro completo riscontrabile nei sistemi informativi del Dipartimento della Ragioneria generale dello Stato, dei lotti in corso di realizzazione con indicazione, per ciascun lotto, dei relativi costi, dello stato progettuale o realizzativo e delle risorse disponibili, nonché del cronoprogramma procedurale e finanziario.» 2. Il Fondo per interventi strutturali di politica economica di cui all'articolo 10, comma 5, del decreto-legge 29 novembre 2004, n. 282, convertito, con modificazioni, dalla legge 27 dicembre 2004, n. 307, è ridotto di 25 milioni di euro per l'anno 2025, di 100 milioni di euro per l'anno 2032, di 500 milioni di euro per l'anno 2033 e di 450 milioni di euro per l'anno 2034."
   },
   {
     "testoHash": "a2831dea1d05e228fea3c2a00324b0dbc696da4e",
@@ -3463,7 +3446,7 @@
     ],
     "gruppiParlamentari": [
       "FI-PPE",
-      "ND"
+      "ORGANO"
     ],
     "traGruppiDiversi": true,
     "annotatoDallaCamera": true,
@@ -5008,21 +4991,6 @@
     "testo": "Dopo l'articolo 38, aggiungere il seguente: Art. 38-bis.(Aumento dell'indennità di comunicazione a favore dei sordi). 1. A decorrere dal 1° gennaio 2025, l'indennità di comunicazione non reversibile di cui all'articolo 4 della legge 21 novembre 1988, n. 508, concessa ai sordi come definiti nel secondo comma dell'articolo 1 della legge 26 maggio 1970 n. 381, modificata dalla legge 20 febbraio 2006, n. 95, è aumentata progressivamente di 150 euro per l'anno 2025, di 300 euro per l'anno 2026 e di 450 euro per l'anno 2027. 2. Agli oneri di cui al comma 1 si provvede mediante corrispondente riduzione del Fondo di cui all'articolo 1, comma 200 della legge 23 dicembre 2014, n. 190, come rifinanziato ai sensi dell'articolo 121, comma 2, della presente legge."
   },
   {
-    "testoHash": "5d50148f4915be4c3b3f3543fc8db543c5b3b4c5",
-    "n": 2,
-    "emendamenti": [
-      "20241115:110.114.",
-      "20241204:110.114."
-    ],
-    "gruppiParlamentari": [
-      "FDI",
-      "ND"
-    ],
-    "traGruppiDiversi": true,
-    "annotatoDallaCamera": false,
-    "testo": "Dopo il comma 15, inserire i seguenti: 15-bis. Le disposizioni del presente articolo in materia di riduzione del turn-over non si applicano alle Forze armate e alle Forze di polizia. 15-ter. Agli oneri derivanti dal comma 15-bis, pari a 115 milioni di euro annui a decorrere dall'anno 2025, si provvede mediante corrispondente riduzione del Fondo di cui all'articolo 1, comma 200, della legge 23 dicembre 2014, n. 190, come rifinanziato ai sensi dell'articolo 121, comma 2, della presente legge."
-  },
-  {
     "testoHash": "5d5b0b9f04a54a2b99f0f6b7882c8e94f9dbc6b7",
     "n": 2,
     "emendamenti": [
@@ -6009,6 +5977,21 @@
     "testo": "Dopo l'articolo 99, aggiungere il seguente: Art. 99-bis.(Proroga in materia di investimenti infrastrutturali dei comuni) 1. All'articolo 8-bis, comma 1, lettera d), del decreto-legge 9 agosto 2024, n. 113, convertito, con modificazioni, dalla legge 7 ottobre 2024, n. 143, le parole: «del 15 settembre 2024» sono sostituite dalle seguenti: «del 31 gennaio 2025»."
   },
   {
+    "testoHash": "9d56a19eda0fe4f553693e058c882a243d091812",
+    "n": 2,
+    "emendamenti": [
+      "20241115:97.01.",
+      "20241115:97.03."
+    ],
+    "gruppiParlamentari": [
+      "FDI",
+      "PD-IDP"
+    ],
+    "traGruppiDiversi": true,
+    "annotatoDallaCamera": true,
+    "testo": "Dopo l'articolo 97, aggiungere il seguente: Art. 97-bis. (Misure urgenti per il trasporto pubblico locale) 1. Alla legge 29 dicembre 2022, n. 197, all'articolo 1, comma 478, apportare le seguenti modificazioni: a) le parole da: «è autorizzata la spesa di 50 milioni di euro per ciascuno degli anni 2023, 2024, 2025,» fino a: «e di 450 milioni di euro per l'anno 2032» sono sostituite dalle seguenti: «fermo restando quanto previsto dai commi 3, 3-bis, 3-ter e 3-quater dell'articolo 17 del decreto-legge 10 agosto 2023, n. 104, convertito, con modificazioni, dalla legge 9 ottobre 2023, n. 136, è autorizzata la spesa di 50 milioni di euro per ciascuno degli anni 2025, 2026, 2027 di 100 milioni di euro per ciascuno degli anni 2028 e 2029, di 200 milioni di euro per ciascuno degli anni 2030 e 2031, di 500 milioni di euro per ciascuno degli anni 2032 e 2033 e di 450 milioni di euro per l'anno 2034»; b) sono aggiunte, in fine, le seguenti parole: «Il Commissario straordinario nominato ai sensi dell'articolo 4 del decreto-legge 18 aprile 2019, n. 32, convertito, con modificazioni, dalla legge 14 giugno 2019, n. 55, provvede entro il 28 febbraio 2025 ad aggiornare il quadro completo riscontrabile nei sistemi informativi del Dipartimento della Ragioneria generale dello Stato, dei lotti in corso di realizzazione con indicazione, per ciascun lotto, dei relativi costi, dello stato progettuale o realizzativo e delle risorse disponibili, nonché del cronoprogramma procedurale e finanziario.» 2. Il Fondo per interventi strutturali di politica economica di cui all'articolo 10, comma 5, del decreto-legge 29 novembre 2004, n. 282, convertito, con modificazioni, dalla legge 27 dicembre 2004, n. 307, è ridotto di 25 milioni di euro per l'anno 2025, di 100 milioni di euro per l'anno 2032, di 500 milioni di euro per l'anno 2033 e di 450 milioni di euro per l'anno 2034."
+  },
+  {
     "testoHash": "9df1dae22764fe160d7837e95fa18ec6f24ec62f",
     "n": 2,
     "emendamenti": [
@@ -6771,21 +6754,6 @@
     "traGruppiDiversi": true,
     "annotatoDallaCamera": true,
     "testo": "Dopo l'articolo 66, aggiungere il seguente: Art. 66-bis.(Proroga in materia di disposizioni per lo sviluppo della ricerca biomedica) 1. All'articolo 31-bis del decreto-legge 25 maggio 2021, n. 73, convertito, con modificazioni, dalla legge 23 luglio 2021, n. 106, sono apportate le seguenti modificazioni: a) al comma 1, le parole: «è riconosciuto in via sperimentale, per l'anno 2021, nel limite di spesa complessivo di 11 milioni di euro per l'anno 2021» sono sostituite dalle seguenti: «è riconosciuto agli enti di terzo settore inseriti nell'elenco permanente degli enti di ricerca sanitaria dal Ministero della salute, in via sperimentale per gli anni 2025 e 2026, nel limite di spesa complessivo di 11 milioni di euro»; b) dopo il comma 1, sono aggiunti i seguenti: «1-bis. Ai fini della determinazione del credito d'imposta di cui al comma 1, sono ammissibili i costi di competenza sostenuti ai sensi dell'articolo 109 del testo unico di cui al decreto del Presidente della Repubblica 22 dicembre 1986, n. 917 dai soggetti beneficiari nel periodo d'imposta di riferimento, quando: a) i soggetti beneficiari acquistano direttamente reagenti e apparecchiature connesse alle proprie attività di ricerca; b) i soggetti beneficiari acquistano reagenti e apparecchiature per conto di enti di ricerca pubblici e privati senza scopo di lucro, al fine di promuoverne l'attività di ricerca; c) i soggetti beneficiari finanziano progetti di ricerca svolti da soggetti terzi, pubblici e privati senza scopo di lucro, in cui è previsto l'acquisto di reagenti e apparecchiature per raggiungere le finalità della ricerca. 1-ter. Non sono in ogni caso ammissibili per il credito di imposta di cui al comma 1 i costi dovuti all'acquisto o all'utilizzo di reagenti e apparecchiature di ricerca da parte di soggetti privati con finalità di lucro.»; c) al comma 4, le parole: «per l'anno 2021» sono sostituite dalle seguenti: «complessivi per gli anni 2024 e 2025.». d) il comma 5 è soppresso. 2. Agli oneri derivanti dall'attuazione del presente articolo, pari a 11 milioni di euro annui a decorrere dall'anno 2025, si provvede mediante corrispondente riduzione del Fondo di cui all'articolo 1, comma 200, della legge 23 dicembre 2014, n. 190, come rifinanziato ai sensi dell'articolo 121, comma 2, della presente legge."
-  },
-  {
-    "testoHash": "d129ace2b18135a7d56a5c2fdd12dfc0b540c7bf",
-    "n": 2,
-    "emendamenti": [
-      "20241115:87.09.",
-      "20241204:87.09."
-    ],
-    "gruppiParlamentari": [
-      "FDI",
-      "ND"
-    ],
-    "traGruppiDiversi": true,
-    "annotatoDallaCamera": false,
-    "testo": "Dopo l'articolo 87, aggiungere il seguente: Art. 87-bis. (Fondo dote famiglia) 1. Presso la Presidenza del Consiglio dei ministri è istituito un apposito «Fondo dote famiglia», con la dotazione di 30 milioni di euro, per la concessione alle famiglie in possesso dei requisiti di cui al comma 3 di un contributo economico annuo di euro 500 per ciascuno figlio a carico fino a 14 anni di età per il rimborso delle spese di cui al comma 2. 2. Il contributo di cui al comma 1 è erogato a titolo di rimborso delle spese sostenute per ciascuno dei figli minori a carico di cui al comma 1, compresi i figli naturali riconosciuti, i figli adottivi o in affido, ed è riconosciuto per le seguenti tipologie di prestazioni e servizi: a) servizi di sostegno alla genitorialità ed educativi, organizzati in orari e periodi extrascolastici; b) percorsi di sostegno scolastico o di apprendimento delle lingue straniere; c) servizi culturali; d) servizi turistici; e) percorsi didattici e di educazione artistica e musicale; f) attività sportive. 3. Le prestazioni e i servizi di cui al comma 2 possono essere erogati da soggetti pubblici, privati o enti del Terzo settore. 4. Può accedere al contributo di cui al comma 1 un solo genitore richiedente in possesso di un ISEE in corso di validità con valore pari o inferiore a euro 35.000. L'attestazione ISEE non è richiesta al genitore con figli minori a carico inseriti in un percorso personalizzato di protezione e sostegno all'uscita da situazioni di violenza. 5. Il contributo di cui al comma 1 è cumulabile con altri benefici e contributi o sgravi fiscali concessi al nucleo familiare per le spese non coperte dal medesimo contributo e comunque non oltre la spesa complessiva sostenuta. 6. Il beneficio di cui al presente articolo è riconosciuto nel limite massimo di 30 milioni di euro per l'anno 2025. Con decreto del Presidente del Consiglio dei ministri, su proposta del Ministro per la famiglia, la natalità e le pari opportunità, di concerto con il Ministro dell'istruzione e il Ministro dell'economia e delle finanze, da adottarsi entro sessanta giorni dalla data di entrata in vigore della presente legge, sono definite le modalità di attuazione delle disposizioni di cui al presente articolo. 7. Agli oneri derivanti dall'attuazione del presente articolo, pari a 30 milioni di euro per l'anno 2025, si provvede mediante corrispondente riduzione del Fondo di cui all'articolo 1, comma 200, della legge 23 dicembre 2014, n. 190, come rifinanziato ai sensi dell'articolo 121, comma 2, della presente legge."
   },
   {
     "testoHash": "d1a642ea8152d7f9b4a5b0983f1a564fe2209bb6",

@@ -8,9 +8,10 @@
     "LEGA",
     "M5S",
     "MISTO",
-    "ND",
     "NM(N-C-U-I)M-CP",
-    "PD-IDP"
+    "ORGANO",
+    "PD-IDP",
+    "RELATORI"
   ],
   "counts": {
     "IV-CR": {
@@ -22,9 +23,8 @@
       "AZ-PER-RE": 39,
       "M5S": 50,
       "LEGA": 56,
-      "FDI": 17,
-      "NM(N-C-U-I)M-CP": 11,
-      "ND": 2
+      "FDI": 19,
+      "NM(N-C-U-I)M-CP": 11
     },
     "AVS": {
       "IV-CR": 32,
@@ -46,10 +46,9 @@
       "IV-CR": 147,
       "PD-IDP": 131,
       "LEGA": 151,
-      "FDI": 48,
+      "FDI": 50,
       "AZ-PER-RE": 87,
-      "NM(N-C-U-I)M-CP": 35,
-      "ND": 3
+      "NM(N-C-U-I)M-CP": 35
     },
     "MISTO": {
       "AVS": 54,
@@ -74,7 +73,7 @@
       "AZ-PER-RE": 41,
       "FI-PPE": 69,
       "FDI": 39,
-      "ND": 3
+      "ORGANO": 3
     },
     "LEGA": {
       "FI-PPE": 159,
@@ -87,16 +86,16 @@
       "LEGA": 54,
       "AZ-PER-RE": 44,
       "NM(N-C-U-I)M-CP": 23,
-      "ND": 1
+      "ORGANO": 1
     },
     "FDI": {
       "MISTO": 35,
       "LEGA": 63,
       "AVS": 9,
-      "PD-IDP": 48,
-      "IV-CR": 17,
+      "PD-IDP": 50,
+      "IV-CR": 19,
       "M5S": 26,
-      "AZ-PER-RE": 20,
+      "AZ-PER-RE": 22,
       "FI-PPE": 39,
       "FDI": 7,
       "NM(N-C-U-I)M-CP": 14
@@ -121,10 +120,9 @@
       "PD-IDP": 87,
       "FI-PPE": 41,
       "NM(N-C-U-I)M-CP": 18,
-      "FDI": 20,
+      "FDI": 22,
       "LEGA": 44,
-      "AZ-PER-RE": 14,
-      "ND": 2
+      "AZ-PER-RE": 14
     },
     "NM(N-C-U-I)M-CP": {
       "FI-PPE": 33,
@@ -137,15 +135,14 @@
       "FDI": 14,
       "IV-CR": 11,
       "NM(N-C-U-I)M-CP": 3,
-      "ND": 2
+      "RELATORI": 2
     },
-    "ND": {
-      "NM(N-C-U-I)M-CP": 2,
+    "RELATORI": {
+      "NM(N-C-U-I)M-CP": 2
+    },
+    "ORGANO": {
       "FI-PPE": 3,
-      "LEGA": 1,
-      "PD-IDP": 3,
-      "AZ-PER-RE": 2,
-      "IV-CR": 2
+      "LEGA": 1
     }
   },
   "soglia": 0.8,

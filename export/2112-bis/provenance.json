@@ -20,8 +20,8 @@
   ],
   "conteggi": {
     "occorrenzeBollettino": 5992,
-    "emendamentiUnici": 5085,
-    "ripubblicazioni": 865
+    "emendamentiUnici": 5082,
+    "ripubblicazioni": 868
   },
   "modello": {
     "fornitore": "TypeSafe",
@@ -53,6 +53,6 @@
     },
     "jaccardCandidati": 0.35
   },
-  "generatoIl": "2026-09-21T10:15:00.671Z",
+  "generatoIl": "2026-09-21T10:36:03.282Z",
   "licenzaDatiDerivati": "CC-BY-4.0"
 }

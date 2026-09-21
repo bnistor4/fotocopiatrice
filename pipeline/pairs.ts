@@ -182,7 +182,8 @@ async function main() {
     process.exit(1);
   }
 
-  const client = new TypeSafeClient();
+  // il client serve solo se c'e' qualcosa da inviare (con cache piena gira senza chiave)
+  const client = toSend.length ? new TypeSafeClient() : null;
   let calls = 0;
   let inputTokens = 0;
   let outputTokens = 0;
@@ -196,7 +197,7 @@ async function main() {
       a: { id: a.id, articolo: a.articolo, testo: a.testo, gruppi: a.gruppi },
       b: { id: b.id, articolo: b.articolo, testo: b.testo, gruppi: b.gruppi },
     };
-    const res = await client.systemOne({ state, questions: pairQuestions });
+    const res = await client!.systemOne({ state, questions: pairQuestions });
     cache.pairs[key] = {
       a: a.key,
       b: b.key,

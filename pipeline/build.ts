@@ -64,10 +64,18 @@ function main() {
     process.exit(1);
   }
 
-  const analyzedIds = new Set(Object.keys(singoli.emendamenti));
+  const analyzedIds = new Set(
+    raw.emendamenti.filter((e) => singoli.emendamenti[e.key]).map((e) => e.key),
+  );
   const byId = new Map(raw.emendamenti.map((e) => [e.key, e]));
-  const primoGruppo = (e: Emendamento) =>
-    gruppoAt(deputati[e.firmatari[0]?.idPersona ?? ""], e.seduta) ?? "ND";
+  const primoGruppo = (e: Emendamento) => {
+    // proponenti collegiali (senza idPersona) -> pseudo-gruppi
+    const t = e.firmatari[0]?.tipo ?? "deputato";
+    if (t === "governo") return "GOVERNO";
+    if (t === "relatori" || t === "relatore") return "RELATORI";
+    if (t === "organo") return "ORGANO";
+    return gruppoAt(deputati[e.firmatari[0]?.idPersona ?? ""], e.seduta) ?? "ND";
+  };
 
   // ---- summary -----------------------------------------------------------
   const perEsito: Record<string, number> = {};
@@ -82,6 +90,7 @@ function main() {
     string,
     {
       n: number;
+      approvati: number;
       localistici: number;
       mirati: number;
       mance: number;
@@ -90,11 +99,13 @@ function main() {
     }
   > = {};
   const perAmbito: Record<string, number> = {};
+  let approvatiGovernoRelatori = 0;
 
   const bumpGruppo = (e: Emendamento) => {
     const g = primoGruppo(e);
     const rec = (perGruppo[g] ??= {
       n: 0,
+      approvati: 0,
       localistici: 0,
       mirati: 0,
       mance: 0,
@@ -102,6 +113,10 @@ function main() {
       n_con_importo: 0,
     });
     rec.n++;
+    if (e.esito === "approvato") {
+      rec.approvati++;
+      if (g === "GOVERNO" || g === "RELATORI") approvatiGovernoRelatori++;
+    }
     return rec;
   };
 
@@ -178,6 +193,7 @@ function main() {
     const fa = ea?.firmatari[0];
     const fb = eb?.firmatari[0];
     if (!ea || !eb || !fa?.nome || !fb?.nome) continue;
+    if (fa.tipo !== "deputato" || fb.tipo !== "deputato") continue;
     const ga = primoGruppo(ea);
     const gb = primoGruppo(eb);
     if (ga === gb || ga === "ND" || gb === "ND" || ga === "MISTO" || gb === "MISTO") continue;
@@ -215,6 +231,7 @@ function main() {
     fotocopie_esatte_stesso_gruppo: esatteStessoGruppo,
     gruppi_fotocopia_esatta: coppie.exactGroups.length,
     fotocopie_semantiche: semanticSet.size,
+    approvati_governo_relatori: approvatiGovernoRelatori,
     esempio_fotocopia: esempioFotocopia,
     euro_richiesti_stima: euroStima,
     n_con_importo: nConImporto,
@@ -362,8 +379,9 @@ function main() {
   };
   for (const e of raw.emendamenti) {
     const f = e.firmatari[0];
-    if (!f) continue;
-    const r = recOf(f.idPersona || f.nome);
+    // esclusi i proponenti collegiali (Governo, Relatori, organi): non sono deputati
+    if (!f?.idPersona) continue;
+    const r = recOf(f.idPersona);
     r.n_depositati++;
     if (e.seduta >= r.ultimaSeduta) {
       r.ultimaSeduta = e.seduta;
@@ -426,8 +444,19 @@ function main() {
       articolo: e.articolo,
       testo: e.testo,
       testoHash: normHash(e.testo),
-      firmatari: e.firmatari,
-      primoFirmatario: e.firmatari[0] ?? null,
+      firmatari: e.firmatari.map((f) => ({
+        nome: f.nome,
+        idPersona: f.idPersona,
+        tipo: f.tipo ?? "deputato",
+      })),
+      primoFirmatario: e.firmatari[0]
+        ? {
+            nome: e.firmatari[0].nome,
+            idPersona: e.firmatari[0].idPersona,
+            tipo: e.firmatari[0].tipo ?? "deputato",
+          }
+        : null,
+      tipoProponente: e.firmatari[0]?.tipo ?? "deputato",
       gruppi: e.gruppi,
       gruppo: primoGruppo(e),
       esito: e.esito,
@@ -483,8 +512,9 @@ function main() {
   const depMap = new Map<string, DepRec>();
   for (const e of raw.emendamenti) {
     const f = e.firmatari[0];
-    if (!f) continue;
-    const idp = f.idPersona || f.nome;
+    // solo persone fisiche: i proponenti collegiali non sono deputati
+    if (!f?.idPersona) continue;
+    const idp = f.idPersona;
     let r = depMap.get(idp);
     if (!r) {
       r = {

@@ -58,7 +58,18 @@ const DETAIL_URL = (
 // Types
 // ---------------------------------------------------------------------------
 
-export type Firmatario = { nome: string; idPersona: string };
+export type TipoProponente =
+  | "deputato"
+  | "governo"
+  | "relatori"
+  | "relatore"
+  | "organo";
+
+export type Firmatario = {
+  nome: string;
+  idPersona: string;
+  tipo: TipoProponente;
+};
 
 export type Emendamento = {
   /** Chiave unica: <primaSeduta>:<numero>. Stesso numero + stesso testo + stessi
@@ -383,27 +394,54 @@ async function main() {
         .find("proponenti > proponente")
         .map((_, pr) => {
           const $pr = $(pr);
-          const tipo = $pr.attr("tipoProponente");
+          const tipo = ($pr.attr("tipoProponente") ?? "deputato") as TipoProponente;
           if (tipo === "deputato") {
             const cognome = $pr.find("cognome").text().trim();
             const nome = $pr.find("nome").text().trim();
-            return {
-              nome: `${nome} ${cognome}`.trim(),
-              idPersona: $pr.attr("idProponente") ?? "",
-            };
+            let idPersona = $pr.attr("idProponente") ?? "";
+            // id rotto nella sorgente (es. "XXX"): prova a risolvere per
+            // cognome se nel roster ce n'e' uno solo con quel cognome
+            if (!deputati[idPersona] && cognome) {
+              const hits = Object.entries(deputati).filter(
+                ([, d]) => d.cognome.toLowerCase() === cognome.toLowerCase(),
+              );
+              if (hits.length === 1) {
+                console.log(
+                  `  risolto "${nome} ${cognome}" (id ${idPersona || "vuoto"}) -> ${hits[0][0]} (${hits[0][1].nome} ${hits[0][1].cognome})`,
+                );
+                idPersona = hits[0][0];
+              }
+            }
+            return { nome: `${nome} ${cognome}`.trim(), idPersona, tipo };
           }
-          // proponente collegiale (organo, governo, gruppo): nessun idPersona
-          const label =
-            $pr.find("organo").text().trim() ||
-            $pr.text().replace(/\s+/g, " ").trim();
-          return label ? { nome: label, idPersona: "" } : null;
+          // proponente collegiale: nel XML governo/relatori sono elementi
+          // vuoti (nessun nome); organo porta l'etichetta in <organo>
+          const nome =
+            tipo === "governo"
+              ? "Governo"
+              : tipo === "relatori"
+                ? "Relatori"
+                : tipo === "relatore"
+                  ? "Relatore"
+                  : $pr.find("organo").text().trim() ||
+                    $pr.text().replace(/\s+/g, " ").trim() ||
+                    "Organo";
+          return { nome, idPersona: "", tipo };
         })
         .get()
         .filter((f): f is Firmatario => f !== null && f.nome !== "");
+      const siglaOf = (f: Firmatario) =>
+        f.tipo === "governo"
+          ? "GOVERNO"
+          : f.tipo === "relatori" || f.tipo === "relatore"
+            ? "RELATORI"
+            : f.tipo === "organo"
+              ? "ORGANO"
+              : gruppoAt(deputati?.[f.idPersona], sedutaData);
       const gruppi = [
         ...new Set(
           firmatari
-            .map((f) => gruppoAt(deputati?.[f.idPersona], sedutaData))
+            .map((f) => siglaOf(f))
             .filter((g): g is string => g !== null),
         ),
       ];

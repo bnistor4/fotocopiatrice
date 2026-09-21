@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { fmtNum } from "@/lib/format";
 import type { Coppia, CoppieFile, PairProbs } from "@/lib/data";
 import { fraseCoppia, nomeGruppo, voce } from "@/lib/testi";
 
@@ -12,32 +13,31 @@ const MEASURES: { key: keyof PairProbs; label: string; voceId: string }[] = [
 ];
 
 const pct = (p: number) => `${Math.round(p * 100)}%`;
+const PAGE = 30;
 
-function MiniBar({ p, label }: { p: number; label: string }) {
+function MeterCell({ label, p, voceId }: { label: string; p: number; voceId: string }) {
   return (
-    <div className="flex items-center gap-2">
-      <span className="label w-36 shrink-0">{label}</span>
-      <div className="prob-track grow">
-        <div className="prob-fill" style={{ width: `${Math.round(p * 100)}%` }} />
+    <div>
+      <p className="eyebrow" title={voce(voceId)?.breve}>{label}</p>
+      <div className="meter-track mt-1.5">
+        <div className="meter-fill" style={{ width: `${Math.round(p * 100)}%` }} />
       </div>
-      <span className="num w-9 text-right text-xs">{pct(p)}</span>
+      <p className="num mt-1 text-base font-semibold">{pct(p)}</p>
     </div>
   );
 }
 
-function PairCard({ c, attoId }: { c: Coppia; attoId: string }) {
-  const lato = (e: Coppia["a"]) => (
+function Lato({ e, attoId }: { e: Coppia["a"]; attoId: string }) {
+  const [aperto, setAperto] = useState(false);
+  return (
     <div className="min-w-0">
-      <div className="flex flex-wrap items-baseline gap-x-3">
-        <Link
-          href={`/emendamento/${encodeURIComponent(e.key)}?atto=${attoId}`}
-          className="font-semibold hover:text-(--color-accent)"
-        >
-          Em. {e.id}
-        </Link>
-        <span className="label">art. {e.articolo}</span>
-      </div>
-      <p className="mt-1 text-sm">
+      <Link
+        href={`/emendamento/${encodeURIComponent(e.key)}?atto=${attoId}`}
+        className="text-sm font-semibold hover:text-(--color-accent)"
+      >
+        Em. {e.id} <span className="font-normal text-(--color-faded)">· art. {e.articolo}</span>
+      </Link>
+      <p className="mt-0.5 text-[13px]">
         {e.primoFirmatario ? (
           <>
             Firmato da <strong>{e.primoFirmatario.nome}</strong> ({nomeGruppo(e.gruppo)})
@@ -47,49 +47,69 @@ function PairCard({ c, attoId }: { c: Coppia; attoId: string }) {
           <span className="text-(--color-faded)">Firmatari non disponibili</span>
         )}
       </p>
-      <p className="mt-1 whitespace-pre-line text-sm leading-relaxed text-(--color-ink-soft)">
+      <p
+        className={`mt-2 whitespace-pre-line text-sm leading-relaxed text-(--color-ink-soft) ${
+          aperto ? "" : "line-clamp-8"
+        }`}
+      >
         {e.testo}
       </p>
+      <button
+        type="button"
+        onClick={() => setAperto(!aperto)}
+        className="mt-1 text-[13px] font-medium text-(--color-accent)"
+      >
+        {aperto ? "Riduci" : "Mostra tutto"}
+      </button>
     </div>
   );
+}
+
+function PairCard({ c, attoId }: { c: Coppia; attoId: string }) {
   return (
-    <article className="border border-(--color-line) bg-white/40 p-4">
-      <p className="mb-2 font-semibold">
-        {fraseCoppia({
-          esatta: c.esatta,
-          stessoRisultato: c.probabilita.stesso_effetto,
-          stessaBozza: c.probabilita.stessa_matrice,
-          soloNumero: c.probabilita.differenza_solo_numerica,
-        })}
-      </p>
-      <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2">
-        {MEASURES.map((m) => (
-          <div key={m.key} className="w-52">
-            <MiniBar p={c.probabilita[m.key]} label={m.label} />
-          </div>
-        ))}
-        {c.esatta ? (
-          <span className="border border-(--color-ink) px-2 py-0.5 text-[0.68rem] font-semibold uppercase tracking-wider">
-            Testo identico
-          </span>
-        ) : (
-          <span className="label" title={voce("parole-in-comune")?.breve}>
-            parole in comune {Math.round(c.jaccard * 100)}%
-          </span>
-        )}
-        {c.identMarkedByCamera && (
-          <span
-            className="border border-(--color-accent) px-2 py-0.5 text-[0.68rem] font-semibold uppercase tracking-wider text-(--color-accent)"
-            title={voce("segnalato-identico")?.breve}
-          >
-            La Camera stessa li segna come identici
-          </span>
-        )}
+    <article className="card">
+      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+        <p className="display max-w-2xl text-lg leading-snug">
+          {fraseCoppia({
+            esatta: c.esatta,
+            stessoRisultato: c.probabilita.stesso_effetto,
+            stessaBozza: c.probabilita.stessa_matrice,
+            soloNumero: c.probabilita.differenza_solo_numerica,
+          })}
+        </p>
+        <div className="flex flex-wrap gap-1.5">
+          {c.esatta && (
+            <span className="rounded-full bg-(--color-navy) px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-white">
+              Testo identico
+            </span>
+          )}
+          {c.identMarkedByCamera && (
+            <span
+              className="rounded-full border border-(--color-accent) px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-(--color-accent)"
+              title={voce("segnalato-identico")?.breve}
+            >
+              La Camera li segna identici
+            </span>
+          )}
+          {!c.esatta && (
+            <span
+              className="rounded-full border border-(--color-line) px-2.5 py-0.5 text-[11px] font-medium text-(--color-faded)"
+              title={voce("parole-in-comune")?.breve}
+            >
+              parole in comune {Math.round(c.jaccard * 100)}%
+            </span>
+          )}
+        </div>
       </div>
-      <div className="grid gap-4 lg:grid-cols-2">
-        {lato(c.a)}
-        <div className="border-t border-(--color-line) pt-3 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-4">
-          {lato(c.b)}
+      <div className="mt-4 grid grid-cols-3 gap-4">
+        {MEASURES.map((m) => (
+          <MeterCell key={m.key} label={m.label} p={c.probabilita[m.key]} voceId={m.voceId} />
+        ))}
+      </div>
+      <div className="mt-4 grid gap-5 border-t border-(--color-line) pt-4 lg:grid-cols-2">
+        <Lato e={c.a} attoId={attoId} />
+        <div className="border-t border-(--color-line) pt-4 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-5">
+          <Lato e={c.b} attoId={attoId} />
         </div>
       </div>
     </article>
@@ -105,6 +125,7 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
   const [soloCamera, setSoloCamera] = useState(false);
   const [soloIdentiche, setSoloIdentiche] = useState(false);
   const [soloPartitiDiversi, setSoloPartitiDiversi] = useState(false);
+  const [visibili, setVisibili] = useState(PAGE);
 
   useEffect(() => {
     fetch(`/data/${attoId}/coppie.json`)
@@ -135,8 +156,9 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
       .filter((c) => !soloPartitiDiversi || c.a.gruppo !== c.b.gruppo);
   }, [data, measure, minProb, gruppo, soloCamera, soloIdentiche, soloPartitiDiversi]);
 
-  if (error) return <p className="text-(--color-accent)">Errore nel caricamento: {error}</p>;
-  if (!data) return <p className="text-(--color-faded)">Caricamento delle coppie…</p>;
+  useEffect(() => {
+    setVisibili(PAGE);
+  }, [measure, minProb, gruppo, soloCamera, soloIdentiche, soloPartitiDiversi]);
 
   const glossLink = (id: string, testo: string) => (
     <Link href={`/glossario#${id}`} title={voce(id)?.breve} className="termine">
@@ -147,8 +169,9 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="masthead-title text-3xl">Copie a confronto</h1>
-        <p className="mt-1 max-w-3xl text-sm text-(--color-ink-soft)">
+        <p className="eyebrow">Emendamenti a confronto</p>
+        <h1 className="display mt-1 text-4xl">Copie a confronto</h1>
+        <p className="mt-2 max-w-3xl text-(--color-ink-soft)">
           Qui vedi due emendamenti affiancati ({titolo}). Sopra, tre barre dicono quanto il
           programma è sicuro che abbiano lo{" "}
           {glossLink("stesso-risultato", "stesso risultato")}, che vengano dalla{" "}
@@ -160,85 +183,106 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
         </p>
       </header>
 
-      <div className="flex flex-wrap items-end gap-x-8 gap-y-3 border-y border-(--color-line) py-3">
-        <label className="block">
-          <span className="label block">Cosa confrontare</span>
-          <select
-            className="mt-1 border border-(--color-line) bg-transparent px-2 py-1 text-sm"
-            value={measure}
-            onChange={(e) => setMeasure(e.target.value as keyof PairProbs)}
-          >
-            {MEASURES.map((m) => (
-              <option key={m.key} value={m.key}>{m.label}</option>
-            ))}
-          </select>
-        </label>
-        <label className="block">
-          <span className="label block">
-            Quanto deve essere sicuro il programma: {minProb}%
-          </span>
-          <input
-            type="range" min={0} max={100} step={5} value={minProb}
-            onChange={(e) => setMinProb(Number(e.target.value))}
-            className="mt-2 w-44 accent-(--color-accent)"
-          />
-        </label>
-        <label className="block">
-          <span className="label block">Partito</span>
-          <select
-            className="mt-1 border border-(--color-line) bg-transparent px-2 py-1 text-sm"
-            value={gruppo}
-            onChange={(e) => setGruppo(e.target.value)}
-          >
-            <option value="">tutti</option>
-            {gruppi.map((g) => (
-              <option key={g} value={g}>
-                {nomeGruppo(g)} ({g})
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="flex items-center gap-2 text-sm">
-          <input
-            type="checkbox" checked={soloIdentiche}
-            onChange={(e) => setSoloIdentiche(e.target.checked)}
-            className="accent-(--color-accent)"
-          />
-          solo testi identici parola per parola
-        </label>
-        <label className="flex items-center gap-2 text-sm">
-          <input
-            type="checkbox" checked={soloPartitiDiversi}
-            onChange={(e) => setSoloPartitiDiversi(e.target.checked)}
-            className="accent-(--color-accent)"
-          />
-          solo tra partiti diversi
-        </label>
-        <label className="flex items-center gap-2 text-sm">
-          <input
-            type="checkbox" checked={soloCamera}
-            onChange={(e) => setSoloCamera(e.target.checked)}
-            className="accent-(--color-accent)"
-          />
-          solo le coppie che la Camera segna come identiche
-        </label>
-        <span className="label ml-auto">{lista.length} coppie</span>
-      </div>
+      {error && <p className="card text-(--color-accent)">Errore nel caricamento: {error}</p>}
+      {!data && !error && (
+        <p className="card text-(--color-faded)">Caricamento delle coppie…</p>
+      )}
 
-      <div className="space-y-4">
-        {lista.slice(0, 100).map((c) => (
-          <PairCard key={`${c.a.key}|${c.b.key}`} c={c} attoId={attoId} />
-        ))}
-        {lista.length > 100 && (
-          <p className="text-sm text-(--color-faded)">
-            Mostrate le prime 100 di {lista.length} coppie — alza la soglia o filtra per
-            partito.
-          </p>
-        )}
-        {lista.length === 0 && (
-          <p className="text-(--color-faded)">Nessuna coppia sopra la soglia scelta.</p>
-        )}
-      </div>
+      {data && (
+        <>
+          <div className="card sticky top-0 z-10 flex flex-wrap items-end gap-x-6 gap-y-3">
+            <label className="block w-full sm:w-auto">
+              <span className="eyebrow block">Cosa confrontare</span>
+              <select
+                className="mt-1 w-full rounded-md border border-(--color-line-strong) bg-(--color-card) px-2 py-1.5 text-sm sm:w-auto"
+                value={measure}
+                onChange={(e) => setMeasure(e.target.value as keyof PairProbs)}
+              >
+                {MEASURES.map((m) => (
+                  <option key={m.key} value={m.key}>{m.label}</option>
+                ))}
+              </select>
+            </label>
+            <label className="block">
+              <span className="eyebrow block">
+                Quanto deve essere sicuro il programma: {minProb}%
+              </span>
+              <input
+                type="range" min={0} max={100} step={5} value={minProb}
+                onChange={(e) => setMinProb(Number(e.target.value))}
+                className="mt-2.5 w-44 accent-(--color-accent)"
+              />
+            </label>
+            <label className="block w-full sm:w-auto">
+              <span className="eyebrow block">Partito</span>
+              <select
+                className="mt-1 w-full rounded-md border border-(--color-line-strong) bg-(--color-card) px-2 py-1.5 text-sm sm:w-auto"
+                value={gruppo}
+                onChange={(e) => setGruppo(e.target.value)}
+              >
+                <option value="">tutti</option>
+                {gruppi.map((g) => (
+                  <option key={g} value={g}>
+                    {nomeGruppo(g)} ({g})
+                  </option>
+                ))}
+              </select>
+            </label>
+            <div className="flex flex-col gap-1.5 text-[13px]">
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox" checked={soloIdentiche}
+                  onChange={(e) => setSoloIdentiche(e.target.checked)}
+                  className="accent-(--color-accent)"
+                />
+                solo testi identici parola per parola
+              </label>
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox" checked={soloPartitiDiversi}
+                  onChange={(e) => setSoloPartitiDiversi(e.target.checked)}
+                  className="accent-(--color-accent)"
+                />
+                solo tra partiti diversi
+              </label>
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox" checked={soloCamera}
+                  onChange={(e) => setSoloCamera(e.target.checked)}
+                  className="accent-(--color-accent)"
+                />
+                solo le coppie che la Camera segna come identiche
+              </label>
+            </div>
+            <span className="ml-auto rounded-full bg-(--color-bg) px-3 py-1 text-[13px] font-semibold">
+              {fmtNum(lista.length)} coppie
+            </span>
+          </div>
+
+          <div className="space-y-5">
+            {lista.slice(0, visibili).map((c) => (
+              <PairCard key={`${c.a.key}|${c.b.key}`} c={c} attoId={attoId} />
+            ))}
+            {lista.length === 0 && (
+              <p className="card text-(--color-faded)">
+                Nessuna coppia sopra la soglia scelta.
+              </p>
+            )}
+          </div>
+
+          {lista.length > visibili && (
+            <div className="text-center">
+              <button
+                type="button"
+                onClick={() => setVisibili((v) => v + PAGE)}
+                className="rounded-md border border-(--color-line-strong) bg-(--color-card) px-5 py-2.5 text-sm font-semibold hover:border-(--color-ink)"
+              >
+                Mostra altre {PAGE}
+              </button>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 }

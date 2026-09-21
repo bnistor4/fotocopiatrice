@@ -181,6 +181,8 @@ export function getEmendamento(attoId: string, key: string): Emendamento | undef
 
 export const pct = (p: number) => `${Math.round(p * 100)}%`;
 
+export { fmtNum } from "./format";
+
 export const fmtEuro = (n: number) =>
   n >= 1e9
     ? `${(n / 1e9).toLocaleString("it-IT", { maximumFractionDigits: 2 })} mld €`

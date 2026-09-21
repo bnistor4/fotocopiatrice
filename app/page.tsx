@@ -1,13 +1,16 @@
 import Link from "next/link";
-import { HBar, Spiega, Stat, Termine } from "./components";
+import { Card, Kpi, Row, Spiega, Termine } from "./components";
 import {
   fmtData,
   fmtEuro,
+  fmtNum,
   getEmendamenti,
   getLatestAtto,
   getSummary,
 } from "@/lib/data";
 import { COSA_STAI_GUARDANDO, evidenze, nomeAmbito, nomeEsito, nomeGruppo } from "@/lib/testi";
+
+const ATTO_URL = "https://www.camera.it/leg19/126?leg=19&idDocumento=2112bis&sede=&tipo=";
 
 export default function Home() {
   const atto = getLatestAtto();
@@ -24,103 +27,149 @@ export default function Home() {
     .filter((e) => e.importoEuro)
     .sort((a, b) => (b.importoEuro ?? 0) - (a.importoEuro ?? 0))
     .slice(0, 8);
-  const maxGruppo = Math.max(...Object.values(s.per_gruppo).map((g) => g.n), 1);
   const maxAmbito = Math.max(...Object.values(s.per_ambito), 1);
+  const maxEsito = Math.max(...Object.values(s.per_esito), 1);
   const sedute = [...new Set(emendamenti.map((e) => e.seduta))].sort();
+  const gruppi = Object.entries(s.per_gruppo).sort((a, b) => b[1].n - a[1].n);
+  const maxQuota = Math.max(...gruppi.map(([, r]) => r.n / s.totale_emendamenti), 0.01);
+
+  const esitoTone = (k: string) =>
+    k === "approvato" ? "ok" : k === "inammissibile" ? "accent" : "faded";
 
   return (
-    <div className="space-y-10">
-      <section>
-        <p className="label">
-          <Termine id="legge-di-bilancio">La legge di bilancio 2025</Termine>
-        </p>
-        <h1 className="masthead-title mt-1 text-3xl sm:text-4xl leading-tight">{s.titolo}</h1>
-        <p className="mt-2 text-sm text-(--color-ink-soft)">
-          Pubblicati nelle sedute del {sedute.map(fmtData).join(", ")} ·{" "}
-          {s.totale_emendamenti.toLocaleString("it-IT")} proposte distinte
-          {s.occorrenze_bollettino
-            ? ` (${s.occorrenze_bollettino.toLocaleString("it-IT")} righe negli elenchi, ripubblicazioni incluse)`
-            : ""}
-          , tutte lette dal programma.
-        </p>
+    <div className="space-y-8">
+      <section className="flex flex-wrap items-end justify-between gap-4">
+        <div className="max-w-3xl">
+          <p className="eyebrow">
+            Legge di bilancio 2025 · Camera dei deputati · Commissione Bilancio
+          </p>
+          <h1 className="display mt-2 text-[40px] leading-tight">
+            {fmtNum(s.totale_emendamenti)} proposte di modifica, lette una per
+            una
+          </h1>
+          <p className="mt-2 text-[17px] text-(--color-ink-soft)">
+            {s.titolo} — pubblicati nelle sedute del {sedute.map(fmtData).join(", ")}
+            {s.occorrenze_bollettino
+              ? `; ${fmtNum(s.occorrenze_bollettino)} righe negli elenchi, ripubblicazioni incluse`
+              : ""}
+            .
+          </p>
+        </div>
+        <a
+          href={ATTO_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="hidden shrink-0 text-sm font-medium text-(--color-accent) underline underline-offset-4 lg:block"
+        >
+          Apri l'atto su camera.it ↗
+        </a>
       </section>
 
-      <section className="border border-(--color-line) bg-white/40 p-5">
-        <h2 className="label">{COSA_STAI_GUARDANDO.titolo}</h2>
-        <div className="mt-3 max-w-3xl space-y-4">
-          {COSA_STAI_GUARDANDO.passi.map((p) => (
-            <div key={p.titolo}>
-              <p className="font-semibold">{p.titolo}</p>
-              <p className="mt-0.5 text-[1.02rem] leading-relaxed">{p.testo}</p>
-              {p.id && (
-                <Link
-                  href={`/glossario#${p.id}`}
-                  className="text-xs text-(--color-accent) underline underline-offset-4"
-                >
-                  → approfondisci
-                </Link>
-              )}
-            </div>
-          ))}
+      <section className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-(--color-line) bg-(--color-line) lg:grid-cols-4">
+        <div className="bg-(--color-card) p-5">
+          <Kpi
+            label={<Termine id="emendamento">Proposte di modifica</Termine>}
+            value={fmtNum(s.totale_emendamenti)}
+          />
+        </div>
+        <div className="bg-(--color-card) p-5">
+          <Kpi
+            label={<Termine id="fotocopia-esatta">Fotocopie esatte</Termine>}
+            value={fmtNum(s.fotocopie_esatte)}
+            sub={`${fmtNum(s.fotocopie_esatte_tra_gruppi)} tra partiti diversi`}
+          />
+        </div>
+        <div className="bg-(--color-card) p-5">
+          <Kpi
+            label={<Termine id="copia-riscritta">Copie riscritte</Termine>}
+            value={fmtNum(s.fotocopie_semantiche)}
+            sub="testo diverso, stesso risultato"
+          />
+        </div>
+        <div className="bg-(--color-card) p-5">
+          <Kpi
+            label={<Termine id="esito">Diventate legge</Termine>}
+            value={fmtNum((s.per_esito.approvato ?? 0))}
+            sub={`${fmtNum((s.per_esito.inammissibile ?? 0))} scartate prima del voto`}
+          />
         </div>
       </section>
 
-      {s.esempio_fotocopia && (
-        <section className="border-l-2 border-(--color-accent) bg-white/40 p-5">
-          <h2 className="label">Un esempio concreto</h2>
-          <p className="mt-2 text-sm">
-            <strong>{s.esempio_fotocopia.a.nome}</strong> (
-            {nomeGruppo(s.esempio_fotocopia.a.gruppo)}) e{" "}
-            <strong>{s.esempio_fotocopia.b.nome}</strong> (
-            {nomeGruppo(s.esempio_fotocopia.b.gruppo)}) hanno depositato questo stesso testo,
-            parola per parola:
-          </p>
-          <p className="mt-2 text-sm italic leading-relaxed text-(--color-ink-soft)">
-            «{s.esempio_fotocopia.testo}»
-          </p>
-          <p className="mt-3 text-sm">
-            Tradotto: due deputati di partiti diversi chiedono, con le stesse identiche parole,
-            {s.esempio_fotocopia.importoEuro
-              ? ` ${fmtEuro(s.esempio_fotocopia.importoEuro)} di soldi pubblici`
-              : " soldi pubblici"}{" "}
-            per un destinatario preciso. È molto probabile che il testo l'abbia scritto qualcun
-            altro e l'abbia consegnato a entrambi. Questo sito serve a trovare casi così, in
-            mezzo a migliaia di pagine.
-          </p>
-          <p className="mt-2 text-sm">
+      <div className="grid gap-6 lg:grid-cols-12">
+        <Card title={COSA_STAI_GUARDANDO.titolo} className="lg:col-span-7">
+          <ol className="space-y-5">
+            {COSA_STAI_GUARDANDO.passi.map((p, i) => (
+              <li key={p.titolo} className="flex gap-3.5">
+                <span className="display flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-(--color-navy) text-sm font-semibold text-white">
+                  {i + 1}
+                </span>
+                <div>
+                  <p className="font-semibold">{p.titolo.replace(/^\d+\.\s*/, "")}</p>
+                  <p className="mt-0.5 leading-relaxed text-(--color-ink-soft)">{p.testo}</p>
+                  {p.id && (
+                    <Link
+                      href={`/glossario#${p.id}`}
+                      className="mt-1 inline-block text-[13px] font-medium text-(--color-accent)"
+                    >
+                      → approfondisci
+                    </Link>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </Card>
+
+        {s.esempio_fotocopia && (
+          <Card title="Un esempio concreto" className="lg:col-span-5">
+            <div className="grid grid-cols-2 gap-3">
+              {[s.esempio_fotocopia.a, s.esempio_fotocopia.b].map((l) => (
+                <Link
+                  key={l.key}
+                  href={`/emendamento/${encodeURIComponent(l.key)}?atto=${atto.attoId}`}
+                  className="rounded-md border border-(--color-line) p-3 hover:border-(--color-accent)"
+                >
+                  <p className="text-sm font-semibold">Em. {l.id}</p>
+                  <p className="mt-0.5 text-[13px] text-(--color-ink-soft)">{l.nome}</p>
+                  <p className="text-[13px] text-(--color-faded)">{nomeGruppo(l.gruppo)}</p>
+                </Link>
+              ))}
+            </div>
+            <p className="mt-4 text-sm leading-relaxed">
+              hanno depositato questo stesso testo, parola per parola:
+            </p>
+            <p className="mt-2 border-l-2 border-(--color-accent) pl-3 text-sm italic leading-relaxed text-(--color-ink-soft)">
+              «{s.esempio_fotocopia.testo}»
+            </p>
+            <p className="mt-3 text-sm text-(--color-ink-soft)">
+              Tradotto: due deputati di partiti diversi chiedono, con le stesse identiche
+              parole,
+              {s.esempio_fotocopia.importoEuro
+                ? ` ${fmtEuro(s.esempio_fotocopia.importoEuro)} di soldi pubblici`
+                : " soldi pubblici"}{" "}
+              per un destinatario preciso. È molto probabile che il testo l'abbia scritto
+              qualcun altro e l'abbia consegnato a entrambi.
+            </p>
             <Link
-              href={`/emendamento/${encodeURIComponent(s.esempio_fotocopia.a.key)}?atto=${atto.attoId}`}
-              className="text-(--color-accent) underline underline-offset-4"
+              href="/coppie"
+              className="mt-4 inline-block text-sm font-medium text-(--color-accent)"
             >
-              Em. {s.esempio_fotocopia.a.id}
-            </Link>
-            {" · "}
-            <Link
-              href={`/emendamento/${encodeURIComponent(s.esempio_fotocopia.b.key)}?atto=${atto.attoId}`}
-              className="text-(--color-accent) underline underline-offset-4"
-            >
-              Em. {s.esempio_fotocopia.b.id}
-            </Link>
-            {" · "}
-            <Link href="/coppie" className="text-(--color-accent) underline underline-offset-4">
               Vedi tutte le coppie →
             </Link>
-          </p>
-        </section>
-      )}
+          </Card>
+        )}
+      </div>
 
       <section>
-        <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">
-          Quattro cose da sapere
-        </h2>
-        <div className="mt-4 grid gap-6 sm:grid-cols-2">
+        <h2 className="display text-2xl">Quattro cose da sapere</h2>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {evidenze(s).map((e) => (
-            <div key={e.id} className="border-l border-(--color-line) pl-4">
-              <div className="masthead-title num text-4xl">{e.numero}</div>
-              <p className="mt-1 text-sm text-(--color-ink-soft)">{e.testo}</p>
+            <div key={e.id} className="card">
+              <p className="display num text-4xl">{e.numero}</p>
+              <p className="mt-2 text-sm leading-snug text-(--color-ink-soft)">{e.testo}</p>
               <Link
                 href={`/glossario#${e.id}`}
-                className="mt-1 inline-block text-xs text-(--color-accent) underline underline-offset-4"
+                className="mt-2 inline-block text-[13px] font-medium text-(--color-accent)"
               >
                 cos'è →
               </Link>
@@ -129,151 +178,135 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
-        <Stat
-          value={s.totale_emendamenti.toLocaleString("it-IT")}
-          label={<Termine id="emendamento">proposte di modifica</Termine>}
-        />
-        <Stat
-          value={s.fotocopie_esatte.toLocaleString("it-IT")}
-          label={<Termine id="fotocopia-esatta">fotocopie esatte</Termine>}
-          sub={`stesso testo, firme diverse; ${s.fotocopie_esatte_tra_gruppi.toLocaleString("it-IT")} tra partiti diversi`}
-        />
-        <Stat
-          value={s.fotocopie_semantiche.toLocaleString("it-IT")}
-          label={<Termine id="copia-riscritta">copie riscritte</Termine>}
-          sub="testo diverso, stesso risultato (≥ 80%)"
-        />
-        <Stat
-          value={s.localistici.toLocaleString("it-IT")}
-          label={<Termine id="territorio-preciso">per un luogo o ente preciso</Termine>}
-        />
-        <Stat
-          value={s.mirati.toLocaleString("it-IT")}
-          label={<Termine id="su-misura">su misura</Termine>}
-          sub={
-            <>
-              di cui <Termine id="mancetta">mancette</Termine>:{" "}
-              {s.mance.toLocaleString("it-IT")}
-            </>
-          }
-        />
-        <Stat
-          value={fmtEuro(s.euro_richiesti_stima)}
-          label={<Termine id="euro-richiesti">euro richiesti</Termine>}
-          sub="somma grezza delle cifre nei testi, non una spesa"
-        />
-      </section>
-      <div className="-mt-6">
-        <Spiega id="euro-richiesti" />
-      </div>
-
-      <section className="grid gap-10 lg:grid-cols-2">
-        <div>
-          <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">
-            Per partito
-          </h2>
-          <p className="mt-2 text-xs text-(--color-faded)">
-            I partiti grandi depositano più emendamenti: guarda le proporzioni, non solo i
-            totali.
-          </p>
-          <table className="mt-3 w-full text-sm">
+      <Card title="Per partito">
+        <div className="overflow-x-auto">
+          <table className="tbl text-sm">
             <thead>
-              <tr className="label border-b border-(--color-line) text-left">
-                <th className="py-1 font-normal">Partito</th>
-                <th className="py-1 text-right font-normal">Proposte</th>
-                <th className="py-1 text-right font-normal">Per un luogo preciso</th>
-                <th className="py-1 text-right font-normal">Su misura</th>
-                <th className="py-1 text-right font-normal">Mancette</th>
-                <th className="py-1 text-right font-normal">Euro nei testi (quante)</th>
-                <th className="w-2/5 py-1 font-normal" />
+              <tr>
+                <th>Partito</th>
+                <th className="num">Proposte</th>
+                <th>% sul totale</th>
+                <th className="num">Per un luogo preciso</th>
+                <th className="num">Su misura</th>
+                <th className="num">Mancette</th>
+                <th className="num">Euro nei testi (n)</th>
               </tr>
             </thead>
             <tbody>
-              {Object.entries(s.per_gruppo)
-                .sort((a, b) => b[1].n - a[1].n)
-                .map(([g, r]) => (
-                  <tr key={g} className="border-b border-(--color-line)">
-                    <td className="py-1.5 pr-2">
+              {gruppi.map(([g, r]) => {
+                const quota = r.n / s.totale_emendamenti;
+                return (
+                  <tr key={g}>
+                    <td>
                       <span className="font-semibold">{nomeGruppo(g)}</span>
                       <span className="block text-xs text-(--color-faded)">{g}</span>
                     </td>
-                    <td className="num py-1.5 text-right">{r.n}</td>
-                    <td className="num py-1.5 text-right">{r.localistici}</td>
-                    <td className="num py-1.5 text-right">{r.mirati}</td>
-                    <td className="num py-1.5 text-right">{r.mance}</td>
-                    <td className="num py-1.5 text-right">
-                      {r.euro ? `${fmtEuro(r.euro)} (${r.n_con_importo})` : "—"}
-                    </td>
-                    <td className="py-1.5 pl-3">
-                      <div className="h-3 bg-(--color-paper-dark)">
-                        <div className="bar-fill h-full" style={{ width: `${(r.n / maxGruppo) * 100}%` }} />
+                    <td className="num">{r.n}</td>
+                    <td>
+                      <div className="flex items-center gap-2">
+                        <div className="meter-track w-[120px] shrink-0">
+                          <div
+                            className="meter-fill navy"
+                            style={{ width: `${(quota / maxQuota) * 100}%` }}
+                          />
+                        </div>
+                        <span className="num text-sm whitespace-nowrap">
+                          {quota.toLocaleString("it-IT", {
+                            style: "percent",
+                            maximumFractionDigits: 1,
+                          })}
+                        </span>
                       </div>
                     </td>
+                    <td className="num">{r.localistici}</td>
+                    <td className="num">{r.mirati}</td>
+                    <td className="num">{r.mance}</td>
+                    <td className="num">
+                      {r.euro ? `${fmtEuro(r.euro)} (${r.n_con_importo})` : "—"}
+                    </td>
                   </tr>
-                ))}
+                );
+              })}
             </tbody>
           </table>
         </div>
-        <div>
-          <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">
-            Di cosa parlano
-          </h2>
-          <div className="mt-3">
-            {Object.entries(s.per_ambito)
-              .sort((a, b) => b[1] - a[1])
-              .map(([ambito, n]) => (
-                <HBar key={ambito} label={nomeAmbito(ambito)} value={n} max={maxAmbito} />
-              ))}
-          </div>
-          <h2 className="masthead-title mt-8 border-b border-(--color-line) pb-2 text-2xl">
-            Che fine hanno fatto
-          </h2>
-          <div className="mt-3">
-            {Object.entries(s.per_esito)
-              .sort((a, b) => b[1] - a[1])
-              .map(([esito, n]) => (
-                <HBar
-                  key={esito}
-                  label={nomeEsito(esito)}
-                  value={n}
-                  max={Math.max(...Object.values(s.per_esito))}
-                />
-              ))}
-          </div>
-        </div>
-      </section>
+        <p className="mt-3 text-[13px] text-(--color-faded)">
+          I partiti grandi depositano più emendamenti: guarda le proporzioni, non solo i
+          totali.
+        </p>
+      </Card>
 
-      <section>
-        <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">
-          Le richieste più grandi scritte nei testi
-        </h2>
-        <div className="mt-1">
-          <Spiega id="euro-richiesti" />
+      <div className="grid gap-6 lg:grid-cols-2">
+        <Card title="Di cosa parlano">
+          {Object.entries(s.per_ambito)
+            .sort((a, b) => b[1] - a[1])
+            .map(([ambito, n]) => (
+              <Row
+                key={ambito}
+                label={nomeAmbito(ambito)}
+                value={fmtNum(n)}
+                pct={n / s.totale_emendamenti}
+                bar={n / maxAmbito}
+              />
+            ))}
+        </Card>
+        <Card title="Che fine hanno fatto">
+          {Object.entries(s.per_esito)
+            .sort((a, b) => b[1] - a[1])
+            .map(([esito, n]) => (
+              <Row
+                key={esito}
+                label={nomeEsito(esito)}
+                value={fmtNum(n)}
+                pct={n / s.totale_emendamenti}
+                bar={n / maxEsito}
+                tone={esitoTone(esito)}
+              />
+            ))}
+        </Card>
+      </div>
+
+      <Card title="Euro richiesti (stima grezza)">
+        <div className="flex flex-wrap items-end gap-x-8 gap-y-2">
+          <Kpi
+            label="Totale delle cifre massime citate"
+            value={fmtEuro(s.euro_richiesti_stima)}
+            sub={`in ${fmtNum(s.n_con_importo)} testi su ${fmtNum(s.totale_emendamenti)}`}
+          />
+          <div className="max-w-xl grow">
+            <Spiega id="euro-richiesti" />
+          </div>
         </div>
-        <div className="mt-3 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+        <div className="mt-5">
           {topEuro.map((e) => (
-            <div key={e.key} className="border-b border-(--color-line) pb-2">
-              <div className="flex items-baseline justify-between gap-3">
-                <Link
-                  href={`/emendamento/${encodeURIComponent(e.key)}?atto=${atto.attoId}`}
-                  className="font-semibold hover:text-(--color-accent)"
-                >
-                  Em. {e.id}
-                </Link>
-                <span className="num text-lg font-semibold text-(--color-accent)">
-                  {e.importoEuro ? fmtEuro(e.importoEuro) : ""}
-                </span>
-              </div>
-              <p className="mt-1 line-clamp-2 text-sm text-(--color-ink-soft)">{e.testo}</p>
+            <div
+              key={e.key}
+              className="flex items-baseline gap-4 border-b border-(--color-line) py-2.5 last:border-b-0"
+            >
+              <Link
+                href={`/emendamento/${encodeURIComponent(e.key)}?atto=${atto.attoId}`}
+                className="w-20 shrink-0 text-sm font-semibold hover:text-(--color-accent)"
+              >
+                Em. {e.id}
+              </Link>
+              <p className="min-w-0 grow truncate text-sm text-(--color-ink-soft)">{e.testo}</p>
+              <span className="num shrink-0 text-sm font-semibold">
+                {e.importoEuro ? fmtEuro(e.importoEuro) : ""}
+              </span>
             </div>
           ))}
         </div>
-      </section>
+      </Card>
 
-      <section className="rule-thin pt-4 text-sm">
-        <Link href="/coppie" className="text-(--color-accent) underline underline-offset-4">
-          Guarda le coppie di emendamenti che si somigliano →
+      <section className="card flex flex-wrap items-center justify-between gap-4">
+        <p className="text-sm text-(--color-ink-soft)">
+          Due emendamenti affiancati, con le firme e il giudizio del programma.
+        </p>
+        <Link
+          href="/coppie"
+          className="rounded-md bg-(--color-navy) px-5 py-2.5 text-sm font-semibold text-white hover:bg-(--color-ink)"
+        >
+          Guarda le coppie →
         </Link>
       </section>
     </div>

@@ -1,50 +1,67 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f7f4ec;
-  --color-paper-dark: #efeade;
-  --color-ink: #1b1813;
-  --color-ink-soft: #4d463c;
-  --color-faded: #837a6b;
-  --color-line: #d8d1c2;
-  --color-accent: #9e2b25;
-  --color-accent-soft: #c26a63;
-
-  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --font-body: Georgia, "Times New Roman", Times, serif;
-  --font-label: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
+  --color-bg: #eef2f5;
+  --color-card: #ffffff;
+  --color-line: #d6dee5;
+  --color-line-strong: #b9c4ce;
+  --color-ink: #182b3a;
+  --color-ink-soft: #3e5060;
+  --color-faded: #6b7b88;
+  --color-accent: #b3261e;
+  --color-accent-soft: #f6e3e1;
+  --color-navy: #182b3a;
+  --color-ok: #2f7d4f;
+  --color-row-hover: #f6f8fa;
 }
 
 html {
-  background: var(--color-paper);
+  background: var(--color-bg);
 }
 
 body {
   color: var(--color-ink);
-  font-family: var(--font-body);
-  font-size: 15.5px;
-  line-height: 1.55;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-.masthead-title {
-  font-family: var(--font-display);
+.display {
+  font-family: var(--font-source-serif), Georgia, "Times New Roman", serif;
   letter-spacing: -0.01em;
 }
 
+.eyebrow,
 .label {
-  font-family: var(--font-label);
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-faded);
 }
 
-.rule-double {
-  border-top: 3px double var(--color-ink);
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  padding: 20px;
+}
+@media (min-width: 1024px) {
+  .card {
+    padding: 24px;
+  }
 }
 
-.rule-thin {
-  border-top: 1px solid var(--color-line);
+.card-title {
+  font-family: var(--font-source-serif), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
+  font-size: 20px;
+  line-height: 1.25;
+}
+@media (min-width: 1024px) {
+  .card-title {
+    font-size: 22px;
+  }
 }
 
 .num {
@@ -53,9 +70,9 @@ body {
 
 /* parola con spiegazione nel glossario */
 .termine {
-  color: inherit;
+  color: var(--color-ink-soft);
   text-decoration: none;
-  border-bottom: 1px dotted var(--color-ink-soft);
+  border-bottom: 1px dotted var(--color-line-strong);
   cursor: help;
 }
 .termine:hover {
@@ -63,29 +80,71 @@ body {
   border-bottom-color: var(--color-accent);
 }
 
-.prob-track {
-  height: 4px;
-  background: var(--color-line);
+/* tabelle */
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tbl thead th {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-faded);
+  text-align: left;
+  border-bottom: 1px solid var(--color-line-strong);
+  padding: 0 8px 8px 0;
+}
+.tbl thead th.num {
+  text-align: right;
+}
+.tbl tbody td {
+  padding: 12px 8px 12px 0;
+  border-bottom: 1px solid var(--color-line);
+  vertical-align: top;
+}
+.tbl tbody tr:hover {
+  background: var(--color-row-hover);
+}
+.tbl td.num,
+.tbl th.num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.tbl td:first-child,
+.tbl th:first-child {
+  min-width: 220px;
+  padding-left: 2px;
 }
 
-.prob-fill {
+/* barre sottili (probabilità e conteggi) */
+.meter-track {
+  height: 6px;
+  background: var(--color-line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.meter-fill {
   height: 100%;
   background: var(--color-accent);
 }
-
-/* barre orizzontali nei grafici CSS */
-.bar-fill {
-  background: var(--color-ink);
+.meter-fill.navy {
+  background: var(--color-navy);
 }
-.bar-fill.accent {
-  background: var(--color-accent);
+.meter-fill.ok {
+  background: var(--color-ok);
+}
+.meter-fill.faded {
+  background: var(--color-faded);
 }
 
 /* heatmap */
 .cell {
+  width: 44px;
+  height: 36px;
   font-variant-numeric: tabular-nums;
   text-align: center;
-  font-size: 0.75rem;
-  padding: 0.3rem 0.15rem;
-  border: 1px solid var(--color-paper);
+  font-size: 13px;
+  border: 1px solid var(--color-card);
 }

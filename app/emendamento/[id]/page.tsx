@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ProbBar, Termine } from "@/app/components";
+import { Card, Meter, Termine } from "@/app/components";
 import {
   fmtData,
   fmtEuro,
@@ -17,6 +17,17 @@ export function generateStaticParams() {
   return getEmendamenti(atto.attoId).map((e) => ({ id: e.key }));
 }
 
+const esitoPill = (esito: string | null) => {
+  const k = esito ?? "non_indicato";
+  const cls =
+    k === "approvato"
+      ? "border-(--color-ok) text-(--color-ok)"
+      : k === "inammissibile"
+        ? "border-(--color-accent) text-(--color-accent)"
+        : "border-(--color-line-strong) text-(--color-faded)";
+  return { label: nomeEsito(k), cls };
+};
+
 export default async function EmendamentoPage({
   params,
   searchParams,
@@ -32,144 +43,147 @@ export default async function EmendamentoPage({
   const e = getEmendamento(attoId, decodeURIComponent(id));
   if (!e) notFound();
   const a = e.answers;
+  const esito = esitoPill(e.esito);
+
+  const pill =
+    "rounded-full border px-2.5 py-0.5 text-[12px] font-medium whitespace-nowrap";
 
   return (
-    <div className="space-y-8">
-      <header className="border-b border-(--color-line) pb-4">
-        <p className="label">
-          <Link href="/" className="hover:text-(--color-accent)">← indice</Link>
-          {" · "}seduta del {fmtData(e.seduta)}
-          {e.sedute.length > 1 && ` (+ altre ${e.sedute.length - 1})`} · art. {e.articolo}
+    <div className="space-y-6">
+      <header>
+        <p className="text-[13px]">
+          <Link href="/" className="text-(--color-ink-soft) hover:text-(--color-accent)">
+            ← In breve
+          </Link>
         </p>
-        <h1 className="masthead-title mt-1 text-4xl">Emendamento {e.id}</h1>
-        <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-(--color-ink-soft)">
-          <span>
-            Che fine ha fatto:{" "}
-            <strong>{e.esito ? nomeEsito(e.esito) : nomeEsito("non_indicato")}</strong>
+        <p className="eyebrow mt-3">
+          Emendamento {e.id} · art. {e.articolo} · seduta del {fmtData(e.seduta)}
+          {e.sedute.length > 1 && ` (+ altre ${e.sedute.length - 1})`}
+        </p>
+        <h1 className="display mt-1 text-4xl">Emendamento {e.id}</h1>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <span className={`${pill} ${esito.cls}`}>
+            {esito.label}
             {e.esitoAnnotazione ? ` (${e.esitoAnnotazione})` : ""}
           </span>
           {e.nuovaFormulazione && (
-            <span className="text-(--color-accent)">
-              <Termine id="riformulazione">nuova formulazione</Termine>
-            </span>
+            <Termine id="riformulazione">
+              <span className={`${pill} border-(--color-accent) text-(--color-accent)`}>
+                nuova formulazione
+              </span>
+            </Termine>
           )}
           {e.sedute.length > 1 && (
-            <span className="text-(--color-faded)">
+            <span className={`${pill} border-(--color-line-strong) text-(--color-faded)`}>
               <Termine id="ripubblicato">ripubblicato</Termine>:{" "}
               {e.sedute.map(fmtData).join(", ")}
             </span>
           )}
           {e.riformulaDi && (
-            <span>
-              riformulazione di{" "}
-              <Link
-                href={`/emendamento/${encodeURIComponent(e.riformulaDi)}?atto=${attoId}`}
-                className="text-(--color-accent) underline underline-offset-4"
-              >
-                Em. {e.riformulaDi.split(":")[1]}
-              </Link>
-            </span>
+            <Link
+              href={`/emendamento/${encodeURIComponent(e.riformulaDi)}?atto=${attoId}`}
+              className={`${pill} border-(--color-line-strong) text-(--color-ink-soft) hover:border-(--color-accent)`}
+            >
+              riformulazione di Em. {e.riformulaDi.split(":")[1]}
+            </Link>
           )}
           {e.importoEuro != null && (
-            <span>
-              Cifra scritta nel testo:{" "}
-              <strong className="num">{fmtEuro(e.importoEuro)}</strong>
+            <span className={`${pill} border-(--color-line-strong) text-(--color-ink)`}>
+              Cifra nel testo: <strong className="num">{fmtEuro(e.importoEuro)}</strong>
             </span>
           )}
           <a
             href={e.sourceUrl}
             target="_blank"
             rel="noreferrer"
-            className="text-(--color-accent) underline underline-offset-4"
+            className={`${pill} border-(--color-accent) text-(--color-accent)`}
           >
             fonte: camera.it ↗
           </a>
         </div>
       </header>
 
-      <section className="grid gap-8 lg:grid-cols-[2fr_1fr]">
-        <div>
-          <h2 className="label">Il testo della proposta</h2>
-          <p className="mt-3 whitespace-pre-line text-[1.05rem] leading-relaxed">{e.testo}</p>
-        </div>
-        <aside className="space-y-6">
-          <div>
-            <h2 className="label border-b border-(--color-line) pb-1">Chi lo firma</h2>
-            <ul className="mt-2 space-y-0.5 text-sm">
+      <div className="grid gap-6 lg:grid-cols-12">
+        <Card title="Testo della proposta" className="lg:col-span-8">
+          <p className="whitespace-pre-line text-base leading-[1.7]">{e.testo}</p>
+        </Card>
+        <div className="space-y-6 lg:col-span-4">
+          <Card title="Chi lo firma">
+            <ul className="space-y-1.5 text-sm">
               {e.firmatari.map((f, i) => (
-                <li key={`${f.idPersona}-${i}`}>
-                  {f.nome}
-                  {i === 0 && <span className="text-(--color-faded)"> (primo firmatario)</span>}
+                <li key={`${f.idPersona}-${i}`} className="flex items-center gap-2">
+                  <span className={i === 0 ? "font-semibold" : ""}>{f.nome}</span>
+                  {i === 0 && (
+                    <span className="rounded-full bg-(--color-bg) px-2 py-0.5 text-[11px] font-semibold text-(--color-faded)">
+                      primo firmatario
+                    </span>
+                  )}
                 </li>
               ))}
               {e.firmatari.length === 0 && <li className="text-(--color-faded)">—</li>}
             </ul>
             {e.gruppi.length > 0 && (
-              <p className="label mt-2">
+              <p className="eyebrow mt-3 normal-case">
                 partiti: {e.gruppi.map((g) => `${nomeGruppo(g)} (${g})`).join(" · ")}
               </p>
             )}
-          </div>
+          </Card>
           {e.identKeys.length > 0 && (
-            <div>
-              <h2 className="label border-b border-(--color-line) pb-1">
-                <Termine id="segnalato-identico">La Camera lo segna identico a</Termine>
-              </h2>
-              <ul className="mt-2 space-y-0.5 text-sm">
+            <Card title={<Termine id="segnalato-identico">La Camera lo segna identico a</Termine>}>
+              <ul className="space-y-1 text-sm">
                 {e.identKeys.map((k) => (
                   <li key={k}>
                     <Link
                       href={`/emendamento/${encodeURIComponent(k)}?atto=${attoId}`}
-                      className="text-(--color-accent) underline underline-offset-4"
+                      className="font-medium text-(--color-accent)"
                     >
                       Em. {k.split(":")[1]}
                     </Link>
                   </li>
                 ))}
               </ul>
-            </div>
+            </Card>
           )}
-        </aside>
-      </section>
+        </div>
+      </div>
 
-      <section>
-        <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">
-          Come lo ha letto il programma
-        </h2>
-        <p className="mt-2 text-xs text-(--color-faded)">
+      <Card title="Come lo ha letto il programma">
+        <p className="mb-4 text-[13px] text-(--color-faded)">
           Ogni barra è quanto il programma è sicuro della risposta — una{" "}
           <Termine id="probabilita">probabilità</Termine>, non un verdetto.
         </p>
         {a ? (
-          <div className="mt-4 grid gap-x-10 gap-y-3 lg:grid-cols-2">
-            <ProbBar p={a.articolo_aggiuntivo} label="aggiunge un articolo nuovo" />
-            <ProbBar p={a.soppressivo} label="cancella una parte" />
-            <ProbBar p={a.localistico} label="per un luogo o ente preciso" />
-            <ProbBar p={a.beneficiario_identificabile} label="si capisce chi ci guadagna" />
-            <ProbBar p={a.copertura_indicata} label="dice da dove vengono i soldi" />
-            <div className="flex items-center gap-2">
-              <span className="label w-40 shrink-0">di cosa parla</span>
-              <span className="text-sm">
+          <div className="grid gap-x-10 gap-y-5 lg:grid-cols-2">
+            <Meter p={a.articolo_aggiuntivo} label="aggiunge un articolo nuovo" />
+            <Meter p={a.soppressivo} label="cancella una parte" />
+            <Meter p={a.localistico} label="per un luogo o ente preciso" />
+            <Meter p={a.beneficiario_identificabile} label="si capisce chi ci guadagna" />
+            <Meter p={a.copertura_indicata} label="dice da dove vengono i soldi" />
+            <div>
+              <p className="eyebrow">di cosa parla</p>
+              <p className="mt-1.5 text-sm">
                 {nomeAmbito(a.ambito.choice)}{" "}
-                <span className="text-(--color-faded)">({pct(a.ambito.probabilities[a.ambito.choice] ?? 0)})</span>
-              </span>
+                <span className="num text-(--color-faded)">
+                  ({pct(a.ambito.probabilities[a.ambito.choice] ?? 0)})
+                </span>
+              </p>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="label w-40 shrink-0">quanto è su misura</span>
-              <span className="num text-sm">
+            <div>
+              <p className="eyebrow">quanto è su misura</p>
+              <p className="num mt-1.5 text-sm">
                 {a.micro_intervento.score.toFixed(1)} / 3{" "}
                 <span className="text-(--color-faded)">
                   (0 = regola per tutti, 3 = mancetta)
                 </span>
-              </span>
+              </p>
             </div>
           </div>
         ) : (
-          <p className="mt-3 text-(--color-faded)">
+          <p className="text-(--color-faded)">
             Questo emendamento non è ancora stato letto dal programma.
           </p>
         )}
-      </section>
+      </Card>
     </div>
   );
 }

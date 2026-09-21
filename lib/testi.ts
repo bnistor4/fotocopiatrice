@@ -266,6 +266,64 @@ export const nomeGruppo = (sigla: string) => GRUPPI[sigla] ?? sigla;
 export const nomeAmbito = (k: string) => AMBITI[k] ?? k.replace(/_/g, " ");
 export const nomeEsito = (k: string) => ESITI[k] ?? k;
 
+/**
+ * Spiegazione passo-passo per chi non sa nulla, mostrata in home prima dei numeri.
+ * Ogni passo: titolo corto, testo, e (opzionale) id del glossario da linkare.
+ */
+export const COSA_STAI_GUARDANDO = {
+  titolo: "Cosa stai guardando, spiegato da zero",
+  passi: [
+    {
+      titolo: "1. Lo Stato decide come spendere i soldi",
+      testo:
+        "Ogni anno il Governo scrive la legge di bilancio: quanto va a pensioni, sanità, scuola, quali tasse cambiano, quali bonus. Deve essere approvata dal Parlamento entro il 31 dicembre. Sono i soldi delle tue tasse.",
+      id: "legge-di-bilancio",
+    },
+    {
+      titolo: "2. I deputati propongono modifiche",
+      testo:
+        "Prima del voto, ogni deputato può dire: «qui aggiungete questo», «qui togliete quello», «qui mettete 10 milioni invece di 5». Ognuna di queste proposte scritte si chiama emendamento. Porta un numero e la firma di chi la presenta. Su questa legge ne sono arrivate 5.085.",
+      id: "emendamento",
+    },
+    {
+      titolo: "3. Molte proposte sono uguali tra loro",
+      testo:
+        "Mettendo i testi uno accanto all'altro si scopre che 1.298 sono identici parola per parola a un altro emendamento, quasi sempre firmato da un deputato di un altro partito. Altri sono scritti diversamente ma chiedono la stessa cosa. Chi ha scritto il testo originale? Spesso non un deputato: un'associazione, una categoria, un'azienda, che lo consegna a più parlamentari perché lo depositino.",
+      id: "fotocopia-esatta",
+    },
+    {
+      titolo: "4. Un programma li ha letti tutti",
+      testo:
+        "Nessuna persona ha mai letto tutti i 5.085 emendamenti. Noi li abbiamo fatti leggere a un programma di intelligenza artificiale che risponde a domande chiuse (per esempio: «questo emendamento dà soldi a un Comune preciso?») con una percentuale di sicurezza. È costato 84 centesimi. Il programma non giudica: conta e segnala. Il giudizio spetta a te, e il testo ufficiale è sempre a un clic.",
+      id: "programma-di-lettura",
+    },
+  ],
+};
+
+/** Frase-guida per leggere una coppia, in base a cosa è. */
+export function fraseCoppia(c: {
+  esatta: boolean;
+  stessoRisultato: number;
+  stessaBozza: number;
+  soloNumero: number;
+}) {
+  if (c.esatta) return "Stesso testo, parola per parola, depositato due volte da firmatari diversi.";
+  if (c.stessoRisultato >= 0.8)
+    return "Testi scritti in modo diverso che, secondo il programma, chiedono la stessa cosa.";
+  if (c.soloNumero >= 0.8)
+    return "Stesso testo, cambia solo una cifra, una data o una percentuale.";
+  if (c.stessaBozza >= 0.8)
+    return "Sembrano partire dalla stessa bozza, con destinatari o importi cambiati.";
+  return "Testi che si somigliano ma che il programma non considera equivalenti.";
+}
+
+export const CHI_FIRMA = {
+  titolo: "Chi firma più spesso un testo identico a un altro",
+  intro:
+    "Qui sotto i deputati che più volte hanno firmato per primi un emendamento identico, parola per parola, a un emendamento firmato da qualcun altro. Non significa che abbiano copiato: spesso hanno ricevuto lo stesso testo dalla stessa fonte esterna. Significa che il testo non l'hanno scritto loro.",
+  colonne: ["Deputato", "Partito", "Testi identici a un altro", "Su quanti depositati"],
+};
+
 /** Testo di apertura della home, riga per riga. */
 export const IN_DUE_PAROLE = [
   "Ogni anno il Parlamento approva la legge di bilancio: decide come spendere i soldi pubblici. Prima del voto, i deputati possono proporre modifiche, chiamate emendamenti.",

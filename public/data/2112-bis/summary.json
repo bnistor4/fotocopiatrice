@@ -19,6 +19,22 @@
   "fotocopie_esatte_stesso_gruppo": 34,
   "gruppi_fotocopia_esatta": 461,
   "fotocopie_semantiche": 44,
+  "esempio_fotocopia": {
+    "a": {
+      "key": "20241217:97.26.",
+      "id": "97.26.",
+      "nome": "Fabrizio Benzoni",
+      "gruppo": "AZ-PER-RE"
+    },
+    "b": {
+      "key": "20241217:97.27.",
+      "id": "97.27.",
+      "nome": "Gian Antonio Girelli",
+      "gruppo": "PD-IDP"
+    },
+    "testo": "Dopo il comma 1 inserire i seguenti: 1-bis. È assegnato un contributo di 1 milione di euro per l'anno 2025 e di 0,5 milioni di euro per ciascuno degli anni 2026 e 2027 in favore del comune di Brescia, da destinare a interventi infrastrutturali. Agli oneri derivanti dal presente comma, pari a 1 milione di euro per l'anno 2025 e a 0,5 milioni di euro per ciascuno degli anni 2026 e 2027, si provvede mediante corrispondente riduzione del Fondo di cui all'articolo 1, comma 200, della legge 23 dicembre 2014, n. 190, come rifinanziato dall'articolo 121, comma 2, della presente legge.",
+    "importoEuro": 1000000
+  },
   "euro_richiesti_stima": 475735771306.56995,
   "n_con_importo": 2042,
   "per_gruppo": {
@@ -127,5 +143,5 @@
     "scuola_universita": 389,
     "sicurezza_difesa": 176
   },
-  "updatedAt": "2026-09-20T22:27:59.009Z"
+  "updatedAt": "2026-09-21T08:16:35.056Z"
 }

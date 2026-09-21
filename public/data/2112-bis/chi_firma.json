@@ -1,0 +1,285 @@
+{
+  "deputati": [
+    {
+      "idPersona": "307496",
+      "nome": "Roberto Pella",
+      "gruppo": "FI-PPE",
+      "n_identici": 90,
+      "n_depositati": 205
+    },
+    {
+      "idPersona": "306497",
+      "nome": "Stefano Vaccari",
+      "gruppo": "PD-IDP",
+      "n_identici": 43,
+      "n_depositati": 79
+    },
+    {
+      "idPersona": "306521",
+      "nome": "Filiberto Zaratti",
+      "gruppo": "AVS",
+      "n_identici": 43,
+      "n_depositati": 78
+    },
+    {
+      "idPersona": "305553",
+      "nome": "Maria Chiara Gadda",
+      "gruppo": "IV-CR",
+      "n_identici": 37,
+      "n_depositati": 92
+    },
+    {
+      "idPersona": "307902",
+      "nome": "Dieter Steger",
+      "gruppo": "MISTO",
+      "n_identici": 34,
+      "n_depositati": 117
+    },
+    {
+      "idPersona": "308891",
+      "nome": "Silvia Roggiani",
+      "gruppo": "PD-IDP",
+      "n_identici": 30,
+      "n_depositati": 115
+    },
+    {
+      "idPersona": "308760",
+      "nome": "Franco Manes",
+      "gruppo": "MISTO",
+      "n_identici": 28,
+      "n_depositati": 51
+    },
+    {
+      "idPersona": "307304",
+      "nome": "Ubaldo Pagano",
+      "gruppo": "PD-IDP",
+      "n_identici": 25,
+      "n_depositati": 87
+    },
+    {
+      "idPersona": "305733",
+      "nome": "Luca Pastorino",
+      "gruppo": "MISTO",
+      "n_identici": 25,
+      "n_depositati": 36
+    },
+    {
+      "idPersona": "306005",
+      "nome": "Davide Faraone",
+      "gruppo": "IV-CR",
+      "n_identici": 23,
+      "n_depositati": 82
+    },
+    {
+      "idPersona": "307234",
+      "nome": "Daniela Torto",
+      "gruppo": "M5S",
+      "n_identici": 21,
+      "n_depositati": 75
+    },
+    {
+      "idPersona": "306382",
+      "nome": "Mauro Del Barba",
+      "gruppo": "IV-CR",
+      "n_identici": 21,
+      "n_depositati": 57
+    },
+    {
+      "idPersona": "302080",
+      "nome": "Angelo Bonelli",
+      "gruppo": "AVS",
+      "n_identici": 20,
+      "n_depositati": 47
+    },
+    {
+      "idPersona": "308810",
+      "nome": "Marco Grimaldi",
+      "gruppo": "AVS",
+      "n_identici": 19,
+      "n_depositati": 72
+    },
+    {
+      "idPersona": "308244",
+      "nome": "Elena Bonetti",
+      "gruppo": "AZ-PER-RE",
+      "n_identici": 18,
+      "n_depositati": 87
+    },
+    {
+      "idPersona": "305771",
+      "nome": "Irene Manzi",
+      "gruppo": "PD-IDP",
+      "n_identici": 18,
+      "n_depositati": 68
+    },
+    {
+      "idPersona": "308892",
+      "nome": "Marco Furfaro",
+      "gruppo": "PD-IDP",
+      "n_identici": 18,
+      "n_depositati": 55
+    },
+    {
+      "idPersona": "307376",
+      "nome": "Massimiliano Panizzut",
+      "gruppo": "LEGA",
+      "n_identici": 18,
+      "n_depositati": 40
+    },
+    {
+      "idPersona": "308890",
+      "nome": "Andrea Barabotti",
+      "gruppo": "LEGA",
+      "n_identici": 18,
+      "n_depositati": 39
+    },
+    {
+      "idPersona": "307568",
+      "nome": "Francesco Cannizzaro",
+      "gruppo": "FI-PPE",
+      "n_identici": 17,
+      "n_depositati": 51
+    },
+    {
+      "idPersona": "300469",
+      "nome": "Luana Zanella",
+      "gruppo": "AVS",
+      "n_identici": 17,
+      "n_depositati": 42
+    },
+    {
+      "idPersona": "302746",
+      "nome": "Vinicio Giuseppe Guido Peluffo",
+      "gruppo": "PD-IDP",
+      "n_identici": 16,
+      "n_depositati": 50
+    },
+    {
+      "idPersona": "307716",
+      "nome": "Vanessa Cattoi",
+      "gruppo": "LEGA",
+      "n_identici": 16,
+      "n_depositati": 39
+    },
+    {
+      "idPersona": "308934",
+      "nome": "Ilenia Malavasi",
+      "gruppo": "PD-IDP",
+      "n_identici": 15,
+      "n_depositati": 40
+    },
+    {
+      "idPersona": "305586",
+      "nome": "Manfred Schullian",
+      "gruppo": "MISTO",
+      "n_identici": 15,
+      "n_depositati": 34
+    },
+    {
+      "idPersona": "307657",
+      "nome": "Alessandro Cattaneo",
+      "gruppo": "FI-PPE",
+      "n_identici": 15,
+      "n_depositati": 24
+    },
+    {
+      "idPersona": "308896",
+      "nome": "Andrea Quartini",
+      "gruppo": "M5S",
+      "n_identici": 13,
+      "n_depositati": 112
+    },
+    {
+      "idPersona": "308854",
+      "nome": "Alessandro Caramiello",
+      "gruppo": "M5S",
+      "n_identici": 13,
+      "n_depositati": 96
+    },
+    {
+      "idPersona": "306160",
+      "nome": "Maria Elena Boschi",
+      "gruppo": "IV-CR",
+      "n_identici": 13,
+      "n_depositati": 72
+    },
+    {
+      "idPersona": "308816",
+      "nome": "Elisabetta Piccolotti",
+      "gruppo": "AVS",
+      "n_identici": 13,
+      "n_depositati": 66
+    },
+    {
+      "idPersona": "308852",
+      "nome": "Annarita Patriarca",
+      "gruppo": "FI-PPE",
+      "n_identici": 13,
+      "n_depositati": 35
+    },
+    {
+      "idPersona": "307630",
+      "nome": "Rebecca Frassini",
+      "gruppo": "LEGA",
+      "n_identici": 13,
+      "n_depositati": 34
+    },
+    {
+      "idPersona": "307570",
+      "nome": "Arianna Lazzarini",
+      "gruppo": "LEGA",
+      "n_identici": 13,
+      "n_depositati": 16
+    },
+    {
+      "idPersona": "307918",
+      "nome": "Andrea De Bertoldi",
+      "gruppo": "MISTO",
+      "n_identici": 12,
+      "n_depositati": 21
+    },
+    {
+      "idPersona": "308840",
+      "nome": "Antonio Caso",
+      "gruppo": "M5S",
+      "n_identici": 11,
+      "n_depositati": 86
+    },
+    {
+      "idPersona": "300447",
+      "nome": "Maurizio Lupi",
+      "gruppo": "NM(N-C-U-I)M-CP",
+      "n_identici": 11,
+      "n_depositati": 37
+    },
+    {
+      "idPersona": "308802",
+      "nome": "Valentina Grippo",
+      "gruppo": "AZ-PER-RE",
+      "n_identici": 11,
+      "n_depositati": 31
+    },
+    {
+      "idPersona": "307248",
+      "nome": "Erica Mazzetti",
+      "gruppo": "FI-PPE",
+      "n_identici": 11,
+      "n_depositati": 26
+    },
+    {
+      "idPersona": "307173",
+      "nome": "Giorgia Latini",
+      "gruppo": "LEGA",
+      "n_identici": 11,
+      "n_depositati": 16
+    },
+    {
+      "idPersona": "307454",
+      "nome": "Raffaele Nevi",
+      "gruppo": "FI-PPE",
+      "n_identici": 11,
+      "n_depositati": 13
+    }
+  ],
+  "totale_deputati_con_identici": 215
+}

@@ -28,6 +28,12 @@ export type Summary = {
   fotocopie_esatte_stesso_gruppo: number;
   gruppi_fotocopia_esatta: number;
   fotocopie_semantiche: number;
+  esempio_fotocopia: {
+    a: { key: string; id: string; nome: string; gruppo: string };
+    b: { key: string; id: string; nome: string; gruppo: string };
+    testo: string;
+    importoEuro: number | null;
+  } | null;
   euro_richiesti_stima: number;
   n_con_importo: number;
   per_gruppo: Record<
@@ -44,18 +50,41 @@ export type PairProbs = {
   differenza_solo_numerica: number;
 };
 
+export type CoppiaLato = {
+  key: string;
+  id: string;
+  articolo: string;
+  testo: string;
+  gruppi: string[];
+  primoFirmatario: { nome: string; idPersona: string } | null;
+  nFirmatari: number;
+  gruppo: string;
+};
+
 export type Coppia = {
-  a: { key: string; id: string; articolo: string; testo: string; gruppi: string[] };
-  b: { key: string; id: string; articolo: string; testo: string; gruppi: string[] };
+  a: CoppiaLato;
+  b: CoppiaLato;
   jaccard: number;
   probabilita: PairProbs;
   identMarkedByCamera: boolean;
+  esatta: boolean;
 };
 
 export type CoppieFile = {
   byStessoEffetto: Coppia[];
   byStessaMatrice: Coppia[];
   totaleCoppie: number;
+};
+
+export type ChiFirma = {
+  deputati: {
+    idPersona: string;
+    nome: string;
+    gruppo: string;
+    n_identici: number;
+    n_depositati: number;
+  }[];
+  totale_deputati_con_identici: number;
 };
 
 export type GruppiMatrix = {
@@ -142,6 +171,7 @@ export function getLatestAtto(): AttoIndex | undefined {
 export const getSummary = (attoId: string) => read<Summary>(attoId, "summary.json");
 export const getCoppie = (attoId: string) => read<CoppieFile>(attoId, "coppie.json");
 export const getGruppiMatrix = (attoId: string) => read<GruppiMatrix>(attoId, "gruppi_matrix.json");
+export const getChiFirma = (attoId: string) => read<ChiFirma>(attoId, "chi_firma.json");
 export const getEmendamenti = (attoId: string) => read<Emendamento[]>(attoId, "emendamenti.json");
 export const getValutazione = (attoId: string) => read<Valutazione>(attoId, "valutazione.json");
 

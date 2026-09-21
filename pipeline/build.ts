@@ -157,6 +157,42 @@ function main() {
     else esatteStessoGruppo += g.length;
   }
 
+  // un esempio concreto da mostrare in home: fotocopia esatta tra partiti
+  // "veri" (niente Misto/ND), testo abbastanza lungo da essere interessante
+  let esempioFotocopia: {
+    a: { key: string; id: string; nome: string; gruppo: string };
+    b: { key: string; id: string; nome: string; gruppo: string };
+    testo: string;
+    importoEuro: number | null;
+  } | null = null;
+  let esempioScore = -1;
+  for (const p of allPairs) {
+    if (p.hashA !== p.hashB) continue;
+    const ea = byId.get(p.a);
+    const eb = byId.get(p.b);
+    const fa = ea?.firmatari[0];
+    const fb = eb?.firmatari[0];
+    if (!ea || !eb || !fa?.nome || !fb?.nome) continue;
+    const ga = primoGruppo(ea);
+    const gb = primoGruppo(eb);
+    if (ga === gb || ga === "ND" || gb === "ND" || ga === "MISTO" || gb === "MISTO") continue;
+    if (ea.testo.length < 200 || ea.testo.length > 700) continue;
+    const ans = singoli.emendamenti[ea.key]?.answers;
+    if (!ans || ans.soppressivo >= 0.5 || ans.articolo_aggiuntivo < 0.5) continue;
+    const euro = importoEuro(ea.testo);
+    if (!euro) continue;
+    const score = ans.localistico + ans.beneficiario_identificabile;
+    if (score > esempioScore) {
+      esempioScore = score;
+      esempioFotocopia = {
+        a: { key: ea.key, id: ea.id, nome: fa.nome, gruppo: ga },
+        b: { key: eb.key, id: eb.id, nome: fb.nome, gruppo: gb },
+        testo: ea.testo,
+        importoEuro: euro,
+      };
+    }
+  }
+
   const summary = {
     attoId,
     titolo,
@@ -174,6 +210,7 @@ function main() {
     fotocopie_esatte_stesso_gruppo: esatteStessoGruppo,
     gruppi_fotocopia_esatta: coppie.exactGroups.length,
     fotocopie_semantiche: semanticSet.size,
+    esempio_fotocopia: esempioFotocopia,
     euro_richiesti_stima: euroStima,
     n_con_importo: nConImporto,
     per_gruppo: perGruppo,
@@ -185,12 +222,23 @@ function main() {
   const pairOut = (p: PairRecord) => {
     const ea = byId.get(p.a);
     const eb = byId.get(p.b);
+    const lato = (e: Emendamento | undefined, key: string) => ({
+      key,
+      id: e?.id ?? key,
+      articolo: e?.articolo ?? "",
+      testo: e?.testo ?? "",
+      gruppi: e?.gruppi ?? [],
+      primoFirmatario: e?.firmatari[0] ?? null,
+      nFirmatari: e?.firmatari.length ?? 0,
+      gruppo: e ? primoGruppo(e) : "ND",
+    });
     return {
-      a: { key: p.a, id: ea?.id ?? p.a, articolo: ea?.articolo ?? "", testo: ea?.testo ?? "", gruppi: ea?.gruppi ?? [] },
-      b: { key: p.b, id: eb?.id ?? p.b, articolo: eb?.articolo ?? "", testo: eb?.testo ?? "", gruppi: eb?.gruppi ?? [] },
+      a: lato(ea, p.a),
+      b: lato(eb, p.b),
       jaccard: p.jaccard,
       probabilita: p.answers,
       identMarkedByCamera: p.identMarkedByCamera,
+      esatta: p.hashA === p.hashB,
     };
   };
   const byEffetto = [...allPairs]
@@ -289,6 +337,47 @@ function main() {
     updatedAt: new Date().toISOString(),
   };
 
+  // ---- chi_firma: deputati che firmano per primi piu' fotocopie esatte ----
+  type ChiFirmaRec = {
+    idPersona: string;
+    nome: string;
+    gruppo: string;
+    n_identici: number;
+    n_depositati: number;
+    ultimaSeduta: string;
+  };
+  const firma = new Map<string, ChiFirmaRec>();
+  const recOf = (idp: string) => {
+    let r = firma.get(idp);
+    if (!r) {
+      r = { idPersona: idp, nome: "", gruppo: "", n_identici: 0, n_depositati: 0, ultimaSeduta: "" };
+      firma.set(idp, r);
+    }
+    return r;
+  };
+  for (const e of raw.emendamenti) {
+    const f = e.firmatari[0];
+    if (!f) continue;
+    const r = recOf(f.idPersona || f.nome);
+    r.n_depositati++;
+    if (e.seduta >= r.ultimaSeduta) {
+      r.ultimaSeduta = e.seduta;
+      r.nome = f.nome;
+      r.gruppo = primoGruppo(e);
+      r.idPersona = f.idPersona;
+    }
+    if (exactSet.has(e.key)) r.n_identici++;
+  }
+  const chiFirma = [...firma.values()]
+    .filter((r) => r.n_identici > 0)
+    .sort((a, b) => b.n_identici - a.n_identici || b.n_depositati - a.n_depositati);
+  const chiFirmaOut = {
+    deputati: chiFirma
+      .slice(0, 40)
+      .map(({ ultimaSeduta: _u, ...r }) => r),
+    totale_deputati_con_identici: chiFirma.length,
+  };
+
   // ---- write ---------------------------------------------------------------
   const dir = paths.publicDir(attoId);
   writeJson(`${dir}/summary.json`, summary);
@@ -300,6 +389,7 @@ function main() {
   writeJson(`${dir}/gruppi_matrix.json`, gruppiMatrix);
   writeJson(`${dir}/emendamenti.json`, emendamentiOut);
   writeJson(`${dir}/valutazione.json`, valutazione);
+  writeJson(`${dir}/chi_firma.json`, chiFirmaOut);
 
   const index =
     readJson<{ attoId: string; titolo: string; n: number; updatedAt: string }[]>(
@@ -309,7 +399,7 @@ function main() {
   rest.push({ attoId, titolo, n: raw.count, updatedAt: new Date().toISOString() });
   writeJson(paths.publicIndex(), rest);
 
-  console.log(`Scritti 5 file + index in ${dir}`);
+  console.log(`Scritti 6 file + index in ${dir}`);
   console.log(
     `  totale=${raw.count} analizzati=${analyzedIds.size} esatte=${exactSet.size} semantiche=${semanticSet.size} coppie=${allPairs.length}`,
   );

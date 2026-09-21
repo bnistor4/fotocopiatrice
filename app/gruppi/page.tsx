@@ -1,10 +1,11 @@
-import { getGruppiMatrix, getLatestAtto } from "@/lib/data";
-import { nomeGruppo } from "@/lib/testi";
+import { getChiFirma, getGruppiMatrix, getLatestAtto } from "@/lib/data";
+import { CHI_FIRMA, nomeGruppo } from "@/lib/testi";
 
 export default function GruppiPage() {
   const atto = getLatestAtto();
   if (!atto) return <p className="text-(--color-faded)">Nessun dato pubblicato.</p>;
   const m = getGruppiMatrix(atto.attoId);
+  const chi = getChiFirma(atto.attoId);
   const max = Math.max(
     ...m.gruppi.flatMap((a) => m.gruppi.map((b) => (a === b ? 0 : m.counts[a]?.[b] ?? 0))),
     1,
@@ -93,6 +94,44 @@ export default function GruppiPage() {
       <p className="text-xs text-(--color-faded)">
         {totale.toLocaleString("it-IT")} coppie sopra soglia · {m.note}
       </p>
+
+      <section className="pt-6">
+        <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">
+          {CHI_FIRMA.titolo}
+        </h2>
+        <p className="mt-2 max-w-3xl text-sm text-(--color-ink-soft)">{CHI_FIRMA.intro}</p>
+        <table className="mt-3 w-full max-w-3xl text-sm">
+          <thead>
+            <tr className="label border-b border-(--color-line) text-left">
+              <th className="py-1 font-normal">{CHI_FIRMA.colonne[0]}</th>
+              <th className="py-1 font-normal">{CHI_FIRMA.colonne[1]}</th>
+              <th className="py-1 text-right font-normal">{CHI_FIRMA.colonne[2]}</th>
+              <th className="py-1 text-right font-normal">{CHI_FIRMA.colonne[3]}</th>
+              <th className="py-1 text-right font-normal">%</th>
+            </tr>
+          </thead>
+          <tbody>
+            {chi.deputati.map((d) => (
+              <tr key={d.idPersona || d.nome} className="border-b border-(--color-line)">
+                <td className="py-1.5 pr-2 font-semibold">{d.nome}</td>
+                <td className="py-1.5 pr-2">
+                  {nomeGruppo(d.gruppo)}{" "}
+                  <span className="text-xs text-(--color-faded)">{d.gruppo}</span>
+                </td>
+                <td className="num py-1.5 text-right">{d.n_identici}</td>
+                <td className="num py-1.5 text-right">{d.n_depositati}</td>
+                <td className="num py-1.5 text-right">
+                  {d.n_depositati ? Math.round((d.n_identici / d.n_depositati) * 100) : 0}%
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="mt-3 max-w-3xl text-sm text-(--color-ink-soft)">
+          {chi.totale_deputati_con_identici} deputati hanno firmato per primi almeno un testo
+          identico a un altro.
+        </p>
+      </section>
     </div>
   );
 }

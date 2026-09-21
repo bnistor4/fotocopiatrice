@@ -7,7 +7,7 @@ import {
   getLatestAtto,
   getSummary,
 } from "@/lib/data";
-import { evidenze, IN_DUE_PAROLE, nomeAmbito, nomeEsito, nomeGruppo } from "@/lib/testi";
+import { COSA_STAI_GUARDANDO, evidenze, nomeAmbito, nomeEsito, nomeGruppo } from "@/lib/testi";
 
 export default function Home() {
   const atto = getLatestAtto();
@@ -46,13 +46,68 @@ export default function Home() {
       </section>
 
       <section className="border border-(--color-line) bg-white/40 p-5">
-        <h2 className="label">In due parole</h2>
-        <div className="mt-3 max-w-3xl space-y-2 text-[1.02rem] leading-relaxed">
-          {IN_DUE_PAROLE.map((p) => (
-            <p key={p.slice(0, 24)}>{p}</p>
+        <h2 className="label">{COSA_STAI_GUARDANDO.titolo}</h2>
+        <div className="mt-3 max-w-3xl space-y-4">
+          {COSA_STAI_GUARDANDO.passi.map((p) => (
+            <div key={p.titolo}>
+              <p className="font-semibold">{p.titolo}</p>
+              <p className="mt-0.5 text-[1.02rem] leading-relaxed">{p.testo}</p>
+              {p.id && (
+                <Link
+                  href={`/glossario#${p.id}`}
+                  className="text-xs text-(--color-accent) underline underline-offset-4"
+                >
+                  → approfondisci
+                </Link>
+              )}
+            </div>
           ))}
         </div>
       </section>
+
+      {s.esempio_fotocopia && (
+        <section className="border-l-2 border-(--color-accent) bg-white/40 p-5">
+          <h2 className="label">Un esempio concreto</h2>
+          <p className="mt-2 text-sm">
+            <strong>{s.esempio_fotocopia.a.nome}</strong> (
+            {nomeGruppo(s.esempio_fotocopia.a.gruppo)}) e{" "}
+            <strong>{s.esempio_fotocopia.b.nome}</strong> (
+            {nomeGruppo(s.esempio_fotocopia.b.gruppo)}) hanno depositato questo stesso testo,
+            parola per parola:
+          </p>
+          <p className="mt-2 text-sm italic leading-relaxed text-(--color-ink-soft)">
+            «{s.esempio_fotocopia.testo}»
+          </p>
+          <p className="mt-3 text-sm">
+            Tradotto: due deputati di partiti diversi chiedono, con le stesse identiche parole,
+            {s.esempio_fotocopia.importoEuro
+              ? ` ${fmtEuro(s.esempio_fotocopia.importoEuro)} di soldi pubblici`
+              : " soldi pubblici"}{" "}
+            per un destinatario preciso. È molto probabile che il testo l'abbia scritto qualcun
+            altro e l'abbia consegnato a entrambi. Questo sito serve a trovare casi così, in
+            mezzo a migliaia di pagine.
+          </p>
+          <p className="mt-2 text-sm">
+            <Link
+              href={`/emendamento/${encodeURIComponent(s.esempio_fotocopia.a.key)}?atto=${atto.attoId}`}
+              className="text-(--color-accent) underline underline-offset-4"
+            >
+              Em. {s.esempio_fotocopia.a.id}
+            </Link>
+            {" · "}
+            <Link
+              href={`/emendamento/${encodeURIComponent(s.esempio_fotocopia.b.key)}?atto=${atto.attoId}`}
+              className="text-(--color-accent) underline underline-offset-4"
+            >
+              Em. {s.esempio_fotocopia.b.id}
+            </Link>
+            {" · "}
+            <Link href="/coppie" className="text-(--color-accent) underline underline-offset-4">
+              Vedi tutte le coppie →
+            </Link>
+          </p>
+        </section>
+      )}
 
       <section>
         <h2 className="masthead-title border-b border-(--color-line) pb-2 text-2xl">

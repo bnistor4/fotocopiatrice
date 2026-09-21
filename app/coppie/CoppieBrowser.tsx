@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import type { Coppia, CoppieFile, PairProbs } from "@/lib/data";
-import { nomeGruppo, voce } from "@/lib/testi";
+import { fraseCoppia, nomeGruppo, voce } from "@/lib/testi";
 
 const MEASURES: { key: keyof PairProbs; label: string; voceId: string }[] = [
   { key: "stesso_effetto", label: "stesso risultato", voceId: "stesso-risultato" },
@@ -36,10 +36,17 @@ function PairCard({ c, attoId }: { c: Coppia; attoId: string }) {
           Em. {e.id}
         </Link>
         <span className="label">art. {e.articolo}</span>
-        <span className="label" title={e.gruppi.map(nomeGruppo).join(" · ")}>
-          {e.gruppi.join(" · ") || "—"}
-        </span>
       </div>
+      <p className="mt-1 text-sm">
+        {e.primoFirmatario ? (
+          <>
+            Firmato da <strong>{e.primoFirmatario.nome}</strong> ({nomeGruppo(e.gruppo)})
+            {e.nFirmatari > 1 && ` e altri ${e.nFirmatari - 1}`}
+          </>
+        ) : (
+          <span className="text-(--color-faded)">Firmatari non disponibili</span>
+        )}
+      </p>
       <p className="mt-1 whitespace-pre-line text-sm leading-relaxed text-(--color-ink-soft)">
         {e.testo}
       </p>
@@ -47,15 +54,29 @@ function PairCard({ c, attoId }: { c: Coppia; attoId: string }) {
   );
   return (
     <article className="border border-(--color-line) bg-white/40 p-4">
+      <p className="mb-2 font-semibold">
+        {fraseCoppia({
+          esatta: c.esatta,
+          stessoRisultato: c.probabilita.stesso_effetto,
+          stessaBozza: c.probabilita.stessa_matrice,
+          soloNumero: c.probabilita.differenza_solo_numerica,
+        })}
+      </p>
       <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2">
         {MEASURES.map((m) => (
           <div key={m.key} className="w-52">
             <MiniBar p={c.probabilita[m.key]} label={m.label} />
           </div>
         ))}
-        <span className="label" title={voce("parole-in-comune")?.breve}>
-          parole in comune {Math.round(c.jaccard * 100)}%
-        </span>
+        {c.esatta ? (
+          <span className="border border-(--color-ink) px-2 py-0.5 text-[0.68rem] font-semibold uppercase tracking-wider">
+            Testo identico
+          </span>
+        ) : (
+          <span className="label" title={voce("parole-in-comune")?.breve}>
+            parole in comune {Math.round(c.jaccard * 100)}%
+          </span>
+        )}
         {c.identMarkedByCamera && (
           <span
             className="border border-(--color-accent) px-2 py-0.5 text-[0.68rem] font-semibold uppercase tracking-wider text-(--color-accent)"
@@ -82,6 +103,8 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
   const [minProb, setMinProb] = useState(50);
   const [gruppo, setGruppo] = useState("");
   const [soloCamera, setSoloCamera] = useState(false);
+  const [soloIdentiche, setSoloIdentiche] = useState(false);
+  const [soloPartitiDiversi, setSoloPartitiDiversi] = useState(false);
 
   useEffect(() => {
     fetch(`/data/${attoId}/coppie.json`)
@@ -94,8 +117,8 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
     if (!data) return [];
     const s = new Set<string>();
     for (const c of [...data.byStessoEffetto, ...data.byStessaMatrice]) {
-      c.a.gruppi.forEach((g) => s.add(g));
-      c.b.gruppi.forEach((g) => s.add(g));
+      s.add(c.a.gruppo);
+      s.add(c.b.gruppo);
     }
     return [...s].sort();
   }, [data]);
@@ -106,9 +129,11 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
       measure === "stessa_matrice" ? data.byStessaMatrice : data.byStessoEffetto;
     return base
       .filter((c) => c.probabilita[measure] * 100 >= minProb)
-      .filter((c) => !gruppo || c.a.gruppi.includes(gruppo) || c.b.gruppi.includes(gruppo))
-      .filter((c) => !soloCamera || c.identMarkedByCamera);
-  }, [data, measure, minProb, gruppo, soloCamera]);
+      .filter((c) => !gruppo || c.a.gruppo === gruppo || c.b.gruppo === gruppo)
+      .filter((c) => !soloCamera || c.identMarkedByCamera)
+      .filter((c) => !soloIdentiche || c.esatta)
+      .filter((c) => !soloPartitiDiversi || c.a.gruppo !== c.b.gruppo);
+  }, [data, measure, minProb, gruppo, soloCamera, soloIdentiche, soloPartitiDiversi]);
 
   if (error) return <p className="text-(--color-accent)">Errore nel caricamento: {error}</p>;
   if (!data) return <p className="text-(--color-faded)">Caricamento delle coppie…</p>;
@@ -130,7 +155,8 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
           {glossLink("stessa-bozza", "stessa bozza")}, o che{" "}
           {glossLink("solo-un-numero", "cambi solo un numero")}. Le barre sono{" "}
           {glossLink("probabilita", "percentuali")}, non verdetti. Le parole sottolineate
-          portano alla spiegazione.
+          portano alla spiegazione. Sotto ogni emendamento c'è chi lo ha firmato per primo e
+          il suo partito.
         </p>
       </header>
 
@@ -171,6 +197,22 @@ export default function CoppieBrowser({ attoId, titolo }: { attoId: string; tito
               </option>
             ))}
           </select>
+        </label>
+        <label className="flex items-center gap-2 text-sm">
+          <input
+            type="checkbox" checked={soloIdentiche}
+            onChange={(e) => setSoloIdentiche(e.target.checked)}
+            className="accent-(--color-accent)"
+          />
+          solo testi identici parola per parola
+        </label>
+        <label className="flex items-center gap-2 text-sm">
+          <input
+            type="checkbox" checked={soloPartitiDiversi}
+            onChange={(e) => setSoloPartitiDiversi(e.target.checked)}
+            className="accent-(--color-accent)"
+          />
+          solo tra partiti diversi
         </label>
         <label className="flex items-center gap-2 text-sm">
           <input

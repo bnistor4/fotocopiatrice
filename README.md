@@ -2,6 +2,8 @@
 
 Legge tutti gli emendamenti depositati alla Camera su una legge, trova quelli identici o equivalenti tra loro, e mostra chi li ha firmati. Scritto per chi non sa cosa sia un emendamento.
 
+**Sito:** [fotocopiatrice.vercel.app](https://fotocopiatrice.vercel.app/)
+
 Primo atto analizzato: legge di bilancio 2025 (A.C. 2112-bis), Commissione Bilancio della Camera.
 
 | | |
@@ -65,4 +67,4 @@ Aggiungere un altro atto: `npm run pipeline:scrape -- --atto <numero>`, poi gli 
 
 ## Deploy
 
-Sito statico, pensato per Vercel: nessuna variabile d'ambiente necessaria. `public/data/2112-bis/emendamenti.json` è 18 MB; va spezzato per pagina prima di aggiungere un secondo atto.
+Sito statico su Vercel (https://fotocopiatrice.vercel.app/): nessuna variabile d'ambiente necessaria. `public/data/2112-bis/emendamenti.json` è 18 MB; va spezzato per pagina prima di aggiungere un secondo atto.

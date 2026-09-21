@@ -1,6 +1,6 @@
 import { Card } from "@/app/components";
 import { fmtNum, getChiFirma, getGruppiMatrix, getLatestAtto } from "@/lib/data";
-import { CHI_FIRMA, nomeGruppo } from "@/lib/testi";
+import { CHI_FIRMA, nomeGruppo, NOTA_MATRICE_DIAGONALE } from "@/lib/testi";
 
 export default function GruppiPage() {
   const atto = getLatestAtto();
@@ -106,6 +106,9 @@ export default function GruppiPage() {
                 dal Parlamento — associazioni, categorie, gruppi di interesse — e consegnato
                 a più deputati. Non è illegale, ma dice chi scrive davvero le leggi.
               </p>
+              <p className="mt-3 text-sm leading-relaxed text-(--color-ink-soft)">
+                {NOTA_MATRICE_DIAGONALE}
+              </p>
             </div>
             <p className="mt-4 text-[13px] text-(--color-faded)">
               {fmtNum(totale)} coppie sopra soglia · {m.note}
@@ -120,11 +123,11 @@ export default function GruppiPage() {
           <table className="tbl text-sm">
             <thead>
               <tr>
-                <th>{CHI_FIRMA.colonne[0]}</th>
-                <th>{CHI_FIRMA.colonne[1]}</th>
-                <th className="num">{CHI_FIRMA.colonne[2]}</th>
-                <th className="num">{CHI_FIRMA.colonne[3]}</th>
-                <th>Quota</th>
+                {CHI_FIRMA.colonne.map((c, i) => (
+                  <th key={c} className={i >= 2 ? "num" : undefined}>
+                    {c}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>

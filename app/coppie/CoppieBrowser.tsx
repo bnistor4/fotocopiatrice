@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { fmtNum } from "@/lib/format";
 import type { Coppia, CoppieFile, PairProbs } from "@/lib/data";
-import { fraseCoppia, nomeGruppo, voce } from "@/lib/testi";
+import { fraseCoppia, nomeGruppo, percheCoppia, voce } from "@/lib/testi";
 
 const MEASURES: { key: keyof PairProbs; label: string; voceId: string }[] = [
   { key: "stesso_effetto", label: "stesso risultato", voceId: "stesso-risultato" },
@@ -69,14 +69,24 @@ function PairCard({ c, attoId }: { c: Coppia; attoId: string }) {
   return (
     <article className="card">
       <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
-        <p className="display max-w-2xl text-lg leading-snug">
-          {fraseCoppia({
-            esatta: c.esatta,
-            stessoRisultato: c.probabilita.stesso_effetto,
-            stessaBozza: c.probabilita.stessa_matrice,
-            soloNumero: c.probabilita.differenza_solo_numerica,
-          })}
-        </p>
+        <div className="max-w-2xl">
+          <p className="display text-lg leading-snug">
+            {fraseCoppia({
+              esatta: c.esatta,
+              stessoRisultato: c.probabilita.stesso_effetto,
+              stessaBozza: c.probabilita.stessa_matrice,
+              soloNumero: c.probabilita.differenza_solo_numerica,
+            })}
+          </p>
+          <p className="mt-1 text-[13px] text-(--color-faded)">
+            {percheCoppia({
+              esatta: c.esatta,
+              stessoGruppo: c.a.gruppo === c.b.gruppo,
+              stessoRisultato: c.probabilita.stesso_effetto,
+              soloNumero: c.probabilita.differenza_solo_numerica,
+            })}
+          </p>
+        </div>
         <div className="flex flex-wrap gap-1.5">
           {c.esatta && (
             <span className="rounded-full bg-(--color-navy) px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-white">

@@ -8,7 +8,7 @@ import {
   getLatestAtto,
   getSummary,
 } from "@/lib/data";
-import { COSA_STAI_GUARDANDO, evidenze, nomeAmbito, nomeEsito, nomeGruppo } from "@/lib/testi";
+import { COSA_STAI_GUARDANDO, evidenze, nomeAmbito, nomeEsito, nomeGruppo, PERCHE_LO_FANNO } from "@/lib/testi";
 
 const ATTO_URL = "https://www.camera.it/leg19/126?leg=19&idDocumento=2112bis&sede=&tipo=";
 
@@ -114,6 +114,14 @@ export default function Home() {
                       → approfondisci
                     </Link>
                   )}
+                  {i === 2 && (
+                    <a
+                      href={`#${PERCHE_LO_FANNO.id}`}
+                      className="mt-1 ml-3 inline-block text-[13px] font-medium text-(--color-accent)"
+                    >
+                      Perché lo fanno? ↓
+                    </a>
+                  )}
                 </div>
               </li>
             ))}
@@ -159,6 +167,44 @@ export default function Home() {
           </Card>
         )}
       </div>
+
+      <section id={PERCHE_LO_FANNO.id} className="scroll-mt-6">
+        <h2 className="display text-2xl">{PERCHE_LO_FANNO.titolo}</h2>
+        <p className="mt-2 max-w-3xl text-(--color-ink-soft)">{PERCHE_LO_FANNO.intro}</p>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          {PERCHE_LO_FANNO.motivi.map((m, i) => (
+            <div key={m.titolo} className="card">
+              <div className="flex items-start gap-3">
+                <span className="display flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-(--color-navy) text-sm font-semibold text-white">
+                  {i + 1}
+                </span>
+                <p className="font-semibold leading-snug">{m.titolo}</p>
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-(--color-ink-soft)">{m.testo}</p>
+              <div className="mt-3 rounded-md border-l-4 border-(--color-accent) bg-(--color-accent-soft) p-3">
+                <p className="eyebrow">Cosa comporta per te</p>
+                <p className="mt-1 text-[13px] leading-relaxed">{m.comporta}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 grid gap-4 lg:grid-cols-2">
+          <Card title={PERCHE_LO_FANNO.cosa_comportano.titolo}>
+            <ul className="list-disc space-y-2 pl-5 text-sm text-(--color-ink-soft)">
+              {PERCHE_LO_FANNO.cosa_comportano.punti.map((p) => (
+                <li key={p.slice(0, 24)}>{p}</li>
+              ))}
+            </ul>
+          </Card>
+          <Card title={PERCHE_LO_FANNO.cosa_non_dicono.titolo}>
+            <ul className="list-disc space-y-2 pl-5 text-sm text-(--color-ink-soft)">
+              {PERCHE_LO_FANNO.cosa_non_dicono.punti.map((p) => (
+                <li key={p.slice(0, 24)}>{p}</li>
+              ))}
+            </ul>
+          </Card>
+        </div>
+      </section>
 
       <section>
         <h2 className="display text-2xl">Quattro cose da sapere</h2>

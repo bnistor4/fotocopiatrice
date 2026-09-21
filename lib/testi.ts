@@ -300,6 +300,87 @@ export const COSA_STAI_GUARDANDO = {
   ],
 };
 
+/**
+ * Perché i deputati depositano copie e mancette, e cosa comporta per chi legge.
+ * Mostrato in home dopo "Cosa stai guardando". Ogni motivo ha la parte
+ * "cosa comporta per te" evidenziata. Nessuna affermazione su singoli deputati.
+ */
+export const PERCHE_LO_FANNO = {
+  id: "perche-lo-fanno",
+  titolo: "Perché lo fanno? E cosa cambia per te",
+  intro:
+    "Depositare un emendamento non costa nulla e richiede pochi minuti. Non serve che venga approvato: spesso serve solo che esista. Ecco i quattro motivi più comuni per cui compaiono migliaia di proposte, molte uguali tra loro.",
+  motivi: [
+    {
+      titolo: "Il testo l'ha scritto qualcuno fuori dal Parlamento",
+      testo:
+        "Associazioni di categoria, sindacati, ordini professionali, aziende, Comuni e Regioni preparano un emendamento già pronto e lo consegnano a più deputati, spesso di partiti diversi. Il ragionamento è semplice: più firme da più parti, più probabilità che qualcuno lo porti avanti o che il Governo lo riprenda. È legale ed è prassi.",
+      comporta:
+        "Chi ha un ufficio che sa scrivere un testo di legge e conosce i deputati riesce a far arrivare la sua richiesta sul tavolo. Chi non lo ha, no. E il deputato che firma non sempre ha scritto, o letto fino in fondo, quello che deposita.",
+    },
+    {
+      titolo: "Farsi vedere dal proprio territorio",
+      testo:
+        "Un deputato eletto in una zona deposita «1 milione al Comune di…» o «fondi per la festa di…». Anche se la proposta non passa, può dire al giornale locale e agli elettori: «io ci ho provato». Per questo tante mancette si ripetono ogni anno, uguali.",
+      comporta:
+        "La legge di bilancio si riempie di piccoli interventi puntuali difficili da valutare uno per uno, invece di regole valide per tutti. Su questa legge ne abbiamo contati 301. Quando uno passa, lo decide una trattativa, non un criterio pubblico su chi ne ha più bisogno.",
+    },
+    {
+      titolo: "Fare numero",
+      testo:
+        "Le opposizioni depositano migliaia di emendamenti per rallentare i lavori, costringere la maggioranza a trattare, o poter dire di aver contestato ogni punto. Lo stesso testo con prime firme diverse conta come più emendamenti. Anche la maggioranza deposita in massa per segnalare al Governo cosa vuole.",
+      comporta:
+        "I tempi si allungano e alla fine, per chiudere entro il 31 dicembre, il Governo di solito presenta un unico testo finale e chiede il voto di fiducia. Le migliaia di proposte non votate decadono. Il testo vero viene letto e votato in pochi giorni, con poco tempo per capirlo.",
+    },
+    {
+      titolo: "Mettere un segnaposto per la trattativa",
+      testo:
+        "Molti emendamenti si depositano sapendo che saranno dichiarati inammissibili o non verranno mai votati. Servono a mettere un tema sul tavolo: poi i partiti ne «segnalano» pochi al Governo, che decide quali accogliere, spesso riscrivendoli.",
+      comporta:
+        "Cosa entra davvero nella legge lo decidono poche persone in una stanza, non il voto sui 5.085 testi. Su questa legge 1.190 proposte sono state scartate prima del voto e 3.548 non hanno alcun esito pubblicato.",
+    },
+  ],
+  cosa_comportano: {
+    titolo: "Le copie, in concreto, cosa comportano",
+    punti: [
+      "Non sono illegali e non costano soldi di per sé: un emendamento copiato che non passa non sposta un euro.",
+      "Dicono chi scrive davvero le leggi. Quando lo stesso testo compare con firme di partiti diversi, l'origine è quasi sempre esterna al Parlamento. Il deputato mette la firma, non la penna.",
+      "Gonfiano il lavoro. 1 emendamento su 4 è una ripetizione: gli uffici della Camera, i relatori e il Governo devono comunque leggerlo e valutarlo, con meno tempo per il resto.",
+      "Rendono difficile capire chi ha ottenuto cosa. Se un testo firmato da tre partiti entra nella legge, tutti e tre possono dire «l'ho fatto io». Nessuno risponde della richiesta originaria.",
+    ],
+  },
+  cosa_non_dicono: {
+    titolo: "Cosa invece non puoi concludere",
+    punti: [
+      "Che un deputato abbia copiato un altro. Nella maggior parte dei casi entrambi hanno ricevuto lo stesso testo dalla stessa fonte.",
+      "Che una richiesta copiata sia sbagliata. Un testo identico può anche essere una proposta giusta condivisa da molti.",
+      "Che una mancetta sia immeritata. Il sito dice che è un intervento su misura per un destinatario preciso, non se quel destinatario lo merita.",
+    ],
+  },
+};
+
+/** Perché succede, per ogni tipo di coppia. Mostrato sotto la frase-guida. */
+export function percheCoppia(c: {
+  esatta: boolean;
+  stessoGruppo: boolean;
+  stessoRisultato: number;
+  soloNumero: number;
+}) {
+  if (c.esatta && c.stessoGruppo)
+    return "Perché succede: lo stesso partito deposita il testo più volte con prime firme diverse, per farlo pesare di più o per dare visibilità a più deputati.";
+  if (c.esatta)
+    return "Perché succede: di solito il testo è stato scritto da un'associazione, un ente o un'azienda e consegnato a deputati di più partiti, che lo hanno depositato tale e quale.";
+  if (c.soloNumero >= 0.8)
+    return "Perché succede: stessa richiesta, cifre diverse. Spesso è lo stesso testo esterno adattato da ciascun partito, oppure versioni «di riserva» dello stesso deputato per avere più chance in trattativa.";
+  if (c.stessoRisultato >= 0.8)
+    return "Perché succede: più partiti hanno la stessa richiesta e la scrivono ognuno a modo proprio, oppure lo stesso testo esterno è stato ritoccato prima del deposito.";
+  return "Perché succede: partono probabilmente dalla stessa bozza, poi ognuno ha cambiato destinatario o importo per il proprio territorio.";
+}
+
+/** Nota per la matrice "chi copia chi": come leggere la diagonale. */
+export const NOTA_MATRICE_DIAGONALE =
+  "Le caselle sulla diagonale (stesso partito con se stesso) contano i testi identici depositati più volte dallo stesso gruppo con prime firme diverse. Non è una copia da un altro partito: è un modo per far pesare di più la stessa richiesta, o per dare a più deputati qualcosa da rivendicare sul proprio territorio.";
+
 /** Frase-guida per leggere una coppia, in base a cosa è. */
 export function fraseCoppia(c: {
   esatta: boolean;
@@ -321,7 +402,7 @@ export const CHI_FIRMA = {
   titolo: "Chi firma più spesso un testo identico a un altro",
   intro:
     "Qui sotto i deputati che più volte hanno firmato per primi un emendamento identico, parola per parola, a un emendamento firmato da qualcun altro. Non significa che abbiano copiato: spesso hanno ricevuto lo stesso testo dalla stessa fonte esterna. Significa che il testo non l'hanno scritto loro.",
-  colonne: ["Deputato", "Partito", "Testi identici a un altro", "Su quanti depositati"],
+  colonne: ["Deputato", "Partito", "Testi identici a un altro", "Su quanti depositati", "Quota"],
 };
 
 /** Testo di apertura della home, riga per riga. */

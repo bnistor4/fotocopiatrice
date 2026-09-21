@@ -1,0 +1,226 @@
+{
+  "MISTO": {
+    "n": 336,
+    "approvati": 20,
+    "inammissibili": 113,
+    "senzaEsito": 203,
+    "identiciAdAltro": 126,
+    "identiciAdAltroGruppo": 126
+  },
+  "M5S": {
+    "n": 1316,
+    "approvati": 43,
+    "inammissibili": 229,
+    "senzaEsito": 1044,
+    "identiciAdAltro": 149,
+    "identiciAdAltroGruppo": 139
+  },
+  "NM(N-C-U-I)M-CP": {
+    "n": 155,
+    "approvati": 13,
+    "inammissibili": 65,
+    "senzaEsito": 77,
+    "identiciAdAltro": 42,
+    "identiciAdAltroGruppo": 42
+  },
+  "FI-PPE": {
+    "n": 541,
+    "approvati": 37,
+    "inammissibili": 142,
+    "senzaEsito": 362,
+    "identiciAdAltro": 194,
+    "identiciAdAltroGruppo": 190
+  },
+  "IV-CR": {
+    "n": 306,
+    "approvati": 16,
+    "inammissibili": 60,
+    "senzaEsito": 230,
+    "identiciAdAltro": 95,
+    "identiciAdAltroGruppo": 95
+  },
+  "FDI": {
+    "n": 251,
+    "approvati": 49,
+    "inammissibili": 55,
+    "senzaEsito": 147,
+    "identiciAdAltro": 52,
+    "identiciAdAltroGruppo": 50
+  },
+  "PD-IDP": {
+    "n": 1055,
+    "approvati": 38,
+    "inammissibili": 250,
+    "senzaEsito": 767,
+    "identiciAdAltro": 269,
+    "identiciAdAltroGruppo": 261
+  },
+  "AZ-PER-RE": {
+    "n": 183,
+    "approvati": 19,
+    "inammissibili": 31,
+    "senzaEsito": 133,
+    "identiciAdAltro": 54,
+    "identiciAdAltroGruppo": 54
+  },
+  "LEGA": {
+    "n": 488,
+    "approvati": 55,
+    "inammissibili": 152,
+    "senzaEsito": 281,
+    "identiciAdAltro": 181,
+    "identiciAdAltroGruppo": 179
+  },
+  "AVS": {
+    "n": 384,
+    "approvati": 12,
+    "inammissibili": 93,
+    "senzaEsito": 279,
+    "identiciAdAltro": 121,
+    "identiciAdAltroGruppo": 121
+  },
+  "ND": {
+    "n": 7,
+    "approvati": 3,
+    "inammissibili": 0,
+    "senzaEsito": 4,
+    "identiciAdAltro": 7,
+    "identiciAdAltroGruppo": 7
+  },
+  "matrice": {
+    "FDI": {
+      "FI-PPE": 21,
+      "LEGA": 39,
+      "PD-IDP": 15,
+      "AZ-PER-RE": 8,
+      "M5S": 12,
+      "MISTO": 7,
+      "AVS": 5,
+      "IV-CR": 4,
+      "NM(N-C-U-I)M-CP": 6,
+      "ND": 3,
+      "FDI": 1
+    },
+    "FI-PPE": {
+      "FDI": 21,
+      "IV-CR": 47,
+      "MISTO": 75,
+      "AVS": 49,
+      "LEGA": 111,
+      "NM(N-C-U-I)M-CP": 23,
+      "AZ-PER-RE": 18,
+      "PD-IDP": 108,
+      "FI-PPE": 12,
+      "M5S": 51,
+      "ND": 3
+    },
+    "IV-CR": {
+      "MISTO": 69,
+      "AVS": 62,
+      "LEGA": 36,
+      "NM(N-C-U-I)M-CP": 33,
+      "AZ-PER-RE": 28,
+      "FI-PPE": 47,
+      "PD-IDP": 115,
+      "M5S": 73,
+      "IV-CR": 16,
+      "FDI": 4,
+      "ND": 2
+    },
+    "MISTO": {
+      "IV-CR": 69,
+      "AVS": 69,
+      "LEGA": 73,
+      "NM(N-C-U-I)M-CP": 34,
+      "AZ-PER-RE": 17,
+      "FI-PPE": 75,
+      "PD-IDP": 102,
+      "MISTO": 22,
+      "M5S": 77,
+      "FDI": 7
+    },
+    "AVS": {
+      "IV-CR": 62,
+      "MISTO": 69,
+      "LEGA": 26,
+      "NM(N-C-U-I)M-CP": 36,
+      "AZ-PER-RE": 22,
+      "FI-PPE": 49,
+      "AVS": 25,
+      "PD-IDP": 126,
+      "M5S": 111,
+      "FDI": 5
+    },
+    "LEGA": {
+      "IV-CR": 36,
+      "MISTO": 73,
+      "AVS": 26,
+      "NM(N-C-U-I)M-CP": 18,
+      "AZ-PER-RE": 21,
+      "LEGA": 19,
+      "FI-PPE": 111,
+      "PD-IDP": 76,
+      "FDI": 39,
+      "M5S": 36,
+      "ND": 1
+    },
+    "NM(N-C-U-I)M-CP": {
+      "IV-CR": 33,
+      "MISTO": 34,
+      "AVS": 36,
+      "LEGA": 18,
+      "AZ-PER-RE": 19,
+      "FI-PPE": 23,
+      "PD-IDP": 45,
+      "M5S": 44,
+      "NM(N-C-U-I)M-CP": 6,
+      "FDI": 6
+    },
+    "AZ-PER-RE": {
+      "IV-CR": 28,
+      "MISTO": 17,
+      "AVS": 22,
+      "LEGA": 21,
+      "NM(N-C-U-I)M-CP": 19,
+      "FI-PPE": 18,
+      "PD-IDP": 53,
+      "M5S": 34,
+      "FDI": 8,
+      "AZ-PER-RE": 1,
+      "ND": 2
+    },
+    "PD-IDP": {
+      "IV-CR": 115,
+      "MISTO": 102,
+      "AVS": 126,
+      "LEGA": 76,
+      "NM(N-C-U-I)M-CP": 45,
+      "AZ-PER-RE": 53,
+      "FI-PPE": 108,
+      "PD-IDP": 52,
+      "M5S": 157,
+      "FDI": 15,
+      "ND": 3
+    },
+    "M5S": {
+      "AZ-PER-RE": 34,
+      "FI-PPE": 51,
+      "PD-IDP": 157,
+      "IV-CR": 73,
+      "LEGA": 36,
+      "FDI": 12,
+      "AVS": 111,
+      "MISTO": 77,
+      "M5S": 44,
+      "NM(N-C-U-I)M-CP": 44
+    },
+    "ND": {
+      "FI-PPE": 3,
+      "LEGA": 1,
+      "FDI": 3,
+      "PD-IDP": 3,
+      "AZ-PER-RE": 2,
+      "IV-CR": 2
+    }
+  }
+}

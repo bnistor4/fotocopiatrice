@@ -3,20 +3,25 @@
 // Uso:
 //   tsx pipeline/build.ts --atto 2112-bis [--title "Bilancio di previsione ..."]
 
+import { createHash } from "node:crypto";
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import path from "node:path";
 import {
   argStr,
   COST_PER_MILLION_INPUT,
   gruppoAt,
   importoEuro,
+  normHash,
   parseArgs,
   paths,
   readJson,
+  ROOT,
   writeJson,
   type DeputatiMap,
 } from "./lib";
 import type { Emendamento } from "./scrape";
 import type { PairRecord } from "./pairs";
-import type { SingleAnswers } from "./questions";
+import { pairQuestions, singleQuestions, type SingleAnswers } from "./questions";
 
 type RawFile = {
   attoId: string;
@@ -378,6 +383,269 @@ function main() {
     totale_deputati_con_identici: chiFirma.length,
   };
 
+  // ---- export/ per il riuso esterno (struttura in DATI.md) ------------------
+  const exportDir = path.join(ROOT, "export", attoId);
+  const cmpKey = (x: string, y: string) => (x < y ? -1 : x > y ? 1 : 0);
+  const writeJsonl = (file: string, rows: object[]) => {
+    mkdirSync(path.dirname(file), { recursive: true });
+    writeFileSync(file, rows.map((r) => JSON.stringify(r)).join("\n") + "\n");
+  };
+
+  // key -> le chiavi del suo gruppo di fotocopie esatte
+  const groupOfKey = new Map<string, string[]>();
+  for (const g of coppie.exactGroups) for (const k of g) groupOfKey.set(k, g);
+  const primoId = (key: string) => byId.get(key)?.firmatari[0]?.idPersona ?? "";
+  const primoGrp = (key: string) => {
+    const e = byId.get(key);
+    return e ? primoGruppo(e) : "ND";
+  };
+  // flags per emendamento: il suo gruppo esatto contiene un primo firmatario
+  // di un'altra persona / di un altro gruppo parlamentare?
+  const flagsIdentici = (e: Emendamento) => {
+    const grp = groupOfKey.get(e.key);
+    const out = { altro: false, altroGruppo: false };
+    if (!grp) return out;
+    const me = primoGruppo(e);
+    const myId = e.firmatari[0]?.idPersona ?? "";
+    for (const k of grp) {
+      if (k === e.key) continue;
+      if (primoId(k) !== myId) out.altro = true;
+      if (primoGrp(k) !== me) out.altroGruppo = true;
+      if (out.altro && out.altroGruppo) break;
+    }
+    return out;
+  };
+
+  // emendamenti.jsonl: osservato + testoHash/importoEuroEstratto deterministici
+  const emendamentiRows = [...raw.emendamenti]
+    .sort((x, y) => cmpKey(x.key, y.key))
+    .map((e) => ({
+      key: e.key,
+      id: e.id,
+      numeroPubblicato: e.numeroPubblicato,
+      articolo: e.articolo,
+      testo: e.testo,
+      testoHash: normHash(e.testo),
+      firmatari: e.firmatari,
+      primoFirmatario: e.firmatari[0] ?? null,
+      gruppi: e.gruppi,
+      gruppo: primoGruppo(e),
+      esito: e.esito,
+      esitoAnnotazione: e.esitoAnnotazione,
+      nuovaFormulazione: e.nuovaFormulazione,
+      riformulaDi: e.riformulaDi,
+      identTo: e.identTo,
+      seduta: e.seduta,
+      sedute: e.sedute,
+      sourceUrl: e.sourceUrl,
+      importoEuroEstratto: importoEuro(e.testo),
+    }));
+  writeJsonl(`${exportDir}/emendamenti.jsonl`, emendamentiRows);
+
+  // fotocopie_esatte.json: un oggetto per testoHash con >= 2 emendamenti
+  const fotocopie = coppie.exactGroups
+    .map((g) => {
+      const keys = [...g].sort(cmpKey);
+      const set = new Set(keys);
+      const gruppiParlamentari = [...new Set(keys.map(primoGrp))].sort(cmpKey);
+      const annotatoDallaCamera = keys.some((k) => {
+        const e = byId.get(k);
+        if (!e) return false;
+        return (
+          e.identKeys.some((ik) => set.has(ik)) ||
+          e.identTo.some((n) => keys.some((k2) => k2 !== k && byId.get(k2)?.id === n))
+        );
+      });
+      return {
+        testoHash: normHash(byId.get(keys[0])?.testo ?? ""),
+        n: keys.length,
+        emendamenti: keys,
+        gruppiParlamentari,
+        traGruppiDiversi: gruppiParlamentari.length > 1,
+        annotatoDallaCamera,
+        testo: byId.get(keys[0])?.testo ?? "",
+      };
+    })
+    .sort((x, y) => y.n - x.n || cmpKey(x.testoHash, y.testoHash));
+  writeJson(`${exportDir}/fotocopie_esatte.json`, fotocopie);
+
+  // per_deputato.jsonl: tutti i primi firmatari, conteggi deterministici
+  type DepRec = {
+    idPersona: string;
+    nome: string;
+    gruppiCount: Record<string, number>;
+    ultimaSeduta: string;
+    depositati: number;
+    identiciAdAltro: number;
+    identiciAdAltroGruppo: number;
+    approvati: number;
+  };
+  const depMap = new Map<string, DepRec>();
+  for (const e of raw.emendamenti) {
+    const f = e.firmatari[0];
+    if (!f) continue;
+    const idp = f.idPersona || f.nome;
+    let r = depMap.get(idp);
+    if (!r) {
+      r = {
+        idPersona: idp,
+        nome: "",
+        gruppiCount: {},
+        ultimaSeduta: "",
+        depositati: 0,
+        identiciAdAltro: 0,
+        identiciAdAltroGruppo: 0,
+        approvati: 0,
+      };
+      depMap.set(idp, r);
+    }
+    r.depositati++;
+    const g = primoGruppo(e);
+    r.gruppiCount[g] = (r.gruppiCount[g] ?? 0) + 1;
+    if (e.seduta >= r.ultimaSeduta) {
+      r.ultimaSeduta = e.seduta;
+      r.nome = f.nome;
+      r.idPersona = f.idPersona;
+    }
+    if (e.esito === "approvato") r.approvati++;
+    const fl = flagsIdentici(e);
+    if (fl.altro) r.identiciAdAltro++;
+    if (fl.altroGruppo) r.identiciAdAltroGruppo++;
+  }
+  const perDeputatoRows = [...depMap.values()]
+    .map((r) => ({
+      idPersona: r.idPersona,
+      nome: r.nome,
+      gruppo:
+        Object.entries(r.gruppiCount).sort((a, b) => b[1] - a[1])[0]?.[0] ?? "ND",
+      depositati: r.depositati,
+      identiciAdAltro: r.identiciAdAltro,
+      identiciAdAltroGruppo: r.identiciAdAltroGruppo,
+      approvati: r.approvati,
+    }))
+    .sort((x, y) => cmpKey(x.idPersona, y.idPersona));
+  writeJsonl(`${exportDir}/per_deputato.jsonl`, perDeputatoRows);
+
+  // per_gruppo.json: conteggi per sigla + matrice delle sole fotocopie esatte
+  const pg: Record<
+    string,
+    {
+      n: number;
+      approvati: number;
+      inammissibili: number;
+      senzaEsito: number;
+      identiciAdAltro: number;
+      identiciAdAltroGruppo: number;
+    }
+  > = {};
+  for (const e of raw.emendamenti) {
+    const f = e.firmatari[0];
+    if (!f) continue;
+    const g = primoGruppo(e);
+    const r = (pg[g] ??= {
+      n: 0,
+      approvati: 0,
+      inammissibili: 0,
+      senzaEsito: 0,
+      identiciAdAltro: 0,
+      identiciAdAltroGruppo: 0,
+    });
+    r.n++;
+    if (e.esito === "approvato") r.approvati++;
+    else if (e.esito === "inammissibile") r.inammissibili++;
+    else if (e.esito === null) r.senzaEsito++;
+    const fl = flagsIdentici(e);
+    if (fl.altro) r.identiciAdAltro++;
+    if (fl.altroGruppo) r.identiciAdAltroGruppo++;
+  }
+  const matriceEsatte: Record<string, Record<string, number>> = {};
+  for (const grp of coppie.exactGroups) {
+    for (let i = 0; i < grp.length; i++) {
+      for (let j = i + 1; j < grp.length; j++) {
+        const ga = primoGrp(grp[i]);
+        const gb = primoGrp(grp[j]);
+        (matriceEsatte[ga] ??= {})[gb] = (matriceEsatte[ga][gb] ?? 0) + 1;
+        if (ga !== gb)
+          (matriceEsatte[gb] ??= {})[ga] = (matriceEsatte[gb][ga] ?? 0) + 1;
+      }
+    }
+  }
+  writeJson(`${exportDir}/per_gruppo.json`, { ...pg, matrice: matriceEsatte });
+
+  // modello/letture.jsonl e modello/coppie.jsonl: sole uscite di Jev
+  const lettureRows = raw.emendamenti
+    .filter((e) => singoli.emendamenti[e.key])
+    .sort((x, y) => cmpKey(x.key, y.key))
+    .map((e) => {
+      const s = singoli.emendamenti[e.key];
+      return { key: e.key, testoHash: s.normHash, ...s.answers };
+    });
+  writeJsonl(`${exportDir}/modello/letture.jsonl`, lettureRows);
+
+  const coppieRows = allPairs
+    .map((p) => {
+      const [a, b] = [p.a, p.b].sort(cmpKey);
+      return {
+        a,
+        b,
+        esatta: p.hashA === p.hashB,
+        identMarkedByCamera: p.identMarkedByCamera,
+        jaccard: p.jaccard,
+        ...p.answers,
+      };
+    })
+    .sort((x, y) => cmpKey(x.a, y.a) || cmpKey(x.b, y.b));
+  writeJsonl(`${exportDir}/modello/coppie.jsonl`, coppieRows);
+
+  // provenance.json
+  const containerPath = path.join(paths.rawDir(attoId), "container.xml");
+  const sha256Xml = existsSync(containerPath)
+    ? createHash("sha256").update(readFileSync(containerPath)).digest("hex")
+    : null;
+  const acqPath = existsSync(containerPath)
+    ? containerPath
+    : paths.rawEmendamenti(attoId);
+  const acquisitoIl = existsSync(acqPath)
+    ? statSync(acqPath).mtime.toISOString()
+    : null;
+  writeJson(`${exportDir}/provenance.json`, {
+    attoId,
+    titolo,
+    fonte: {
+      titolare: "Camera dei deputati",
+      xml: `https://documenti.camera.it/leg19/emendamenti/xml/${raw.container}.xml`,
+      pagineEmendamento:
+        "https://documenti.camera.it/apps/emendamenti/getPropostaEmendativa.aspx",
+      gruppiDeputati: "https://dati.camera.it/sparql",
+      sha256Xml,
+      acquisitoIl,
+    },
+    sedute: raw.sedute,
+    conteggi: {
+      occorrenzeBollettino: raw.occorrenze ?? null,
+      emendamentiUnici: raw.count,
+      ripubblicazioni: raw.emendamenti.filter((e) => e.sedute.length > 1)
+        .length,
+    },
+    modello: {
+      fornitore: "TypeSafe",
+      nome: "Jev",
+      domandeSingole: Object.keys(singleQuestions),
+      domandeCoppia: Object.keys(pairQuestions),
+      chiamate: usage?.calls ?? null,
+      tokenInput: usage?.totalInputTokens ?? null,
+      costoUsdStimato: usage?.estimatedCostUSD ?? null,
+      definizioni: "pipeline/questions.ts",
+    },
+    soglie: {
+      copiaRiscritta: 0.8,
+      mancetta: { livello: 3, probabilitaMinima: 0.5 },
+      jaccardCandidati: 0.35,
+    },
+    generatoIl: new Date().toISOString(),
+    licenzaDatiDerivati: "CC-BY-4.0",
+  });
+
   // ---- write ---------------------------------------------------------------
   const dir = paths.publicDir(attoId);
   writeJson(`${dir}/summary.json`, summary);
@@ -400,6 +668,7 @@ function main() {
   writeJson(paths.publicIndex(), rest);
 
   console.log(`Scritti 6 file + index in ${dir}`);
+  console.log(`Export per il riuso in ${exportDir} (7 file)`);
   console.log(
     `  totale=${raw.count} analizzati=${analyzedIds.size} esatte=${exactSet.size} semantiche=${semanticSet.size} coppie=${allPairs.length}`,
   );

@@ -1,0 +1,58 @@
+{
+  "attoId": "2112-bis",
+  "titolo": "Bilancio di previsione dello Stato per l'anno finanziario 2025 (A.C. 2112-bis)",
+  "fonte": {
+    "titolare": "Camera dei deputati",
+    "xml": "https://documenti.camera.it/leg19/emendamenti/xml/leg.19.eme.ac.2112-bis.xml",
+    "pagineEmendamento": "https://documenti.camera.it/apps/emendamenti/getPropostaEmendativa.aspx",
+    "gruppiDeputati": "https://dati.camera.it/sparql",
+    "sha256Xml": "c0d1aa3d38864ad1190b355fc5511021cfaf3e2d7965c4aedd18117f39d9cd28",
+    "acquisitoIl": "2026-09-20T21:41:25.947Z"
+  },
+  "sedute": [
+    "20241115",
+    "20241204",
+    "20241212",
+    "20241213",
+    "20241214",
+    "20241216",
+    "20241217"
+  ],
+  "conteggi": {
+    "occorrenzeBollettino": 5992,
+    "emendamentiUnici": 5085,
+    "ripubblicazioni": 865
+  },
+  "modello": {
+    "fornitore": "TypeSafe",
+    "nome": "Jev",
+    "domandeSingole": [
+      "articolo_aggiuntivo",
+      "soppressivo",
+      "localistico",
+      "beneficiario_identificabile",
+      "copertura_indicata",
+      "ambito",
+      "micro_intervento"
+    ],
+    "domandeCoppia": [
+      "stesso_effetto",
+      "stessa_matrice",
+      "differenza_solo_numerica"
+    ],
+    "chiamate": 12206,
+    "tokenInput": 19955846,
+    "costoUsdStimato": 0.838145532,
+    "definizioni": "pipeline/questions.ts"
+  },
+  "soglie": {
+    "copiaRiscritta": 0.8,
+    "mancetta": {
+      "livello": 3,
+      "probabilitaMinima": 0.5
+    },
+    "jaccardCandidati": 0.35
+  },
+  "generatoIl": "2026-09-21T10:15:00.671Z",
+  "licenzaDatiDerivati": "CC-BY-4.0"
+}

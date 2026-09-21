@@ -2,7 +2,9 @@
   "name": "fotocopiatrice",
   "version": "0.1.0",
   "private": true,
-  "description": "Analisi degli emendamenti parlamentari con TypeSafe Jev",
+  "description": "Analisi degli emendamenti parlamentari italiani con TypeSafe Jev: fotocopie, copie riscritte e mancette, pubblicati come sito statico con dataset riutilizzabile",
+  "repository": "https://github.com/bnistor4/fotocopiatrice",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
